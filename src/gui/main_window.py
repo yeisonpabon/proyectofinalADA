@@ -15,6 +15,7 @@ import sys
 import os
 import json
 from datetime import datetime
+import numpy as np
 
 # Agregar directorio raíz al path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
@@ -22,6 +23,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../.
 # Importar módulos de análisis
 from src.complexity_analysis.recurrence_parser import RecurrenceParser
 from src.complexity_analysis.master_theorem import MasterTheorem
+from src.neural_network.mlp import MLP
+from src.data_processing.feature_extractor import GoFeatureExtractor
 
 
 class MainWindow:
@@ -45,6 +48,19 @@ class MainWindow:
         self.recurrence_parser = RecurrenceParser()
         self.master_theorem = MasterTheorem()
         self.current_analysis_result = None
+        
+        # Inicializar MLP y feature extractor
+        self.mlp = None
+        self.feature_extractor = GoFeatureExtractor()
+        self.complexity_labels = {
+            0: "O(1)",
+            1: "O(log n)",
+            2: "O(n)",
+            3: "O(n log n)",
+            4: "O(n²)",
+            5: "O(2^n)"
+        }
+        self._load_mlp_model()
         
         # Crear interfaz
         self._create_menu()
@@ -195,6 +211,62 @@ func binarySearch(arr []int, target int) int {
         self.status_bar = ttk.Label(self.root, text="Listo", relief=tk.SUNKEN, anchor=tk.W)
         self.status_bar.pack(side=tk.BOTTOM, fill=tk.X)
     
+    def _load_mlp_model(self):
+        """Carga el modelo MLP entrenado."""
+        model_path = os.path.join(os.path.dirname(__file__), '../../experiments/models/mlp_complexity_classifier.npz')
+        dataset_path = os.path.join(os.path.dirname(__file__), '../../data/dataset.json')
+        
+        # Primero, entrenar el feature extractor con el dataset
+        if os.path.exists(dataset_path):
+            try:
+                with open(dataset_path, 'r', encoding='utf-8') as f:
+                    dataset = json.load(f)
+                
+                # Cargar código de los algoritmos
+                code_samples = []
+                for algo in dataset['algorithms']:
+                    algo_path = os.path.join(os.path.dirname(__file__), '../../', algo['path'])
+                    if os.path.exists(algo_path):
+                        with open(algo_path, 'r', encoding='utf-8') as code_file:
+                            code_samples.append(code_file.read())
+                
+                if code_samples:
+                    # Entrenar extractor
+                    self.feature_extractor.fit(code_samples)
+                    print(f"✓ Feature extractor entrenado con {len(code_samples)} algoritmos")
+                
+            except Exception as e:
+                print(f"⚠ Error entrenando feature extractor: {e}")
+        
+        # Cargar modelo MLP
+        if os.path.exists(model_path):
+            try:
+                # Arquitectura fija del modelo entrenado
+                # Basada en train_model.py
+                input_dim = 56  # 45 tokens TF-IDF + 11 features sintácticas
+                hidden_dims = [128, 64]
+                num_classes = 6
+                
+                self.mlp = MLP(
+                    input_dim=input_dim,
+                    hidden_dims=hidden_dims,
+                    num_classes=num_classes,
+                    learning_rate=0.01,
+                    batch_size=4
+                )
+                
+                # Cargar pesos
+                self.mlp.load_weights(model_path)
+                
+                print(f"✓ Modelo MLP cargado: {input_dim} → {hidden_dims} → {num_classes}")
+                
+            except Exception as e:
+                print(f"⚠ Error cargando modelo MLP: {e}")
+                self.mlp = None
+        else:
+            print(f"⚠ Modelo MLP no encontrado en: {model_path}")
+            self.mlp = None
+    
     # Callbacks de menú
     def _open_file(self):
         """Abre archivo de código."""
@@ -255,6 +327,13 @@ func binarySearch(arr []int, target int) int {
                         'explanation': mt.explanation
                     }
                 
+                # Agregar predicción MLP si existe
+                if 'mlp_prediction' in self.current_analysis_result and self.current_analysis_result['mlp_prediction']:
+                    data['analysis']['mlp'] = {
+                        'prediction': self.current_analysis_result['mlp_prediction'],
+                        'confidence': float(self.current_analysis_result['mlp_confidence'])
+                    }
+                
                 with open(filename, 'w', encoding='utf-8') as f:
                     json.dump(data, f, indent=2, ensure_ascii=False)
                 
@@ -266,8 +345,46 @@ func binarySearch(arr []int, target int) int {
                 self.status_bar.config(text="✗ Error al guardar")
     
     def _load_model(self):
-        """Carga modelo."""
-        messagebox.showinfo("Info", "Función de carga de modelo en desarrollo")
+        """Carga modelo MLP desde archivo .npz"""
+        filename = filedialog.askopenfilename(
+            title="Cargar modelo MLP",
+            defaultextension=".npz",
+            filetypes=[("NumPy archive", "*.npz"), ("All files", "*.*")]
+        )
+        
+        if filename:
+            try:
+                self.status_bar.config(text="Cargando modelo...")
+                self.root.update_idletasks()
+                
+                # Cargar pesos del modelo
+                data = np.load(filename, allow_pickle=True)
+                
+                # Recrear arquitectura del MLP
+                input_dim = data['input_dim'].item()
+                hidden_dims = data['hidden_dims'].tolist()
+                num_classes = data['num_classes'].item()
+                
+                self.mlp = MLP(
+                    input_dim=input_dim,
+                    hidden_dims=hidden_dims,
+                    num_classes=num_classes,
+                    learning_rate=0.01,
+                    batch_size=4
+                )
+                
+                # Cargar pesos
+                self.mlp.load_weights(filename)
+                
+                self.status_bar.config(text=f"✓ Modelo cargado: {input_dim} → {hidden_dims} → {num_classes}")
+                messagebox.showinfo("Éxito", 
+                                  f"Modelo MLP cargado exitosamente:\n\n"
+                                  f"Arquitectura: {input_dim} → {hidden_dims} → {num_classes}\n"
+                                  f"Archivo: {os.path.basename(filename)}")
+                
+            except Exception as e:
+                messagebox.showerror("Error", f"No se pudo cargar el modelo:\n{e}")
+                self.status_bar.config(text="✗ Error al cargar modelo")
     
     def _retrain_model(self):
         """Reentrena modelo."""
@@ -368,10 +485,59 @@ func binarySearch(arr []int, target int) int {
                 
                 result += f"\n  • Confianza: {mt_result.confidence:.1%}\n"
                 
-                # Guardar resultado
+                # 4. Predicción con MLP
+                mlp_prediction = None
+                mlp_confidence = 0.0
+                
+                if self.mlp is not None:
+                    try:
+                        self.status_bar.config(text="Extrayendo features del código...")
+                        self.root.update_idletasks()
+                        
+                        # Extraer features usando el extractor entrenado
+                        if not self.feature_extractor.is_fitted:
+                            result += "\n" + "─" * 60 + "\n"
+                            result += "PREDICCIÓN RED NEURONAL MLP\n"
+                            result += "─" * 60 + "\n\n"
+                            result += "⚠ Feature extractor no entrenado.\n"
+                            result += "   No se puede hacer predicción MLP.\n"
+                        else:
+                            features = self.feature_extractor.transform([code])
+                        
+                            # Hacer predicción
+                            self.status_bar.config(text="Ejecutando predicción MLP...")
+                            self.root.update_idletasks()
+                            
+                            prediction_probs = self.mlp.predict(features)
+                            predicted_class = np.argmax(prediction_probs[0])
+                            mlp_confidence = prediction_probs[0][predicted_class]
+                            mlp_prediction = self.complexity_labels.get(predicted_class, "Desconocida")
+                            
+                            result += "\n" + "─" * 60 + "\n"
+                            result += "PREDICCIÓN RED NEURONAL MLP\n"
+                            result += "─" * 60 + "\n\n"
+                            
+                            result += f"🧠 Predicción MLP: {mlp_prediction}\n"
+                            result += f"  • Confianza: {mlp_confidence:.1%}\n\n"
+                            
+                            result += "Distribución de probabilidades:\n"
+                            for class_idx, prob in enumerate(prediction_probs[0]):
+                                complexity = self.complexity_labels.get(class_idx, f"Clase {class_idx}")
+                                bar = "█" * int(prob * 20)
+                                result += f"  {complexity:12s} [{bar:<20s}] {prob:.1%}\n"
+                        
+                    except Exception as e:
+                        result += "\n" + "─" * 60 + "\n"
+                        result += "PREDICCIÓN RED NEURONAL MLP\n"
+                        result += "─" * 60 + "\n\n"
+                        result += f"⚠ Error en predicción MLP: {str(e)}\n"
+                
+                # Guardar resultado con MLP
                 self.current_analysis_result = {
                     'recurrence': recurrence,
                     'master_theorem': mt_result,
+                    'mlp_prediction': mlp_prediction,
+                    'mlp_confidence': mlp_confidence,
                     'code': code
                 }
             
