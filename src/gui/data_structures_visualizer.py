@@ -101,6 +101,10 @@ class DataStructuresVisualizer:
         """Visualiza estructura seleccionada."""
         structure = self.structure_var.get()
         
+        # Inicializar estructura vacía si no existe o cambia el tipo
+        if self.current_structure is None or not self._is_correct_structure_type(structure):
+            self._initialize_structure(structure)
+        
         if structure == "MinHeap":
             self._visualize_heap(is_min=True)
         elif structure == "MaxHeap":
@@ -111,6 +115,40 @@ class DataStructuresVisualizer:
             self._visualize_hash_table()
         elif structure == "Trie":
             self._visualize_trie()
+    
+    def _is_correct_structure_type(self, structure_name):
+        """Verifica si la estructura actual es del tipo correcto."""
+        if self.current_structure is None:
+            return False
+        
+        type_map = {
+            "MinHeap": self.MinHeap,
+            "MaxHeap": self.MaxHeap,
+            "AVL Tree": self.AVLTree,
+            "Hash Table": self.HashTable,
+            "Trie": self.Trie
+        }
+        
+        expected_type = type_map.get(structure_name)
+        if expected_type is None:
+            return False
+        
+        return isinstance(self.current_structure, expected_type)
+    
+    def _initialize_structure(self, structure_name):
+        """Inicializa una estructura vacía del tipo especificado."""
+        self.current_structure = None
+        
+        if structure_name == "MinHeap" and self.MinHeap:
+            self.current_structure = self.MinHeap()
+        elif structure_name == "MaxHeap" and self.MaxHeap:
+            self.current_structure = self.MaxHeap()
+        elif structure_name == "AVL Tree" and self.AVLTree:
+            self.current_structure = self.AVLTree()
+        elif structure_name == "Hash Table" and self.HashTable:
+            self.current_structure = self.HashTable()
+        elif structure_name == "Trie" and self.Trie:
+            self.current_structure = self.Trie()
     
     def insert_data(self):
         """Inserta datos en la estructura actual."""
@@ -130,32 +168,22 @@ class DataStructuresVisualizer:
             structure_type = self.structure_var.get()
             
             if structure_type == "MinHeap":
-                if not self.current_structure:
-                    self.current_structure = self.MinHeap()
                 for val in data:
                     self.current_structure.insert(val)
             
             elif structure_type == "MaxHeap":
-                if not self.current_structure:
-                    self.current_structure = self.MaxHeap()
                 for val in data:
                     self.current_structure.insert(val)
             
             elif structure_type == "AVL Tree":
-                if not self.current_structure:
-                    self.current_structure = self.AVLTree()
                 for val in data:
                     self.current_structure.insert(val)
             
             elif structure_type == "Hash Table":
-                if not self.current_structure:
-                    self.current_structure = self.HashTable()
                 for val in data:
                     self.current_structure.insert(f"key{val}", val)
             
             elif structure_type == "Trie":
-                if not self.current_structure:
-                    self.current_structure = self.Trie()
                 for word in data:
                     self.current_structure.insert(word)
             
@@ -167,7 +195,8 @@ class DataStructuresVisualizer:
     
     def clear_structure(self):
         """Limpia estructura actual."""
-        self.current_structure = None
+        structure_name = self.structure_var.get()
+        self._initialize_structure(structure_name)
         self.visualize()
     
     def _visualize_heap(self, is_min=True):
