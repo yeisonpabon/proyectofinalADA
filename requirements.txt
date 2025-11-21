@@ -1,0 +1,15 @@
+# Dependencias del proyecto
+# Sistema de Clasificación de Complejidad Computacional
+
+# Computación numérica (álgebra lineal para MLP)
+numpy>=1.21.0
+
+# Visualización
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# GUI (Tkinter viene con Python, pero puede necesitar instalación en Linux)
+# tkinter - Instalado por defecto en Windows/Mac
+
+# Utilidades
+tqdm>=4.62.0  # Barras de progreso opcionales

@@ -1,0 +1,46 @@
+{
+  "complexity_classes": [
+    {
+      "class_id": 0,
+      "notation": "O(1)",
+      "name": "Constante",
+      "description": "Tiempo constante, independiente del tamaño de entrada",
+      "examples": ["Acceso a array", "Operaciones aritméticas", "Asignación"]
+    },
+    {
+      "class_id": 1,
+      "notation": "O(log n)",
+      "name": "Logarítmico",
+      "description": "Crece logarítmicamente con el tamaño de entrada",
+      "examples": ["Búsqueda binaria", "Búsqueda en árbol balanceado"]
+    },
+    {
+      "class_id": 2,
+      "notation": "O(n)",
+      "name": "Lineal",
+      "description": "Crece linealmente con el tamaño de entrada",
+      "examples": ["Búsqueda lineal", "Recorrido de array", "DFS/BFS"]
+    },
+    {
+      "class_id": 3,
+      "notation": "O(n log n)",
+      "name": "Linearítmico",
+      "description": "Crece como n multiplicado por log n",
+      "examples": ["Merge Sort", "Quick Sort", "Heap Sort"]
+    },
+    {
+      "class_id": 4,
+      "notation": "O(n²)",
+      "name": "Cuadrático",
+      "description": "Crece como el cuadrado del tamaño de entrada",
+      "examples": ["Bubble Sort", "Selection Sort", "Insertion Sort"]
+    },
+    {
+      "class_id": 5,
+      "notation": "O(2^n)",
+      "name": "Exponencial",
+      "description": "Crece exponencialmente con el tamaño de entrada",
+      "examples": ["Fibonacci recursivo", "Subconjuntos", "Torres de Hanoi"]
+    }
+  ]
+}
