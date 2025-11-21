@@ -340,6 +340,149 @@
       "recurrence": "T(n) = n * T(n-1) + O(1)",
       "master_theorem": null,
       "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+    },
+    {
+      "id": "get_element",
+      "name": "Obtener Elemento",
+      "path": "data/algorithms/search/get_element.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Retorna elemento en posición específica",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {"loops": 0, "recursion": false, "nested_depth": 1}
+    },
+    {
+      "id": "sum_two_numbers",
+      "name": "Suma de Dos Números",
+      "path": "data/algorithms/search/sum_two_numbers.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Suma simple de dos números",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {"loops": 0, "recursion": false, "nested_depth": 1}
+    },
+    {
+      "id": "check_even",
+      "name": "Verificar Par",
+      "path": "data/algorithms/search/check_even.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Verifica si un número es par",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {"loops": 0, "recursion": false, "nested_depth": 1}
+    },
+    {
+      "id": "ternary_search",
+      "name": "Búsqueda Ternaria",
+      "path": "data/algorithms/search/ternary_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Divide el espacio de búsqueda en tres partes",
+      "recurrence": "T(n) = T(n/3) + O(1)",
+      "master_theorem": {"a": 1, "b": 3, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 0, "recursion": true, "nested_depth": 2}
+    },
+    {
+      "id": "count_occurrences",
+      "name": "Contar Ocurrencias",
+      "path": "data/algorithms/search/count_occurrences.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Cuenta cuántas veces aparece un valor",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "reverse_array",
+      "name": "Invertir Array",
+      "path": "data/algorithms/search/reverse_array.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Invierte los elementos de un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "find_min",
+      "name": "Encontrar Mínimo",
+      "path": "data/algorithms/search/find_min.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encuentra el valor mínimo en un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "karatsuba_multiply",
+      "name": "Multiplicación de Karatsuba",
+      "path": "data/algorithms/search/karatsuba_multiply.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Multiplicación rápida divide y conquista",
+      "recurrence": "T(n) = 3T(n/2) + O(n)",
+      "master_theorem": {"a": 3, "b": 2, "f_n": "O(n)", "case": 1, "result": "O(n^1.58)"},
+      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+    },
+    {
+      "id": "shell_sort",
+      "name": "Shell Sort",
+      "path": "data/algorithms/sort/shell_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Insertion sort mejorado con gaps",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {"loops": 3, "recursion": false, "nested_depth": 3}
+    },
+    {
+      "id": "two_sum",
+      "name": "Two Sum Problem",
+      "path": "data/algorithms/search/two_sum.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Encuentra dos números que sumen un objetivo",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {"loops": 2, "recursion": false, "nested_depth": 3}
+    },
+    {
+      "id": "longest_palindrome",
+      "name": "Palíndromo Más Largo",
+      "path": "data/algorithms/search/longest_palindrome.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Encuentra el palíndromo más largo en una cadena",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {"loops": 2, "recursion": false, "nested_depth": 3}
+    },
+    {
+      "id": "power_set",
+      "name": "Power Set",
+      "path": "data/algorithms/search/power_set.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todos los subconjuntos de un conjunto",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
+      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+    },
+    {
+      "id": "n_queens",
+      "name": "N-Queens Problem",
+      "path": "data/algorithms/search/n_queens.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Coloca N reinas en un tablero sin conflictos",
+      "recurrence": "T(n) = nT(n-1) + O(n)",
+      "master_theorem": null,
+      "features": {"loops": 2, "recursion": true, "nested_depth": 4}
     }
   ]
 }

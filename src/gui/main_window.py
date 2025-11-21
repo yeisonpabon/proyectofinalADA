@@ -425,7 +425,7 @@ func binarySearch(arr []int, target int) int {
         progress_bar.pack(pady=(0, 10))
         
         # Label de época
-        epoch_label = ttk.Label(frame, text="Época: 0 / 500", 
+        epoch_label = ttk.Label(frame, text="Época: 0 / 1500", 
                                font=('Arial', 9))
         epoch_label.pack(pady=(0, 10))
         
@@ -515,10 +515,10 @@ func binarySearch(arr []int, target int) int {
             progress_window.update()
             
             # 5. Entrenar con callback de progreso
-            status_label.config(text="Entrenando modelo (500 épocas)...")
+            status_label.config(text="Entrenando modelo (1500 épocas)...")
             progress_window.update()
             
-            epochs = 500
+            epochs = 1500
             history = {
                 'train_loss': [],
                 'train_accuracy': [],

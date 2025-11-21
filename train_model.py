@@ -254,16 +254,16 @@ def main():
     
     print(mlp.get_architecture_summary())
     
-    # 5. Entrenar (1000 épocas - FASE 2)
+    # 5. Entrenar (1500 épocas - FASE 4 MEJORADA)
     print("\n" + "=" * 70)
-    print("ENTRENAMIENTO (1000 ÉPOCAS - FASE 2)")
+    print("ENTRENAMIENTO (1500 ÉPOCAS - FASE 4 MEJORADA)")
     print("=" * 70)
     print()
     
     history = mlp.fit(
         X_train, y_train,
         X_val=X_test, y_val=y_test,
-        epochs=1000,  # 1000 épocas totales (Fase 2)
+        epochs=1500,  # 1500 épocas totales (Fase 4 mejorada)
         verbose=True
     )
     
