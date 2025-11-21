@@ -33,13 +33,20 @@ class TrainingVisualizer:
     def _load_training_history(self):
         """Carga historial de entrenamiento."""
         try:
+            # Buscar en la ubicación correcta
             history_path = os.path.join(os.path.dirname(__file__), 
-                                       '../../models/training_history.json')
+                                       '../../experiments/logs/training_history.json')
+            
             if os.path.exists(history_path):
                 with open(history_path, 'r') as f:
                     self.history = json.load(f)
+                print(f"✓ Historial de entrenamiento cargado: {len(self.history.get('train_loss', []))} épocas")
+            else:
+                print(f"⚠ No se encontró historial en: {history_path}")
+                print("  Usando datos de ejemplo para demostración")
+                self.history = self._generate_dummy_history()
         except Exception as e:
-            print(f"No se pudo cargar historial: {e}")
+            print(f"⚠ Error cargando historial: {e}")
             self.history = self._generate_dummy_history()
     
     def _generate_dummy_history(self):
@@ -70,11 +77,11 @@ class TrainingVisualizer:
         metrics_frame.pack(fill=tk.X, padx=10, pady=5)
         
         if self.history:
-            epochs = self.history.get('epochs', 0)
-            final_train_acc = self.history['train_accuracy'][-1] if self.history['train_accuracy'] else 0
-            final_test_acc = self.history['test_accuracy'][-1] if self.history['test_accuracy'] else 0
-            final_train_loss = self.history['train_loss'][-1] if self.history['train_loss'] else 0
-            final_test_loss = self.history['test_loss'][-1] if self.history['test_loss'] else 0
+            epochs = len(self.history.get('train_loss', []))
+            final_train_acc = self.history['train_accuracy'][-1] if self.history.get('train_accuracy') else 0
+            final_test_acc = self.history['test_accuracy'][-1] if self.history.get('test_accuracy') else 0
+            final_train_loss = self.history['train_loss'][-1] if self.history.get('train_loss') else 0
+            final_test_loss = self.history['test_loss'][-1] if self.history.get('test_loss') else 0
             
             info_text = f"""
 Épocas entrenadas: {epochs}

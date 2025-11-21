@@ -387,8 +387,216 @@ func binarySearch(arr []int, target int) int {
                 self.status_bar.config(text="✗ Error al cargar modelo")
     
     def _retrain_model(self):
-        """Reentrena modelo."""
-        messagebox.showinfo("Info", "Función de reentrenamiento en desarrollo")
+        """Reentrena modelo con el dataset completo."""
+        # Confirmar acción
+        response = messagebox.askyesno(
+            "Reentrenar Modelo",
+            "¿Deseas reentrenar el modelo desde cero?\n\n"
+            "Esto puede tomar varios minutos.\n"
+            "El modelo actual será reemplazado."
+        )
+        
+        if not response:
+            return
+        
+        # Crear ventana de progreso
+        progress_window = tk.Toplevel(self.root)
+        progress_window.title("Reentrenamiento en progreso")
+        progress_window.geometry("500x300")
+        progress_window.transient(self.root)
+        progress_window.grab_set()
+        
+        # Frame principal
+        frame = ttk.Frame(progress_window, padding=20)
+        frame.pack(fill=tk.BOTH, expand=True)
+        
+        # Título
+        title_label = ttk.Label(frame, text="Reentrenando Modelo MLP", 
+                               font=('Arial', 14, 'bold'))
+        title_label.pack(pady=(0, 20))
+        
+        # Label de estado
+        status_label = ttk.Label(frame, text="Inicializando...", 
+                                font=('Arial', 10))
+        status_label.pack(pady=(0, 10))
+        
+        # Barra de progreso
+        progress_bar = ttk.Progressbar(frame, mode='determinate', length=400)
+        progress_bar.pack(pady=(0, 10))
+        
+        # Label de época
+        epoch_label = ttk.Label(frame, text="Época: 0 / 500", 
+                               font=('Arial', 9))
+        epoch_label.pack(pady=(0, 10))
+        
+        # Label de métricas
+        metrics_label = ttk.Label(frame, text="", font=('Arial', 9))
+        metrics_label.pack(pady=(0, 10))
+        
+        # Botón cancelar (deshabilitado durante entrenamiento)
+        cancel_btn = ttk.Button(frame, text="Cancelar", state='disabled')
+        cancel_btn.pack(pady=(10, 0))
+        
+        progress_window.update()
+        
+        try:
+            # 1. Cargar dataset
+            status_label.config(text="Cargando dataset...")
+            progress_window.update()
+            
+            base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+            dataset_path = os.path.join(base_path, 'data', 'dataset.json')
+            
+            with open(dataset_path, 'r', encoding='utf-8') as f:
+                dataset = json.load(f)
+            
+            code_samples = []
+            labels = []
+            
+            for algo in dataset['algorithms']:
+                code_path = os.path.join(base_path, algo['path'])
+                try:
+                    with open(code_path, 'r', encoding='utf-8') as f:
+                        code = f.read()
+                        code_samples.append(code)
+                        labels.append(algo['complexity_class'])
+                except FileNotFoundError:
+                    pass
+            
+            progress_bar['value'] = 10
+            progress_window.update()
+            
+            # 2. Extraer features
+            status_label.config(text="Extrayendo features...")
+            progress_window.update()
+            
+            extractor = GoFeatureExtractor(max_features=200)
+            X = extractor.fit_transform(code_samples)
+            y = np.array(labels)
+            
+            progress_bar['value'] = 20
+            progress_window.update()
+            
+            # 3. Dividir dataset
+            status_label.config(text="Dividiendo dataset...")
+            progress_window.update()
+            
+            np.random.seed(42)
+            n_samples = len(X)
+            indices = np.random.permutation(n_samples)
+            n_test = int(n_samples * 0.2)
+            test_indices = indices[:n_test]
+            train_indices = indices[n_test:]
+            
+            X_train = X[train_indices]
+            X_test = X[test_indices]
+            y_train = y[train_indices]
+            y_test = y[test_indices]
+            
+            progress_bar['value'] = 25
+            progress_window.update()
+            
+            # 4. Crear nuevo modelo
+            status_label.config(text="Inicializando modelo...")
+            progress_window.update()
+            
+            input_dim = X_train.shape[1]
+            num_classes = 6
+            
+            new_mlp = MLP(
+                input_dim=input_dim,
+                hidden_dims=[128, 64],
+                num_classes=num_classes,
+                learning_rate=0.01,
+                batch_size=4
+            )
+            
+            progress_bar['value'] = 30
+            progress_window.update()
+            
+            # 5. Entrenar con callback de progreso
+            status_label.config(text="Entrenando modelo (500 épocas)...")
+            progress_window.update()
+            
+            epochs = 500
+            history = {
+                'train_loss': [],
+                'train_accuracy': [],
+                'test_loss': [],
+                'test_accuracy': []
+            }
+            
+            for epoch in range(epochs):
+                # Entrenar una época
+                train_loss, train_acc = new_mlp._train_epoch(X_train, y_train)
+                test_loss, test_acc = new_mlp.evaluate_loss(X_test, y_test)
+                
+                history['train_loss'].append(train_loss)
+                history['train_accuracy'].append(train_acc)
+                history['test_loss'].append(test_loss)
+                history['test_accuracy'].append(test_acc)
+                
+                # Actualizar UI cada 10 épocas
+                if (epoch + 1) % 10 == 0 or epoch == 0:
+                    progress = 30 + int((epoch + 1) / epochs * 60)
+                    progress_bar['value'] = progress
+                    epoch_label.config(text=f"Época: {epoch + 1} / {epochs}")
+                    metrics_label.config(
+                        text=f"Train Acc: {train_acc:.3f} | Test Acc: {test_acc:.3f}\n"
+                             f"Train Loss: {train_loss:.4f} | Test Loss: {test_loss:.4f}"
+                    )
+                    progress_window.update()
+            
+            progress_bar['value'] = 90
+            
+            # 6. Guardar modelo
+            status_label.config(text="Guardando modelo...")
+            progress_window.update()
+            
+            model_path = os.path.join(base_path, 'experiments', 'models', 
+                                     'mlp_complexity_classifier.npz')
+            new_mlp.save_weights(model_path)
+            
+            # 7. Guardar historial
+            history_path = os.path.join(base_path, 'experiments', 'logs', 
+                                       'training_history.json')
+            with open(history_path, 'w') as f:
+                json.dump(history, f, indent=2)
+            
+            progress_bar['value'] = 95
+            
+            # 8. Actualizar modelo en memoria
+            status_label.config(text="Actualizando modelo...")
+            progress_window.update()
+            
+            self.mlp = new_mlp
+            self.feature_extractor = extractor
+            
+            progress_bar['value'] = 100
+            status_label.config(text="✓ Reentrenamiento completado")
+            epoch_label.config(text=f"Completado: {epochs} épocas")
+            
+            # Mostrar resultado final
+            final_train_acc = history['train_accuracy'][-1]
+            final_test_acc = history['test_accuracy'][-1]
+            
+            messagebox.showinfo(
+                "Reentrenamiento Completado",
+                f"✓ Modelo reentrenado exitosamente\n\n"
+                f"Épocas: {epochs}\n"
+                f"Precisión Train: {final_train_acc:.2%}\n"
+                f"Precisión Test: {final_test_acc:.2%}\n\n"
+                f"Modelo guardado en:\n{model_path}"
+            )
+            
+        except Exception as e:
+            messagebox.showerror(
+                "Error en Reentrenamiento",
+                f"Error durante el reentrenamiento:\n{str(e)}"
+            )
+        
+        finally:
+            progress_window.destroy()
     
     def _show_docs(self):
         """Muestra documentación."""

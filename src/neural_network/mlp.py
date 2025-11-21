@@ -330,6 +330,67 @@ class MLP:
         accuracy = np.mean(predictions == y)
         return accuracy
     
+    def _train_epoch(self, X_train, y_train):
+        """
+        Entrena una sola época y retorna métricas.
+        
+        Args:
+            X_train (np.ndarray): Datos de entrenamiento
+            y_train (np.ndarray): Etiquetas de entrenamiento
+            
+        Returns:
+            tuple: (loss, accuracy)
+        """
+        n_samples = X_train.shape[0]
+        n_batches = max(1, n_samples // self.batch_size)
+        effective_batch_size = min(self.batch_size, n_samples)
+        
+        # Shuffle de datos
+        indices = np.random.permutation(n_samples)
+        X_shuffled = X_train[indices]
+        y_shuffled = y_train[indices]
+        
+        # Entrenamiento por mini-batches
+        epoch_loss = 0.0
+        for batch_idx in range(n_batches):
+            start_idx = batch_idx * effective_batch_size
+            end_idx = min(start_idx + effective_batch_size, n_samples)
+            X_batch = X_shuffled[start_idx:end_idx]
+            y_batch = y_shuffled[start_idx:end_idx]
+            
+            # Forward pass
+            y_pred = self.forward(X_batch)
+            
+            # Calcular pérdida
+            batch_loss = self.loss_fn.compute(y_pred, y_batch)
+            epoch_loss += batch_loss
+            
+            # Backward pass
+            self.backward(y_pred, y_batch)
+        
+        # Promediar pérdida y calcular precisión
+        avg_loss = epoch_loss / n_batches
+        accuracy = self.evaluate(X_train, y_train)
+        
+        return avg_loss, accuracy
+    
+    def evaluate_loss(self, X, y):
+        """
+        Evalúa pérdida y precisión del modelo.
+        
+        Args:
+            X (np.ndarray): Datos de entrada
+            y (np.ndarray): Etiquetas verdaderas
+            
+        Returns:
+            tuple: (loss, accuracy)
+        """
+        y_pred = self.forward(X)
+        loss = self.loss_fn.compute(y_pred, y)
+        predictions = np.argmax(y_pred, axis=1)
+        accuracy = np.mean(predictions == y)
+        return loss, accuracy
+    
     def save_weights(self, filepath):
         """
         Guarda los pesos del modelo.
