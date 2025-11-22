@@ -2045,6 +2045,186 @@
       "complexity_class": 2,
       "description": "Encontrar dos n\u00fameros que sumen target",
       "source": "user_provided"
+    },
+    {
+      "id": "bubble_sort_n2",
+      "name": "BubbleSort",
+      "code": "func BubbleSort(arr []int) {\n\tn := len(arr)\n\tfor i := 0; i < n; i++ {\n\t\tfor j := 0; j < n-1; j++ {\n\t\t\tif arr[j] > arr[j+1] {\n\t\t\t\tarr[j], arr[j+1] = arr[j+1], arr[j]\n\t\t\t}\n\t\t}\n\t}\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Bubble Sort - Ordenamiento de burbuja",
+      "source": "user_provided"
+    },
+    {
+      "id": "selection_sort_n2",
+      "name": "SelectionSort",
+      "code": "func SelectionSort(arr []int) {\n\tn := len(arr)\n\tfor i := 0; i < n; i++ {\n\t\tminIdx := i\n\t\tfor j := i + 1; j < n; j++ {\n\t\t\tif arr[j] < arr[minIdx] {\n\t\t\t\tminIdx = j\n\t\t\t}\n\t\t}\n\t\tarr[i], arr[minIdx] = arr[minIdx], arr[i]\n\t}\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Selection Sort - Ordenamiento por selecci\u00f3n",
+      "source": "user_provided"
+    },
+    {
+      "id": "insertion_sort_n2",
+      "name": "InsertionSort",
+      "code": "func InsertionSort(arr []int) {\n\tfor i := 1; i < len(arr); i++ {\n\t\tkey := arr[i]\n\t\tj := i - 1\n\t\tfor j >= 0 && arr[j] > key {\n\t\t\tarr[j+1] = arr[j]\n\t\t\tj--\n\t\t}\n\t\tarr[j+1] = key\n\t}\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Insertion Sort - Ordenamiento por inserci\u00f3n",
+      "source": "user_provided"
+    },
+    {
+      "id": "count_pairs_greater_n2",
+      "name": "CountPairsGreater",
+      "code": "func CountPairsGreater(arr []int, target int) int {\n\tn := len(arr)\n\tcount := 0\n\tfor i := 0; i < n; i++ {\n\t\tfor j := i + 1; j < n; j++ {\n\t\t\tif arr[i]+arr[j] > target {\n\t\t\t\tcount++\n\t\t\t}\n\t\t}\n\t}\n\treturn count\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Contar pares con suma mayor a target",
+      "source": "user_provided"
+    },
+    {
+      "id": "find_duplicates_n2",
+      "name": "FindDuplicates",
+      "code": "func FindDuplicates(arr []int) []int {\n\tn := len(arr)\n\tdups := []int{}\n\tfor i := 0; i < n; i++ {\n\t\tfor j := i + 1; j < n; j++ {\n\t\t\tif arr[i] == arr[j] {\n\t\t\t\tdups = append(dups, arr[i])\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n\treturn dups\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Encontrar todos los duplicados",
+      "source": "user_provided"
+    },
+    {
+      "id": "has_duplicate_n2",
+      "name": "HasAnyDuplicate",
+      "code": "func HasAnyDuplicate(arr []int) bool {\n\tn := len(arr)\n\tfor i := 0; i < n; i++ {\n\t\tfor j := i + 1; j < n; j++ {\n\t\t\tif arr[i] == arr[j] {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\treturn false\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Verificar si hay alg\u00fan duplicado",
+      "source": "user_provided"
+    },
+    {
+      "id": "identity_matrix_n2",
+      "name": "IdentityMatrix",
+      "code": "func IdentityMatrix(n int) [][]int {\n\tm := make([][]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tm[i] = make([]int, n)\n\t\tfor j := 0; j < n; j++ {\n\t\t\tif i == j {\n\t\t\t\tm[i][j] = 1\n\t\t\t}\n\t\t}\n\t}\n\treturn m\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Crear matriz identidad n\u00d7n",
+      "source": "user_provided"
+    },
+    {
+      "id": "add_matrices_n2",
+      "name": "AddMatrices",
+      "code": "func AddMatrices(a, b [][]int) [][]int {\n\tn := len(a)\n\tres := make([][]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tres[i] = make([]int, n)\n\t\tfor j := 0; j < n; j++ {\n\t\t\tres[i][j] = a[i][j] + b[i][j]\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Suma de dos matrices n\u00d7n",
+      "source": "user_provided"
+    },
+    {
+      "id": "transpose_matrix_n2",
+      "name": "Transpose",
+      "code": "func Transpose(mat [][]int) [][]int {\n\tn := len(mat)\n\tres := make([][]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tres[i] = make([]int, n)\n\t\tfor j := 0; j < n; j++ {\n\t\t\tres[j][i] = mat[i][j]\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Transpuesta de matriz n\u00d7n",
+      "source": "user_provided"
+    },
+    {
+      "id": "all_pairs_product_n2",
+      "name": "AllPairsProduct",
+      "code": "func AllPairsProduct(arr []int) int {\n\tn := len(arr)\n\tsum := 0\n\tfor i := 0; i < n; i++ {\n\t\tfor j := 0; j < n; j++ {\n\t\t\tsum += arr[i] * arr[j]\n\t\t}\n\t}\n\treturn sum\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Producto punto de todos con todos",
+      "source": "user_provided"
+    },
+    {
+      "id": "all_abs_distances_n2",
+      "name": "AllAbsDistances",
+      "code": "func AllAbsDistances(arr []int) []int {\n\tn := len(arr)\n\tres := make([]int, 0, n*(n-1)/2)\n\tfor i := 0; i < n; i++ {\n\t\tfor j := i + 1; j < n; j++ {\n\t\t\td := arr[i] - arr[j]\n\t\t\tif d < 0 { d = -d }\n\t\t\tres = append(res, d)\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Calcular distancias absolutas entre pares",
+      "source": "user_provided"
+    },
+    {
+      "id": "anagram_naive_n2",
+      "name": "IsAnagramNaive",
+      "code": "func IsAnagramNaive(a, b string) bool {\n\tra := []rune(a)\n\trb := []rune(b)\n\tif len(ra) != len(rb) { return false }\n\n\tused := make([]bool, len(rb))\n\tfor i := 0; i < len(ra); i++ {\n\t\tfound := false\n\t\tfor j := 0; j < len(rb); j++ {\n\t\t\tif !used[j] && ra[i] == rb[j] {\n\t\t\t\tused[j] = true\n\t\t\t\tfound = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tif !found { return false }\n\t}\n\treturn true\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Verificar anagrama (comparaci\u00f3n naive)",
+      "source": "user_provided"
+    },
+    {
+      "id": "count_inversions_n2",
+      "name": "CountInversions",
+      "code": "func CountInversions(arr []int) int {\n\tn := len(arr)\n\tinv := 0\n\tfor i := 0; i < n; i++ {\n\t\tfor j := i + 1; j < n; j++ {\n\t\t\tif arr[i] > arr[j] {\n\t\t\t\tinv++\n\t\t\t}\n\t\t}\n\t}\n\treturn inv\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Conteo de inversiones",
+      "source": "user_provided"
+    },
+    {
+      "id": "two_sum_naive_n2",
+      "name": "TwoSumNaive",
+      "code": "func TwoSumNaive(arr []int, target int) bool {\n\tn := len(arr)\n\tfor i := 0; i < n; i++ {\n\t\tfor j := i + 1; j < n; j++ {\n\t\t\tif arr[i]+arr[j] == target {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\treturn false\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "TwoSum naive - Verificar par con suma exacta",
+      "source": "user_provided"
+    },
+    {
+      "id": "max_pair_product_n2",
+      "name": "MaxPairProduct",
+      "code": "func MaxPairProduct(arr []int) int {\n\tn := len(arr)\n\tmaxP := -1 << 31\n\tfor i := 0; i < n; i++ {\n\t\tfor j := i + 1; j < n; j++ {\n\t\t\tp := arr[i] * arr[j]\n\t\t\tif p > maxP { maxP = p }\n\t\t}\n\t}\n\treturn maxP\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Encontrar m\u00e1ximo producto de pares",
+      "source": "user_provided"
+    },
+    {
+      "id": "adj_matrix_naive_n2",
+      "name": "BuildAdjMatrixNaive",
+      "code": "type Edge struct{ U, V int }\n\nfunc BuildAdjMatrixNaive(n int, edges []Edge) [][]int {\n\tmat := make([][]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tmat[i] = make([]int, n)\n\t}\n\tfor i := 0; i < n; i++ {\n\t\tfor j := 0; j < n; j++ {\n\t\t\tfor _, e := range edges {\n\t\t\t\tif (e.U == i && e.V == j) || (e.U == j && e.V == i) {\n\t\t\t\t\tmat[i][j] = 1\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn mat\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Matriz de adyacencia naive",
+      "source": "user_provided"
+    },
+    {
+      "id": "intersection_naive_n2",
+      "name": "IntersectionNaive",
+      "code": "func IntersectionNaive(a, b []int) []int {\n\tres := []int{}\n\tfor i := 0; i < len(a); i++ {\n\t\tfor j := 0; j < len(b); j++ {\n\t\t\tif a[i] == b[j] {\n\t\t\t\tres = append(res, a[i])\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Intersecci\u00f3n de arreglos (naive)",
+      "source": "user_provided"
+    },
+    {
+      "id": "mult_table_n2",
+      "name": "MultiplicationTable",
+      "code": "func MultiplicationTable(n int) [][]int {\n\ttab := make([][]int, n)\n\tfor i := 0; i < n; i++ {\n\t\ttab[i] = make([]int, n)\n\t\tfor j := 0; j < n; j++ {\n\t\t\ttab[i][j] = (i + 1) * (j + 1)\n\t\t}\n\t}\n\treturn tab\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Tabla de multiplicar n\u00d7n",
+      "source": "user_provided"
+    },
+    {
+      "id": "count_matches_naive_n2",
+      "name": "CountMatchesNaive",
+      "code": "func CountMatchesNaive(a, b []int) int {\n\tmatches := 0\n\tfor i := 0; i < len(a); i++ {\n\t\tfor j := 0; j < len(b); j++ {\n\t\t\tif a[i] == b[j] {\n\t\t\t\tmatches++\n\t\t\t}\n\t\t}\n\t}\n\treturn matches\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Contar coincidencias naive",
+      "source": "user_provided"
+    },
+    {
+      "id": "subarray_sums_n2",
+      "name": "AllSubarraySums",
+      "code": "func AllSubarraySums(arr []int) []int {\n\tn := len(arr)\n\tres := []int{}\n\tfor i := 0; i < n; i++ {\n\t\tsum := 0\n\t\tfor j := i; j < n; j++ {\n\t\t\tsum += arr[j]\n\t\t\tres = append(res, sum)\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n\u00b2)",
+      "complexity_class": 5,
+      "description": "Calcular todas las sumas de subarrays",
+      "source": "user_provided"
     }
   ]
 }
