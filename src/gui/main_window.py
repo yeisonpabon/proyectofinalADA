@@ -654,6 +654,59 @@ func binarySearch(arr []int, target int) int {
                           "✅ Fase 3: Estructuras de datos\n"
                           "✅ Fase 4: GUI completa")
     
+    def _extract_v6_features(self, code):
+        """
+        Extrae los 3 features para modelo v6 (loops, recursion, depth).
+        
+        Returns:
+            np.array: Array de shape (1, 3) con features, o None si falla.
+        """
+        try:
+            # Feature 1: Contar loops (for, while)
+            loop_count = len(re.findall(r'\b(for|while)\b', code))
+            loops = min(loop_count, 5)  # Capped a 5
+            
+            # Feature 2: Detectar recursión (llamadas a función dentro de sí misma)
+            recursion = 0
+            # Buscar definiciones de funciones
+            func_defs = re.findall(r'\bfunc\s+(\w+)\s*\(', code)
+            for func_name in func_defs:
+                # Buscar si se llama a sí misma dentro de su cuerpo
+                if re.search(rf'\b{func_name}\s*\(', code):
+                    recursion = 1
+                    break
+            
+            # Feature 3: Calcular profundidad de anidamiento (máximo)
+            depth = 1
+            max_indent = 0
+            for line in code.split('\n'):
+                # Contar espacios/tabs al inicio
+                indent = len(line) - len(line.lstrip())
+                max_indent = max(max_indent, indent)
+            
+            # Convertir indentación a nivel de profundidad (asumiendo 4 espacios por nivel)
+            depth = min(max(1, max_indent // 4 + 1), 5)  # Entre 1 y 5
+            
+            # Crear array de features normalizado
+            features = np.array([[loops, recursion, depth]], dtype=np.float32)
+            
+            return features
+            
+        except Exception as e:
+            print(f"Error extrayendo features v6: {e}")
+            return None
+    
+    def _show_docs(self):
+        """Muestra documentación."""
+        messagebox.showinfo("Documentación", 
+                          "Analizador de Complejidad Algorítmica\n\n"
+                          "Utiliza MLP + RecurrenceParser + MasterTheorem\n\n"
+                          "Fases completadas:\n"
+                          "✅ Fase 1: MLP desde cero\n"
+                          "✅ Fase 2: Algoritmos avanzados\n"
+                          "✅ Fase 3: Estructuras de datos\n"
+                          "✅ Fase 4: GUI completa")
+    
     def _show_about(self):
         """Muestra información."""
         messagebox.showinfo("Acerca de", 
@@ -707,10 +760,25 @@ func binarySearch(arr []int, target int) int {
                     self.status_bar.config(text="Extrayendo features del código...")
                     self.root.update_idletasks()
                     
-                    # Extraer features usando el extractor entrenado
-                    if self.feature_extractor.is_fitted:
-                        features = self.feature_extractor.transform([code])
+                    features = None
                     
+                    # Intentar primero con modelo v6 (3 features automáticos)
+                    v6_features = self._extract_v6_features(code)
+                    if v6_features is not None:
+                        # Verificar si el modelo espera 3 features (v6)
+                        try:
+                            test_pred = self.mlp.forward(v6_features)
+                            features = v6_features
+                            print("✓ Usando detección automática de features (v6)")
+                        except:
+                            pass
+                    
+                    # Fallback: usar feature extractor tradicional si está fitted
+                    if features is None and self.feature_extractor.is_fitted:
+                        features = self.feature_extractor.transform([code])
+                        print("✓ Usando feature extractor tradicional")
+                    
+                    if features is not None:
                         # Hacer predicción
                         self.status_bar.config(text="Ejecutando predicción MLP...")
                         self.root.update_idletasks()
