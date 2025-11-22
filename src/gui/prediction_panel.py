@@ -46,6 +46,12 @@ class PredictionPanel:
             model_path = os.path.join(base_path, 'experiments', 'models', 'mlp_complexity_classifier.npz')
             dataset_path = os.path.join(base_path, 'data', 'dataset.json')
             
+            print(f"[PredictionPanel] Cargando modelos...")
+            print(f"  Model path: {model_path}")
+            print(f"  Dataset path: {dataset_path}")
+            print(f"  Model exists: {os.path.exists(model_path)}")
+            print(f"  Dataset exists: {os.path.exists(dataset_path)}")
+            
             if os.path.exists(model_path) and os.path.exists(dataset_path):
                 # Cargar dataset para ajustar el extractor
                 with open(dataset_path, 'r', encoding='utf-8') as f:
@@ -60,12 +66,18 @@ class PredictionPanel:
                     except:
                         pass
                 
+                print(f"  Loaded {len(code_samples)} code samples")
+                
                 # Inicializar y ajustar extractor
                 self.feature_extractor = GoFeatureExtractor(max_features=200)
                 self.feature_extractor.fit(code_samples)
                 
+                print(f"  Feature extractor fitted, features: {len(self.feature_extractor.feature_names)}")
+                
                 # Cargar modelo
                 input_dim = self.feature_extractor.transform([code_samples[0]]).shape[1]
+                print(f"  Input dim: {input_dim}")
+                
                 self.mlp = MLP(
                     input_dim=input_dim,
                     hidden_dims=[256, 128, 64],
@@ -74,7 +86,9 @@ class PredictionPanel:
                     batch_size=4
                 )
                 self.mlp.load_weights(model_path)
+                print(f"  ✓ MLP loaded successfully")
             else:
+                print(f"  ⚠ Model or dataset not found")
                 self.mlp = None
                 self.feature_extractor = None
             
@@ -82,9 +96,11 @@ class PredictionPanel:
             self.master_theorem = MasterTheorem()
             
         except Exception as e:
-            print(f"Error cargando modelos: {e}")
+            print(f"[PredictionPanel] Error cargando modelos: {e}")
             import traceback
             traceback.print_exc()
+            self.mlp = None
+            self.feature_extractor = None
     
     def _create_ui(self):
         """Crea interfaz de usuario."""
@@ -260,8 +276,17 @@ func binarySearch(arr []int, target int) int {
             text += f"  f(n) = {result['fn_complexity']} (trabajo adicional)\n\n"
             text += f"Confianza: {result.get('confidence', 0):.1%}\n"
         else:
-            text = "❌ No se detectó recurrencia\n\n"
-            text += "El código no parece seguir un patrón de divide-y-conquista.\n"
+            text = "ℹ️  CÓDIGO ITERATIVO (SIN RECURRENCIA)\n\n"
+            text += "El análisis no detectó recursión de divide-y-conquista.\n"
+            text += "Sin embargo, el código puede tener complejidad significativa\n"
+            text += "basada en:\n\n"
+            text += "  • Bucles anidados\n"
+            text += "  • Llamadas a operaciones costosas (sort, búsqueda)\n"
+            text += "  • Estructuras de datos usadas\n"
+            text += "  • Patrones de acceso a memoria\n\n"
+            text += "La complejidad se estimará mediante:\n"
+            text += "  - Análisis de bucles y anidamiento\n"
+            text += "  - Predicción del modelo de red neuronal\n"
         
         self.recurrence_text.insert("1.0", text)
         self.recurrence_text.config(state=tk.DISABLED)
@@ -287,52 +312,87 @@ func binarySearch(arr []int, target int) int {
         """Muestra predicción del MLP."""
         self.mlp_text.config(state=tk.NORMAL)
         
-        if self.mlp and self.feature_extractor:
+        if self.mlp and self.feature_extractor and self.feature_extractor.is_fitted:
             try:
                 # Obtener código
                 code = self.code_text.get("1.0", tk.END)
                 
-                # Extraer features
-                features = self.feature_extractor.transform([code])
-                
-                # Predecir
-                prediction = self.mlp.predict(features)[0]
-                probabilities = self.mlp.predict_proba(features)[0]
-                
-                # Mapeo de clases
-                complexity_labels = {
-                    0: "O(1)",
-                    1: "O(log n)",
-                    2: "O(n)",
-                    3: "O(n log n)",
-                    4: "O(n²)",
-                    5: "O(2^n)"
-                }
-                
-                text = "🧠 PREDICCIÓN RED NEURONAL MLP\n\n"
-                text += f"📊 Modelo: 180 → 256 → 128 → 64 → 6\n"
-                text += f"📚 Entrenado: 59 algoritmos, 1500 épocas\n"
-                text += f"🎯 Precisión: 90.91%\n\n"
-                text += "═" * 40 + "\n"
-                text += f"🏆 Complejidad Final: {complexity_labels[prediction]}\n"
-                text += f"💯 Confianza: {probabilities[prediction]*100:.1f}%\n"
-                text += "═" * 40 + "\n\n"
-                text += "Distribución de probabilidades:\n\n"
-                
-                # Ordenar por probabilidad
-                sorted_probs = sorted(enumerate(probabilities), key=lambda x: x[1], reverse=True)
-                for idx, prob in sorted_probs[:3]:
-                    bar_length = int(prob * 30)
-                    bar = "█" * bar_length + "░" * (30 - bar_length)
-                    text += f"{complexity_labels[idx]:12} {bar} {prob*100:5.1f}%\n"
+                if not code.strip():
+                    text = "🧠 PREDICCIÓN RED NEURONAL MLP\n\n"
+                    text += "❌ Código vacío\n"
+                else:
+                    # Extraer features
+                    features = self.feature_extractor.transform([code])
+                    
+                    # Predecir
+                    prediction = self.mlp.predict(features)[0]
+                    probabilities = self.mlp.predict_proba(features)[0]
+                    
+                    # Mapeo de clases
+                    complexity_labels = {
+                        0: "O(1)",
+                        1: "O(log n)",
+                        2: "O(n)",
+                        3: "O(n log n)",
+                        4: "O(n²)",
+                        5: "O(2^n)"
+                    }
+                    
+                    # Calibración de confianza
+                    raw_confidence = probabilities[prediction]
+                    calibrated_confidence = max(0.0, raw_confidence - 0.15)  # Reducir sobre-confianza
+                    
+                    # Determinar nivel de confianza
+                    if raw_confidence > 0.85:
+                        confidence_level = "ALTA"
+                        confidence_symbol = "✅"
+                    elif raw_confidence > 0.60:
+                        confidence_level = "MODERADA"
+                        confidence_symbol = "⚠️"
+                    else:
+                        confidence_level = "BAJA"
+                        confidence_symbol = "⚠️⚠️"
+                    
+                    text = "🧠 PREDICCIÓN RED NEURONAL MLP\n\n"
+                    text += f"📊 Arquitectura: 225 → 256 → 128 → 64 → 6\n"
+                    text += f"📚 Datos: 60 algoritmos, 2000 épocas\n"
+                    text += f"📈 Precisión test: 78.57%\n"
+                    text += f"⚠️  Dataset limitado (59 ejemplos)\n\n"
+                    text += "═" * 50 + "\n"
+                    text += f"🏆 Predicción: {complexity_labels[prediction]}\n"
+                    text += f"{confidence_symbol} Confianza: {confidence_level} ({raw_confidence*100:.1f}% raw)\n"
+                    text += "═" * 50 + "\n\n"
+                    text += "Distribución de probabilidades:\n\n"
+                    
+                    # Ordenar por probabilidad
+                    sorted_probs = sorted(enumerate(probabilities), key=lambda x: x[1], reverse=True)
+                    for idx, prob in sorted_probs[:3]:
+                        bar_length = int(prob * 30)
+                        bar = "█" * bar_length + "░" * (30 - bar_length)
+                        text += f"{complexity_labels[idx]:12} {bar} {prob*100:5.1f}%\n"
+                    
+                    text += "\n" + "─" * 50 + "\n"
+                    text += "NOTAS IMPORTANTES:\n"
+                    text += "• El modelo se entrenó con dataset limitado\n"
+                    text += "• Puede haber desbalance de clases\n"
+                    text += "• Verifica manualmente si dudas\n"
+                    text += "• Combina con análisis de bucles\n"
                 
             except Exception as e:
+                import traceback
                 text = "🧠 PREDICCIÓN RED NEURONAL MLP\n\n"
-                text += f"❌ Error al predecir: {str(e)}\n"
+                text += f"❌ Error al predecir: {str(e)}\n\n"
+                text += "Detalles del error:\n"
+                text += traceback.format_exc()
         else:
             text = "🧠 PREDICCIÓN RED NEURONAL MLP\n\n"
-            text += "⚠️ Modelo no cargado\n"
-            text += "Ejecuta primero: python train_model.py\n"
+            if not self.mlp:
+                text += "⚠️ Modelo MLP no cargado\n"
+            elif not self.feature_extractor:
+                text += "⚠️ Feature extractor no disponible\n"
+            elif not self.feature_extractor.is_fitted:
+                text += "⚠️ Feature extractor no ha sido ajustado\n"
+            text += "\nEjecuta primero: python train_model.py\n"
         
         self.mlp_text.insert("1.0", text)
         self.mlp_text.config(state=tk.DISABLED)
@@ -342,7 +402,7 @@ func binarySearch(arr []int, target int) int {
         self.summary_text.config(state=tk.NORMAL)
         
         text = "═" * 50 + "\n"
-        text += "RESUMEN DEL ANÁLISIS\n"
+        text += "ANÁLISIS ESTRUCTURAL\n"
         text += "═" * 50 + "\n\n"
         
         # Complejidad final
@@ -360,28 +420,38 @@ func binarySearch(arr []int, target int) int {
         text += f"🎯 Confianza: {confidence:.1%}\n\n"
         
         # Métodos utilizados
-        text += "Métodos de análisis:\n"
+        text += "Métodos de análisis aplicados:\n"
         
         if recurrence_result and recurrence_result.get('detected'):
-            text += "  ✅ Análisis de recurrencia\n"
+            text += "  ✅ Recurrencia (divide-y-conquista)\n"
         else:
-            text += "  ❌ Análisis de recurrencia\n"
+            text += "  ℹ️  Código iterativo\n"
         
         if master_result:
             text += "  ✅ Master Theorem\n"
         else:
-            text += "  ❌ Master Theorem\n"
+            text += "  ℹ️  Master Theorem (no aplica)\n"
         
-        text += "  ⚠️  Red Neuronal (pendiente)\n\n"
+        text += "  🧠 Red Neuronal MLP\n\n"
+        
+        # Advertencias sobre dataset
+        text += "LIMITACIONES DEL MODELO:\n"
+        text += "  ⚠️  Dataset: 60 algoritmos (tamaño limitado)\n"
+        text += "  ⚠️  Posible desbalance de clases\n"
+        text += "  ⚠️  Precisión test: 78.57%\n\n"
         
         # Recomendaciones
-        text += "Recomendaciones:\n"
-        if confidence > 0.8:
-            text += "  • Alta confianza en el resultado\n"
-        elif confidence > 0.5:
-            text += "  • Confianza moderada, considera análisis manual\n"
+        text += "RECOMENDACIONES:\n"
+        if confidence > 0.75:
+            text += "  ✅ Alta confianza - resultado confiable\n"
+        elif confidence > 0.50:
+            text += "  ⚠️  Confianza moderada\n"
+            text += "     Verifica manualmente con análisis de bucles\n"
         else:
-            text += "  • Baja confianza, se recomienda análisis experto\n"
+            text += "  ⚠️⚠️ Baja confianza\n"
+            text += "     Se recomienda análisis experto\n"
+        text += "  • Revisa el análisis de recurrencia\n"
+        text += "  • Considera las características del código\n"
         
         self.summary_text.insert("1.0", text)
         self.summary_text.config(state=tk.DISABLED)
