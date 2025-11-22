@@ -214,68 +214,94 @@ func binarySearch(arr []int, target int) int {
     
     def _load_mlp_model(self):
         """Carga el modelo MLP entrenado."""
-        # Preferir modelo fine-tuned si existe
+        # Preferir modelo v6 (220) o fine-tuned, sino original
         base_models_dir = os.path.join(os.path.dirname(__file__), '../../experiments/models')
+        v6_path = os.path.join(base_models_dir, 'mlp_complexity_classifier_220.npz')
         finetuned_path = os.path.join(base_models_dir, 'mlp_complexity_classifier_finetuned.npz')
         original_path = os.path.join(base_models_dir, 'mlp_complexity_classifier.npz')
-        model_path = finetuned_path if os.path.exists(finetuned_path) else original_path
+        
+        if os.path.exists(v6_path):
+            model_path = v6_path
+        elif os.path.exists(finetuned_path):
+            model_path = finetuned_path
+        else:
+            model_path = original_path
         dataset_path = os.path.join(os.path.dirname(__file__), '../../data/dataset.json')
         
-        # Primero, entrenar el feature extractor con el dataset
+        # Primero, entrenar el feature extractor con el dataset (si es dataset antiguo con 'path')
         if os.path.exists(dataset_path):
             try:
                 with open(dataset_path, 'r', encoding='utf-8') as f:
                     dataset = json.load(f)
                 
-                # Cargar código de los algoritmos
-                code_samples = []
-                for algo in dataset['algorithms']:
-                    algo_path = os.path.join(os.path.dirname(__file__), '../../', algo['path'])
-                    if os.path.exists(algo_path):
-                        with open(algo_path, 'r', encoding='utf-8') as code_file:
-                            code_samples.append(code_file.read())
-                
-                if code_samples:
-                    # Entrenar extractor
-                    self.feature_extractor.fit(code_samples)
-                    print(f"✓ Feature extractor entrenado con {len(code_samples)} algoritmos")
+                # Verificar si es dataset v6 (no tiene 'path')
+                if dataset['algorithms'] and 'path' not in dataset['algorithms'][0]:
+                    print("✓ Dataset v6 detectado (features pre-calculadas, no requiere extractor)")
+                else:
+                    # Cargar código de los algoritmos (dataset antiguo)
+                    code_samples = []
+                    for algo in dataset['algorithms']:
+                        if 'path' in algo:
+                            algo_path = os.path.join(os.path.dirname(__file__), '../../', algo['path'])
+                            if os.path.exists(algo_path):
+                                with open(algo_path, 'r', encoding='utf-8') as code_file:
+                                    code_samples.append(code_file.read())
+                    
+                    if code_samples:
+                        # Entrenar extractor
+                        self.feature_extractor.fit(code_samples)
+                        print(f"✓ Feature extractor entrenado con {len(code_samples)} algoritmos")
                 
             except Exception as e:
-                print(f"⚠ Error entrenando feature extractor: {e}")
+                print(f"⚠ Error procesando dataset: {e}")
         
         # Cargar modelo MLP dinámicamente según dimensión de features
         if os.path.exists(model_path):
             try:
-                hidden_dims = [256, 128, 64]
-                num_classes = 6
-                # Determinar input_dim desde extractor (ya fitted) o desde pesos
                 weights_npz = np.load(model_path)
                 expected_input_dim = weights_npz['layer_0_W'].shape[0]
-                if self.feature_extractor.is_fitted:
-                    current_dim = len(self.feature_extractor.feature_names)
-                    # Ajustar si hay desajuste entre extractor y pesos
-                    if current_dim != expected_input_dim:
-                        # Recalcular max_features para que vocab + sintácticas = expected_input_dim
-                        syntactic_count = self.feature_extractor.syntactic_feature_count
-                        adjusted_vocab_size = max(1, expected_input_dim - syntactic_count)
-                        print(f"⚠ Mismatch dimensiones: extractor={current_dim}, pesos={expected_input_dim}. Reajustando vocabulario a {adjusted_vocab_size} tokens.")
-                        # Refit rápido solo con nuevo límite
-                        self.feature_extractor.max_features = adjusted_vocab_size
-                        # Reajustar usando mismos code_samples (guardados antes)
-                        # Necesitamos recargar dataset para refit
-                        with open(dataset_path, 'r', encoding='utf-8') as f:
-                            dataset_refit = json.load(f)
-                        codes_refit = []
-                        for algo in dataset_refit['algorithms']:
-                            apath = os.path.join(os.path.dirname(__file__), '../../', algo['path'])
-                            if os.path.exists(apath):
-                                with open(apath, 'r', encoding='utf-8') as cf:
-                                    codes_refit.append(cf.read())
-                        if codes_refit:
-                            self.feature_extractor.fit(codes_refit)
-                    input_dim = expected_input_dim
+                num_classes = 6
+                
+                # Detectar si es modelo v6 (3 features) o modelo antiguo (225+ features)
+                is_v6_model = expected_input_dim == 3
+                
+                if is_v6_model:
+                    # Modelo v6: 3 → 64 → 32 → 6
+                    hidden_dims = [64, 32]
+                    input_dim = 3
+                    print("✓ Detectado modelo v6 (3 features automáticos)")
                 else:
-                    input_dim = expected_input_dim
+                    # Modelo antiguo: 225+ → 256 → 128 → 64 → 6
+                    hidden_dims = [256, 128, 64]
+                    
+                    # Ajustar input_dim desde extractor si está fitted
+                    if self.feature_extractor.is_fitted:
+                        current_dim = len(self.feature_extractor.feature_names)
+                        if current_dim != expected_input_dim:
+                            # Mismatch - intentar reajustar
+                            syntactic_count = self.feature_extractor.syntactic_feature_count
+                            adjusted_vocab_size = max(1, expected_input_dim - syntactic_count)
+                            print(f"⚠ Mismatch dimensiones: extractor={current_dim}, pesos={expected_input_dim}")
+                            self.feature_extractor.max_features = adjusted_vocab_size
+                            # Recargar y refit del dataset si es posible
+                            try:
+                                with open(dataset_path, 'r', encoding='utf-8') as f:
+                                    dataset_refit = json.load(f)
+                                codes_refit = []
+                                for algo in dataset_refit['algorithms']:
+                                    if 'path' in algo:
+                                        apath = os.path.join(os.path.dirname(__file__), '../../', algo['path'])
+                                        if os.path.exists(apath):
+                                            with open(apath, 'r', encoding='utf-8') as cf:
+                                                codes_refit.append(cf.read())
+                                if codes_refit:
+                                    self.feature_extractor.fit(codes_refit)
+                            except:
+                                pass
+                        input_dim = expected_input_dim
+                    else:
+                        input_dim = expected_input_dim
+                
                 self.mlp = MLP(
                     input_dim=input_dim,
                     hidden_dims=hidden_dims,
@@ -284,7 +310,14 @@ func binarySearch(arr []int, target int) int {
                     batch_size=4
                 )
                 self.mlp.load_weights(model_path)
-                tag = 'FINE-TUNED' if 'finetuned' in model_path else 'BASE'
+                
+                if is_v6_model:
+                    tag = 'V6'
+                elif 'finetuned' in model_path:
+                    tag = 'FINE-TUNED'
+                else:
+                    tag = 'BASE'
+                    
                 print(f"Modelo ({tag}) cargado desde: {model_path}")
                 print(f"✓ Arquitectura: {input_dim} → {hidden_dims} → {num_classes}")
                 # Cargar historiales disponibles
@@ -917,6 +950,9 @@ func binarySearch(arr []int, target int) int {
             self.status_bar.config(text="✓ Análisis completado exitosamente")
             
         except Exception as e:
+            print(f"ERROR EN _analyze_code: {e}")
+            import traceback
+            traceback.print_exc()
             messagebox.showerror("Error", f"Error durante el análisis:\n\n{str(e)}")
             self.status_bar.config(text="✗ Error en el análisis")
     
