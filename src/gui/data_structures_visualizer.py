@@ -64,7 +64,7 @@ class DataStructuresVisualizer:
         ttk.Combobox(selector_frame, textvariable=self.structure_var, 
                     values=structures, state="readonly", width=15).pack(side=tk.LEFT, padx=5)
         
-        ttk.Button(selector_frame, text="🔄 Visualizar", 
+        ttk.Button(selector_frame, text="Visualizar", 
                   command=self.visualize).pack(side=tk.LEFT, padx=5)
         
         # Controles de datos
@@ -77,9 +77,9 @@ class DataStructuresVisualizer:
         self.data_entry.pack(side=tk.LEFT, padx=5)
         self.data_entry.insert(0, "50,30,70,20,40,60,80")
         
-        ttk.Button(data_frame, text="➕ Insertar", 
+        ttk.Button(data_frame, text="Insertar", 
                   command=self.insert_data).pack(side=tk.LEFT, padx=5)
-        ttk.Button(data_frame, text="🗑️ Limpiar", 
+        ttk.Button(data_frame, text="Limpiar", 
                   command=self.clear_structure).pack(side=tk.LEFT, padx=5)
         
         # Frame para visualización
@@ -158,15 +158,19 @@ class DataStructuresVisualizer:
             return
         
         try:
+            structure_type = self.structure_var.get()
+            
+            # Verificar si necesita inicializar estructura
+            if self.current_structure is None or not self._is_correct_structure_type(structure_type):
+                self._initialize_structure(structure_type)
+            
             # Parsear datos
-            if self.structure_var.get() == "Trie":
+            if structure_type == "Trie":
                 data = [word.strip() for word in data_str.split(',')]
             else:
                 data = [int(x.strip()) for x in data_str.split(',')]
             
             # Insertar en estructura
-            structure_type = self.structure_var.get()
-            
             if structure_type == "MinHeap":
                 for val in data:
                     self.current_structure.insert(val)
@@ -319,7 +323,7 @@ class DataStructuresVisualizer:
             info = f"Tipo: AVL Tree\n"
             info += f"Elementos: {self.current_structure.size()}\n"
             info += f"Altura: {self.current_structure.height()}\n"
-            info += f"Balanceado: {'✅' if self.current_structure.is_balanced() else '❌'}"
+            info += f"Balanceado: {'SI' if self.current_structure.is_balanced() else 'NO'}"
         else:
             ax.text(0.5, 0.5, "AVL Tree vacío\n\nInserta datos para visualizar", 
                    ha='center', va='center', transform=ax.transAxes, 
@@ -388,7 +392,7 @@ class DataStructuresVisualizer:
         if self.current_structure and self.current_structure.size() > 0:
             # Dibujar tabla hash
             capacity = self.current_structure.capacity
-            buckets = self.current_structure.table
+            buckets = self.current_structure.buckets
             
             # Dibujar buckets
             for i in range(min(capacity, 16)):  # Limitar a 16 buckets visibles

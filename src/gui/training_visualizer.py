@@ -79,12 +79,16 @@ class TrainingVisualizer:
         if self.history:
             epochs = len(self.history.get('train_loss', []))
             final_train_acc = self.history['train_accuracy'][-1] if self.history.get('train_accuracy') else 0
-            final_test_acc = self.history['val_accuracy'][-1] if self.history.get('val_accuracy') else 0
+            # Usar test_accuracy si existe, sino val_accuracy
+            test_acc_key = 'test_accuracy' if 'test_accuracy' in self.history else 'val_accuracy'
+            final_test_acc = self.history[test_acc_key][-1] if self.history.get(test_acc_key) else 0
             final_train_loss = self.history['train_loss'][-1] if self.history.get('train_loss') else 0
-            final_test_loss = self.history['val_loss'][-1] if self.history.get('val_loss') else 0
+            # Usar test_loss si existe, sino val_loss
+            test_loss_key = 'test_loss' if 'test_loss' in self.history else 'val_loss'
+            final_test_loss = self.history[test_loss_key][-1] if self.history.get(test_loss_key) else 0
             
             info_text = f"""
-Épocas entrenadas: {epochs}
+Epochs trained: {epochs}
 Train Accuracy: {final_train_acc:.2%}
 Test Accuracy: {final_test_acc:.2%}
 Train Loss: {final_train_loss:.4f}
@@ -116,15 +120,18 @@ Test Loss: {final_test_loss:.4f}
         figure = Figure(figsize=(8, 5), dpi=100)
         ax = figure.add_subplot(111)
         
-        if self.history and self.history['train_loss']:
+        if self.history and self.history.get('train_loss'):
             epochs = range(1, len(self.history['train_loss']) + 1)
             
             ax.plot(epochs, self.history['train_loss'], 'b-', label='Train Loss', linewidth=2)
-            ax.plot(epochs, self.history['val_loss'], 'r--', label='Val Loss', linewidth=2)
+            # Usar test_loss si existe, sino val_loss (para compatibilidad)
+            test_loss_key = 'test_loss' if 'test_loss' in self.history else 'val_loss'
+            if test_loss_key in self.history:
+                ax.plot(epochs, self.history[test_loss_key], 'r--', label='Test Loss', linewidth=2)
             
-            ax.set_xlabel('Época', fontsize=12)
-            ax.set_ylabel('Pérdida', fontsize=12)
-            ax.set_title('Evolución de la Pérdida Durante el Entrenamiento', fontsize=13, fontweight='bold')
+            ax.set_xlabel('Epoca', fontsize=12)
+            ax.set_ylabel('Perdida', fontsize=12)
+            ax.set_title('Evolution of Loss During Training', fontsize=13, fontweight='bold')
             ax.legend()
             ax.grid(True, alpha=0.3)
         else:
@@ -145,8 +152,10 @@ Test Loss: {final_test_loss:.4f}
             
             ax.plot(epochs, [a * 100 for a in self.history['train_accuracy']], 
                    'g-', label='Train Accuracy', linewidth=2)
-            ax.plot(epochs, [a * 100 for a in self.history['val_accuracy']], 
-                   'm--', label='Val Accuracy', linewidth=2)
+            test_acc_key = 'test_accuracy' if 'test_accuracy' in self.history else 'val_accuracy'
+            if test_acc_key in self.history:
+                ax.plot(epochs, [a * 100 for a in self.history[test_acc_key]], 
+                       'm--', label='Test Accuracy', linewidth=2)
             
             ax.set_xlabel('Época', fontsize=12)
             ax.set_ylabel('Precisión (%)', fontsize=12)

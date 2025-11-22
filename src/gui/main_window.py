@@ -105,17 +105,17 @@ class MainWindow:
         
         # Tab 2: Entrenamiento
         self.training_frame = ttk.Frame(self.notebook)
-        self.notebook.add(self.training_frame, text="📈 Entrenamiento")
+        self.notebook.add(self.training_frame, text="Entrenamiento")
         self._create_training_panel()
         
         # Tab 3: Estructuras de Datos
         self.structures_frame = ttk.Frame(self.notebook)
-        self.notebook.add(self.structures_frame, text="🌳 Estructuras")
+        self.notebook.add(self.structures_frame, text="Estructuras")
         self._create_structures_panel()
         
         # Tab 4: Comparador
         self.compare_frame = ttk.Frame(self.notebook)
-        self.notebook.add(self.compare_frame, text="⚖️ Comparador")
+        self.notebook.add(self.compare_frame, text="Comparador")
         self._create_compare_panel()
     
     def _create_prediction_panel(self):
@@ -162,9 +162,9 @@ func binarySearch(arr []int, target int) int {
         button_frame = ttk.Frame(left_frame)
         button_frame.pack(fill=tk.X, padx=5, pady=5)
         
-        ttk.Button(button_frame, text="🔍 Analizar", command=self._analyze_code).pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="🗑️ Limpiar", command=self._clear_code).pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="📂 Cargar archivo", command=self._load_code_file).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="Analizar", command=self._analyze_code).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="Limpiar", command=self._clear_code).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="Cargar archivo", command=self._load_code_file).pack(side=tk.LEFT, padx=5)
         
         # Frame derecho: resultados
         right_frame = ttk.LabelFrame(self.prediction_frame, text="Resultados del Análisis")
@@ -682,10 +682,10 @@ func binarySearch(arr []int, target int) int {
                           "Analizador de Complejidad Algorítmica\n\n"
                           "Utiliza MLP + RecurrenceParser + MasterTheorem\n\n"
                           "Fases completadas:\n"
-                          "✅ Fase 1: MLP desde cero\n"
-                          "✅ Fase 2: Algoritmos avanzados\n"
-                          "✅ Fase 3: Estructuras de datos\n"
-                          "✅ Fase 4: GUI completa")
+                          "[OK] Fase 1: MLP desde cero\n"
+                          "[OK] Fase 2: Algoritmos avanzados\n"
+                          "[OK] Fase 3: Estructuras de datos\n"
+                          "[OK] Fase 4: GUI completa")
     
     def _extract_v6_features(self, code):
         """
@@ -735,10 +735,10 @@ func binarySearch(arr []int, target int) int {
                           "Analizador de Complejidad Algorítmica\n\n"
                           "Utiliza MLP + RecurrenceParser + MasterTheorem\n\n"
                           "Fases completadas:\n"
-                          "✅ Fase 1: MLP desde cero\n"
-                          "✅ Fase 2: Algoritmos avanzados\n"
-                          "✅ Fase 3: Estructuras de datos\n"
-                          "✅ Fase 4: GUI completa")
+                          "[OK] Fase 1: MLP desde cero\n"
+                          "[OK] Fase 2: Algoritmos avanzados\n"
+                          "[OK] Fase 3: Estructuras de datos\n"
+                          "[OK] Fase 4: GUI completa")
     
     def _show_about(self):
         """Muestra información."""
