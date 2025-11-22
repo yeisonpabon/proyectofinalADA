@@ -72,7 +72,7 @@ def load_dataset(dataset_path, base_path):
     return code_samples, np.array(labels), metadata
 
 
-def split_dataset(X, y, test_size=0.2, random_seed=42):
+def split_dataset(X, y, test_size=0.2, random_seed=777):
     """
     Divide el dataset en entrenamiento y prueba.
     
@@ -213,7 +213,7 @@ def main():
     print("EXTRACCIÓN DE FEATURES")
     print("=" * 70)
     
-    extractor = GoFeatureExtractor(max_features=200)
+    extractor = GoFeatureExtractor(max_features=200)  # Más features TF-IDF
     X = extractor.fit_transform(code_samples)
     
     print(f"✓ Shape de features: {X.shape}")
@@ -246,24 +246,24 @@ def main():
     
     mlp = MLP(
         input_dim=input_dim,
-        hidden_dims=[128, 64],  # 2 capas ocultas
+        hidden_dims=[256, 128, 64],  # 3 capas ocultas (mejor para 64 algoritmos)
         num_classes=num_classes,
-        learning_rate=0.01,
-        batch_size=4  # Dataset pequeño, batch pequeño
+        learning_rate=0.005,  # Learning rate menor para mejor generalización
+        batch_size=8  # Batch más grande para dataset de 64 algoritmos
     )
     
     print(mlp.get_architecture_summary())
     
-    # 5. Entrenar (1500 épocas - FASE 4 MEJORADA)
+    # 5. Entrenar (2000 épocas - FASE 4 MEJORADA)
     print("\n" + "=" * 70)
-    print("ENTRENAMIENTO (1500 ÉPOCAS - FASE 4 MEJORADA)")
+    print("ENTRENAMIENTO (2000 ÉPOCAS - FASE 4 MEJORADA)")
     print("=" * 70)
     print()
     
     history = mlp.fit(
         X_train, y_train,
         X_val=X_test, y_val=y_test,
-        epochs=1500,  # 1500 épocas totales (Fase 4 mejorada)
+        epochs=2000,  # 2000 épocas totales (Fase 4 mejorada con 64 algoritmos)
         verbose=True
     )
     

@@ -75,7 +75,8 @@ class GoFeatureExtractor:
         
         # Tokenizar
         # Patrón: palabra completa o símbolo
-        tokens = re.findall(r'\b\w+\b|[<>=!+\-*/]', code.lower())
+        # Incluir también operador de módulo '%' en la tokenización
+        tokens = re.findall(r'\b\w+\b|[<>=!+\-*/%]', code.lower())
         
         # Filtrar tokens relevantes
         filtered_tokens = []
@@ -151,6 +152,116 @@ class GoFeatureExtractor:
         # Número de líneas de código (sin contar vacías)
         lines = [l.strip() for l in code.split('\n') if l.strip()]
         features['num_lines'] = len(lines)
+        
+        # ===== NUEVAS FEATURES PARA DETECTAR O(log n) =====
+        
+        # 1. Patrón de división binaria (mid, /2, left+right)
+        features['has_binary_division'] = 0
+        binary_patterns = [
+            r'mid\s*:?=\s*\(?left\s*\+\s*right\)?.*?[/]',  # mid = (left+right)/2
+            r'mid\s*:?=\s*left\s*\+\s*\(.*?right.*?left.*?\)\s*/\s*2',  # mid = left + (right-left)/2
+            r'/\s*2(?!\*)',  # división por 2 (no seguida de *)
+            r'>>\s*1',  # bit shift (equivalente a /2)
+        ]
+        for pattern in binary_patterns:
+            if re.search(pattern, code):
+                features['has_binary_division'] = 1
+                break
+        
+        # 2. Actualización de left/right (búsqueda binaria)
+        features['has_binary_search_update'] = 0
+        if re.search(r'left\s*=\s*mid', code) and re.search(r'right\s*=\s*mid', code):
+            features['has_binary_search_update'] = 1
+        
+        # 3. Patrón logarítmico: loop que divide el rango
+        features['has_logarithmic_loop'] = 0
+        # Detectar: while/for con condición left <= right y división de rango
+        if re.search(r'for\s+.*?left\s*<=?\s*right', code) and features['has_binary_division']:
+            features['has_logarithmic_loop'] = 1
+        
+        # 4. Recursión con división del problema (T(n/2), T(n/3))
+        features['has_divide_conquer_recursion'] = 0
+        if features['has_recursion'] and features['has_binary_division']:
+            features['has_divide_conquer_recursion'] = 1
+        
+        # 5. Patrón de búsqueda: comparaciones con mid
+        features['has_mid_comparison'] = 0
+        if re.search(r'arr\s*\[.*?mid.*?\]', code) or re.search(r'matrix\s*\[.*?mid.*?\]', code):
+            features['has_mid_comparison'] = 1
+        
+        # 6. Variables típicas de búsqueda binaria (left, right, mid)
+        features['has_binary_search_vars'] = 0
+        has_left = bool(re.search(r'\bleft\b', code))
+        has_right = bool(re.search(r'\bright\b', code))
+        has_mid = bool(re.search(r'\bmid\b', code))
+        if has_left and has_right and has_mid:
+            features['has_binary_search_vars'] = 1
+        
+        # 7. Patrón de búsqueda exponencial (duplicación: *2, <<1)
+        features['has_exponential_search'] = 0
+        if re.search(r'\*\s*2(?!\.)|\<\<\s*1', code):  # *2 o <<1
+            features['has_exponential_search'] = 1
+        
+        # 8. Ratio de profundidad vs líneas (bajo = posible log)
+        if features['num_lines'] > 0:
+            features['depth_to_lines_ratio'] = features['max_nesting_depth'] / features['num_lines']
+        else:
+            features['depth_to_lines_ratio'] = 0
+
+        # === NUEVAS FEATURES PARA PATRONES LOGARÍTMICOS NO BINARIOS (Euclides, conteo dígitos, etc.) ===
+
+        # 9. Uso de operador módulo dentro de un loop (típico en gcd, fast power, conversión base)
+        features['has_modulo_in_loop'] = 0
+        if re.search(r'for\s+.*?{[\s\S]*?%[\s\S]*?}', code):
+            features['has_modulo_in_loop'] = 1
+
+        # 10. Patrón de reducción (a, b = b, a % b) o asignaciones similares con módulo encadenado
+        features['has_gcd_swap_pattern'] = 0
+        gcd_patterns = [
+            r'\b[a-zA-Z_]\w*\s*,\s*[a-zA-Z_]\w*\s*=\s*[a-zA-Z_]\w*\s*,\s*[a-zA-Z_]\w*\s*%\s*[a-zA-Z_]\w*',
+            r'\b[a-zA-Z_]\w*\s*=\s*[a-zA-Z_]\w*\s*%\s*[a-zA-Z_]\w*'
+        ]
+        for pattern in gcd_patterns:
+            if re.search(pattern, code):
+                features['has_gcd_swap_pattern'] = 1
+                break
+
+        # 11. Loop con condición basada en variable que se reduce por división/módulo (b != 0, n > 0)
+        features['has_loop_variable_reduction'] = 0
+        # Detectar variable control que aparece en condición del for y luego se reasigna con / o %
+        loop_conditions = re.findall(r'for\s+([^\{]*){', code)
+        for cond in loop_conditions:
+            # Extraer posibles variables en condición
+            vars_in_cond = re.findall(r'\b([a-zA-Z_]\w*)\b', cond)
+            for var in vars_in_cond:
+                # Buscar reasignaciones de la variable con / o % dentro del cuerpo
+                pattern_div = rf'{var}\s*=\s*{var}\s*/\s*\d+'
+                pattern_mod = rf'{var}\s*=\s*{var}\s*%\s*\d+'
+                if re.search(pattern_div, code) or re.search(pattern_mod, code):
+                    features['has_loop_variable_reduction'] = 1
+                    break
+            if features['has_loop_variable_reduction']:
+                break
+
+        # 12. Conteo de divisiones por base 10 (n /= 10, n = n/10) para detectar log base distinto
+        features['has_division_by_10_loop'] = 0
+        if re.search(r'for\s+.*?{[\s\S]*?(?:/\s*10)', code):
+            features['has_division_by_10_loop'] = 1
+
+        # 13. Conversión repetida mediante division y módulo (decimal a binario/base)
+        features['has_division_mod_conversion'] = 0
+        if features['has_modulo_in_loop'] and (features['has_binary_division'] or features['has_division_by_10_loop']):
+            features['has_division_mod_conversion'] = 1
+
+        # 14. Señal compuesta de posible log: cualquier patrón de reducción + loop
+        reduction_signals = [
+            features['has_binary_division'],
+            features['has_modulo_in_loop'],
+            features['has_loop_variable_reduction'],
+            features['has_division_by_10_loop'],
+            features['has_gcd_swap_pattern']
+        ]
+        features['has_any_log_reduction_pattern'] = 1 if any(reduction_signals) else 0
         
         return features
     
@@ -246,7 +357,7 @@ class GoFeatureExtractor:
         
         self.is_fitted = True
         
-        print(f"✓ Vocabulario: {len(self.vocabulary)} tokens")
+        print(f"[OK] Vocabulario: {len(self.vocabulary)} tokens")
         print(f"✓ Total features: {len(self.feature_names)}")
         print(f"✓ Top 10 tokens: {list(self.vocabulary.keys())[:10]}")
     

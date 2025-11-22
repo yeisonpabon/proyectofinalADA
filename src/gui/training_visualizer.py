@@ -59,9 +59,9 @@ class TrainingVisualizer:
         
         return {
             'train_loss': train_loss.tolist(),
-            'test_loss': test_loss.tolist(),
+            'val_loss': test_loss.tolist(),
             'train_accuracy': train_acc.tolist(),
-            'test_accuracy': test_acc.tolist(),
+            'val_accuracy': test_acc.tolist(),
             'epochs': epochs
         }
     
@@ -79,9 +79,9 @@ class TrainingVisualizer:
         if self.history:
             epochs = len(self.history.get('train_loss', []))
             final_train_acc = self.history['train_accuracy'][-1] if self.history.get('train_accuracy') else 0
-            final_test_acc = self.history['test_accuracy'][-1] if self.history.get('test_accuracy') else 0
+            final_test_acc = self.history['val_accuracy'][-1] if self.history.get('val_accuracy') else 0
             final_train_loss = self.history['train_loss'][-1] if self.history.get('train_loss') else 0
-            final_test_loss = self.history['test_loss'][-1] if self.history.get('test_loss') else 0
+            final_test_loss = self.history['val_loss'][-1] if self.history.get('val_loss') else 0
             
             info_text = f"""
 Épocas entrenadas: {epochs}
@@ -120,7 +120,7 @@ Test Loss: {final_test_loss:.4f}
             epochs = range(1, len(self.history['train_loss']) + 1)
             
             ax.plot(epochs, self.history['train_loss'], 'b-', label='Train Loss', linewidth=2)
-            ax.plot(epochs, self.history['test_loss'], 'r--', label='Test Loss', linewidth=2)
+            ax.plot(epochs, self.history['val_loss'], 'r--', label='Val Loss', linewidth=2)
             
             ax.set_xlabel('Época', fontsize=12)
             ax.set_ylabel('Pérdida', fontsize=12)
@@ -145,8 +145,8 @@ Test Loss: {final_test_loss:.4f}
             
             ax.plot(epochs, [a * 100 for a in self.history['train_accuracy']], 
                    'g-', label='Train Accuracy', linewidth=2)
-            ax.plot(epochs, [a * 100 for a in self.history['test_accuracy']], 
-                   'm--', label='Test Accuracy', linewidth=2)
+            ax.plot(epochs, [a * 100 for a in self.history['val_accuracy']], 
+                   'm--', label='Val Accuracy', linewidth=2)
             
             ax.set_xlabel('Época', fontsize=12)
             ax.set_ylabel('Precisión (%)', fontsize=12)

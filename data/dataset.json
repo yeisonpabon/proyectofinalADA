@@ -386,6 +386,171 @@
       "features": {"loops": 0, "recursion": true, "nested_depth": 2}
     },
     {
+      "id": "lower_bound_search",
+      "name": "Lower Bound Binary Search",
+      "path": "data/algorithms/search/lower_bound_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra el primer elemento no menor que el objetivo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "upper_bound_search",
+      "name": "Upper Bound Binary Search",
+      "path": "data/algorithms/search/upper_bound_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra el primer elemento mayor que el objetivo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "binary_search_first_occurrence",
+      "name": "Binary Search First Occurrence",
+      "path": "data/algorithms/search/binary_search_first_occurrence.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra la primera ocurrencia de un elemento",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "binary_search_last_occurrence",
+      "name": "Binary Search Last Occurrence",
+      "path": "data/algorithms/search/binary_search_last_occurrence.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra la última ocurrencia de un elemento",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "binary_search_rotated",
+      "name": "Binary Search in Rotated Array",
+      "path": "data/algorithms/search/binary_search_rotated.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria en array rotado",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "sqrt_binary_search",
+      "name": "Square Root Binary Search",
+      "path": "data/algorithms/search/sqrt_binary_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Calcula raíz cuadrada usando búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "peak_element_search",
+      "name": "Peak Element Binary Search",
+      "path": "data/algorithms/search/peak_element_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra un elemento pico usando búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "binary_search_2d",
+      "name": "Binary Search in 2D Matrix",
+      "path": "data/algorithms/search/binary_search_2d.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria en matriz 2D ordenada",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "find_kth_smallest",
+      "name": "Find Kth Smallest Element",
+      "path": "data/algorithms/search/find_kth_smallest.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra k-ésimo elemento más pequeño con QuickSelect",
+      "recurrence": "T(n) = T(n/2) + O(n)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(n)", "case": 3, "result": "O(n) promedio, O(log n) mejor caso"},
+      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+    },
+    {
+      "id": "bitonic_search",
+      "name": "Bitonic Array Search",
+      "path": "data/algorithms/search/bitonic_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda en array bitónico (crece y decrece)",
+      "recurrence": "T(n) = 2*T(n/2) + O(1)",
+      "master_theorem": {"a": 2, "b": 2, "f_n": "O(1)", "case": 1, "result": "O(log n)"},
+      "features": {"loops": 3, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "find_closest_element",
+      "name": "Find Closest Element",
+      "path": "data/algorithms/search/closest_element.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra el elemento más cercano a un valor objetivo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "find_missing_number",
+      "name": "Find Missing Number",
+      "path": "data/algorithms/search/find_missing_number.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra número faltante en secuencia con búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "search_infinite_array",
+      "name": "Search in Infinite Array",
+      "path": "data/algorithms/search/search_infinite_array.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda en array infinito con expansión exponencial",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 2, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "count_rotations",
+      "name": "Count Array Rotations",
+      "path": "data/algorithms/search/count_rotations.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Cuenta rotaciones de array ordenado usando búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "find_fixed_point",
+      "name": "Find Fixed Point",
+      "path": "data/algorithms/search/find_fixed_point.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra punto fijo (arr[i] == i) con búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
       "id": "count_occurrences",
       "name": "Contar Ocurrencias",
       "path": "data/algorithms/search/count_occurrences.go",
@@ -483,6 +648,171 @@
       "recurrence": "T(n) = nT(n-1) + O(n)",
       "master_theorem": null,
       "features": {"loops": 2, "recursion": true, "nested_depth": 4}
+    },
+    {
+      "id": "fast_power",
+      "name": "Fast Power (Binary Exponentiation)",
+      "path": "data/algorithms/search/fast_power.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Exponenciación binaria rápida usando división por 2 y módulo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 1}
+    },
+    {
+      "id": "gcd_euclidean",
+      "name": "GCD Euclidean Algorithm",
+      "path": "data/algorithms/search/gcd_euclidean.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Algoritmo de Euclides para GCD usando módulo y división",
+      "recurrence": "T(n) = T(n mod m) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 1}
+    },
+    {
+      "id": "count_digits",
+      "name": "Count Digits",
+      "path": "data/algorithms/search/count_digits.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Cuenta dígitos dividiendo por 10 iterativamente",
+      "recurrence": "T(n) = T(n/10) + O(1)",
+      "master_theorem": {"a": 1, "b": 10, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 1}
+    },
+    {
+      "id": "decimal_to_binary",
+      "name": "Decimal to Binary Conversion",
+      "path": "data/algorithms/search/decimal_to_binary.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Conversión decimal a binario usando división por 2 y módulo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 1}
+    },
+    {
+      "id": "bst_search",
+      "name": "Binary Search Tree Search",
+      "path": "data/algorithms/search/bst_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda iterativa en árbol binario de búsqueda balanceado",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
+      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+    },
+    {
+      "id": "combinations",
+      "name": "Combinations (C(n,k))",
+      "path": "data/algorithms/search/combinations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todas las combinaciones de k elementos usando backtracking",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
+      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+    },
+    {
+      "id": "string_permutations",
+      "name": "String Permutations",
+      "path": "data/algorithms/search/string_permutations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todas las permutaciones de una cadena (n! pero clase exponencial)",
+      "recurrence": "T(n) = n*T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+    },
+    {
+      "id": "sudoku_solver",
+      "name": "Sudoku Solver",
+      "path": "data/algorithms/search/sudoku_solver.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Resuelve sudoku usando backtracking (9^(n*n) exponencial)",
+      "recurrence": "T(n) = 9T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {"loops": 3, "recursion": true, "nested_depth": 4}
+    },
+    {
+      "id": "graph_coloring",
+      "name": "Graph Coloring",
+      "path": "data/algorithms/search/graph_coloring.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Asigna colores a vértices usando backtracking (m^n exponencial)",
+      "recurrence": "T(n) = m*T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {"loops": 2, "recursion": true, "nested_depth": 3}
+    },
+    {
+      "id": "knapsack_exponential",
+      "name": "Knapsack 0/1 (Brute Force)",
+      "path": "data/algorithms/search/knapsack_exponential.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Knapsack con fuerza bruta recursiva",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
+      "features": {"loops": 0, "recursion": true, "nested_depth": 3}
+    },
+    {
+      "id": "generate_parentheses",
+      "name": "Generate Valid Parentheses",
+      "path": "data/algorithms/search/generate_parentheses.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera paréntesis válidos usando backtracking (Catalan number, ~4^n/sqrt(n))",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
+      "features": {"loops": 0, "recursion": true, "nested_depth": 3}
+    },
+    {
+      "id": "word_search",
+      "name": "Word Search (Backtracking)",
+      "path": "data/algorithms/search/word_search.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Busca palabra en matriz usando backtracking (N*3^L exponencial)",
+      "recurrence": "T(n) = 4T(n-1) + O(1)",
+      "master_theorem": {"a": 4, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(4^n)"},
+      "features": {"loops": 0, "recursion": true, "nested_depth": 3}
+    },
+    {
+      "id": "partition_equal_subset",
+      "name": "Partition Equal Subset",
+      "path": "data/algorithms/search/partition_equal_subset.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Determina si array se puede dividir en dos subconjuntos con suma igual",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
+      "features": {"loops": 0, "recursion": true, "nested_depth": 3}
+    },
+    {
+      "id": "letter_combinations",
+      "name": "Letter Combinations (Phone)",
+      "path": "data/algorithms/search/letter_combinations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera combinaciones de letras del teclado telefónico (4^n exponencial)",
+      "recurrence": "T(n) = 4T(n-1) + O(1)",
+      "master_theorem": {"a": 4, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(4^n)"},
+      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+    },
+    {
+      "id": "rat_in_maze",
+      "name": "Rat in a Maze",
+      "path": "data/algorithms/search/rat_in_maze.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Encuentra camino en laberinto usando backtracking (2^(n^2) exponencial)",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
+      "features": {"loops": 0, "recursion": true, "nested_depth": 3}
     }
   ]
 }

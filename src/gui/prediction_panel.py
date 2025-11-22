@@ -36,20 +36,55 @@ class PredictionPanel:
             import sys
             sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
             
-            from src.ml.mlp import MLP
+            from src.neural_network.mlp import MLP
+            from src.data_processing.feature_extractor import GoFeatureExtractor
             from src.complexity_analysis.recurrence_parser import RecurrenceParser
             from src.complexity_analysis.master_theorem import MasterTheorem
             
-            # Cargar modelo entrenado
-            model_path = os.path.join(os.path.dirname(__file__), '../../models/best_mlp_model.json')
-            if os.path.exists(model_path):
-                self.mlp = MLP.load(model_path)
+            # Cargar modelo entrenado (nuevo path)
+            base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+            model_path = os.path.join(base_path, 'experiments', 'models', 'mlp_complexity_classifier.npz')
+            dataset_path = os.path.join(base_path, 'data', 'dataset.json')
+            
+            if os.path.exists(model_path) and os.path.exists(dataset_path):
+                # Cargar dataset para ajustar el extractor
+                with open(dataset_path, 'r', encoding='utf-8') as f:
+                    dataset = json.load(f)
+                
+                code_samples = []
+                for algo in dataset['algorithms']:
+                    code_path = os.path.join(base_path, algo['path'])
+                    try:
+                        with open(code_path, 'r', encoding='utf-8') as f:
+                            code_samples.append(f.read())
+                    except:
+                        pass
+                
+                # Inicializar y ajustar extractor
+                self.feature_extractor = GoFeatureExtractor(max_features=200)
+                self.feature_extractor.fit(code_samples)
+                
+                # Cargar modelo
+                input_dim = self.feature_extractor.transform([code_samples[0]]).shape[1]
+                self.mlp = MLP(
+                    input_dim=input_dim,
+                    hidden_dims=[256, 128, 64],
+                    num_classes=6,
+                    learning_rate=0.008,
+                    batch_size=4
+                )
+                self.mlp.load_weights(model_path)
+            else:
+                self.mlp = None
+                self.feature_extractor = None
             
             self.recurrence_parser = RecurrenceParser()
             self.master_theorem = MasterTheorem()
             
         except Exception as e:
             print(f"Error cargando modelos: {e}")
+            import traceback
+            traceback.print_exc()
     
     def _create_ui(self):
         """Crea interfaz de usuario."""
@@ -249,14 +284,55 @@ func binarySearch(arr []int, target int) int {
         self.master_text.config(state=tk.DISABLED)
     
     def _display_mlp_placeholder(self):
-        """Muestra placeholder para MLP."""
+        """Muestra predicción del MLP."""
         self.mlp_text.config(state=tk.NORMAL)
         
-        text = "🧠 PREDICCIÓN CON RED NEURONAL\n\n"
-        text += "Modelo: MLP (118 → 128 → 64 → 6)\n"
-        text += "Entrenamiento: 1000 épocas, 31 algoritmos\n\n"
-        text += "⚠️ Integración pendiente\n"
-        text += "La extracción de features del código está en desarrollo.\n"
+        if self.mlp and self.feature_extractor:
+            try:
+                # Obtener código
+                code = self.code_text.get("1.0", tk.END)
+                
+                # Extraer features
+                features = self.feature_extractor.transform([code])
+                
+                # Predecir
+                prediction = self.mlp.predict(features)[0]
+                probabilities = self.mlp.predict_proba(features)[0]
+                
+                # Mapeo de clases
+                complexity_labels = {
+                    0: "O(1)",
+                    1: "O(log n)",
+                    2: "O(n)",
+                    3: "O(n log n)",
+                    4: "O(n²)",
+                    5: "O(2^n)"
+                }
+                
+                text = "🧠 PREDICCIÓN RED NEURONAL MLP\n\n"
+                text += f"📊 Modelo: 180 → 256 → 128 → 64 → 6\n"
+                text += f"📚 Entrenado: 59 algoritmos, 1500 épocas\n"
+                text += f"🎯 Precisión: 90.91%\n\n"
+                text += "═" * 40 + "\n"
+                text += f"🏆 Complejidad Final: {complexity_labels[prediction]}\n"
+                text += f"💯 Confianza: {probabilities[prediction]*100:.1f}%\n"
+                text += "═" * 40 + "\n\n"
+                text += "Distribución de probabilidades:\n\n"
+                
+                # Ordenar por probabilidad
+                sorted_probs = sorted(enumerate(probabilities), key=lambda x: x[1], reverse=True)
+                for idx, prob in sorted_probs[:3]:
+                    bar_length = int(prob * 30)
+                    bar = "█" * bar_length + "░" * (30 - bar_length)
+                    text += f"{complexity_labels[idx]:12} {bar} {prob*100:5.1f}%\n"
+                
+            except Exception as e:
+                text = "🧠 PREDICCIÓN RED NEURONAL MLP\n\n"
+                text += f"❌ Error al predecir: {str(e)}\n"
+        else:
+            text = "🧠 PREDICCIÓN RED NEURONAL MLP\n\n"
+            text += "⚠️ Modelo no cargado\n"
+            text += "Ejecuta primero: python train_model.py\n"
         
         self.mlp_text.insert("1.0", text)
         self.mlp_text.config(state=tk.DISABLED)

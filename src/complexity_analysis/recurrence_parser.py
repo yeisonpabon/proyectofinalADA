@@ -99,8 +99,34 @@ class RecurrenceParser:
         # 1. Detectar llamadas recursivas
         recursive_calls = self._find_recursive_calls(code, function_name)
         
+        # DEBUG: Imprimir lo que se encontró
+        if self.debug:
+            print(f"DEBUG: Función '{function_name}' - Llamadas encontradas: {len(recursive_calls)}")
+            for call in recursive_calls:
+                print(f"  - {call}")
+        
+        # VALIDACIÓN ESTRICTA: NO hay recursión si no hay llamadas recursivas REALES
         if len(recursive_calls) == 0:
             return None  # No hay recursión
+        
+        # 2. VALIDACIÓN ADICIONAL: Si hay loops, muy probablemente NO es recursivo
+        has_loops = bool(re.search(r'\bfor\b', code))
+        
+        if has_loops:
+            # Si tiene loops Y las "llamadas recursivas" no tienen 'return' delante,
+            # probablemente sea un falso positivo
+            real_recursive_calls = [call for call in recursive_calls if 'return' in call.lower()]
+            
+            if len(real_recursive_calls) == 0:
+                # No hay llamadas recursivas reales (con return)
+                return None
+            
+            # Actualizar con solo las llamadas reales
+            recursive_calls = real_recursive_calls
+        
+        # Si después de validaciones no hay llamadas, retornar None
+        if len(recursive_calls) == 0:
+            return None
         
         # 2. Contar llamadas recursivas (parámetro 'a')
         a = len(recursive_calls)
@@ -154,13 +180,42 @@ class RecurrenceParser:
         # Buscar llamadas a la misma función
         pattern = rf'\b{function_name}\s*\('
         
-        for line in code.split('\n'):
-            # Excluir la definición de la función
+        # IMPORTANTE: Solo considerar líneas que NO estén en contexto de definición
+        in_function = False
+        function_def_line = 0
+        
+        lines = code.split('\n')
+        for i, line in enumerate(lines):
+            # Detectar definición de la función
             if re.match(r'\s*func\s+' + function_name, line):
+                in_function = True
+                function_def_line = i
                 continue
             
-            if re.search(pattern, line):
-                recursive_calls.append(line.strip())
+            # Solo buscar llamadas DESPUÉS de la definición
+            if in_function and i > function_def_line:
+                # Verificar que NO sea solo el nombre de la función en un comentario
+                stripped = line.strip()
+                if stripped.startswith('//'):
+                    continue
+                    
+                if re.search(pattern, line):
+                    # Verificar contexto: permitir llamada dentro de bucle aunque no tenga 'return'
+                    is_real = any(keyword in line for keyword in ['return', '=', ':=', 'go '])
+                    # Patrones de backtracking (swap antes/después) indican llamada real
+                    # Ej: arr[l], arr[i] = arr[i], arr[l]; permute(...); arr[l], arr[i] = arr[i], arr[l]
+                    backtracking_context = False
+                    if i+1 < len(lines):
+                        next_line = lines[i+1].strip()
+                        prev_line = lines[i-1].strip() if i > 0 else ''
+                        if ('arr[' in prev_line and 'arr[' in next_line and '=' in prev_line and '=' in next_line):
+                            backtracking_context = True
+                    # Si línea está dentro de un for y sólo contiene la llamada recursiva, aceptarla
+                    loop_context = any('for' in lines[j] for j in range(max(0, i-3), i+1))
+                    stripped = line.strip()
+                    just_call = re.match(rf'^({function_name})\s*\(', stripped) is not None
+                    if is_real or (loop_context and just_call) or backtracking_context:
+                        recursive_calls.append(line.strip())
         
         return recursive_calls
     
