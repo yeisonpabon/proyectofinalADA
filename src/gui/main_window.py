@@ -249,13 +249,33 @@ func binarySearch(arr []int, target int) int {
                 hidden_dims = [256, 128, 64]
                 num_classes = 6
                 # Determinar input_dim desde extractor (ya fitted) o desde pesos
+                weights_npz = np.load(model_path)
+                expected_input_dim = weights_npz['layer_0_W'].shape[0]
                 if self.feature_extractor.is_fitted:
-                    input_dim = len(self.feature_extractor.feature_names)
+                    current_dim = len(self.feature_extractor.feature_names)
+                    # Ajustar si hay desajuste entre extractor y pesos
+                    if current_dim != expected_input_dim:
+                        # Recalcular max_features para que vocab + sintácticas = expected_input_dim
+                        syntactic_count = self.feature_extractor.syntactic_feature_count
+                        adjusted_vocab_size = max(1, expected_input_dim - syntactic_count)
+                        print(f"⚠ Mismatch dimensiones: extractor={current_dim}, pesos={expected_input_dim}. Reajustando vocabulario a {adjusted_vocab_size} tokens.")
+                        # Refit rápido solo con nuevo límite
+                        self.feature_extractor.max_features = adjusted_vocab_size
+                        # Reajustar usando mismos code_samples (guardados antes)
+                        # Necesitamos recargar dataset para refit
+                        with open(dataset_path, 'r', encoding='utf-8') as f:
+                            dataset_refit = json.load(f)
+                        codes_refit = []
+                        for algo in dataset_refit['algorithms']:
+                            apath = os.path.join(os.path.dirname(__file__), '../../', algo['path'])
+                            if os.path.exists(apath):
+                                with open(apath, 'r', encoding='utf-8') as cf:
+                                    codes_refit.append(cf.read())
+                        if codes_refit:
+                            self.feature_extractor.fit(codes_refit)
+                    input_dim = expected_input_dim
                 else:
-                    # Fallback: intentar leer primera matriz de pesos para deducir dimensión
-                    weights_npz = np.load(model_path)
-                    first_W = weights_npz['layer_0_W']
-                    input_dim = first_W.shape[0]
+                    input_dim = expected_input_dim
                 self.mlp = MLP(
                     input_dim=input_dim,
                     hidden_dims=hidden_dims,
