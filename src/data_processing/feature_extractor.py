@@ -43,6 +43,18 @@ class GoFeatureExtractor:
         self.idf = {}  # IDF por token
         self.feature_names = []  # Nombres de todas las features
         self.is_fitted = False
+        self._syntactic_feature_template = None  # cache para contar sintácticas
+
+    @property
+    def syntactic_feature_count(self):
+        """Devuelve el número de features sintácticas generadas.
+
+        Se calcula una sola vez sobre un código mínimo si aún no existe.
+        """
+        if self._syntactic_feature_template is None:
+            dummy_code = "package main\nfunc f(){}"
+            self._syntactic_feature_template = self._extract_syntactic_features(dummy_code)
+        return len(self._syntactic_feature_template.keys())
     
     def _tokenize_go(self, code):
         """
@@ -403,12 +415,11 @@ class GoFeatureExtractor:
         return np.array(features_matrix)
     
     def fit_transform(self, code_samples):
-        """
-        Ajusta y transforma en un solo paso.
-        
+        """Ajusta y transforma en un solo paso.
+
         Args:
             code_samples (list): Lista de strings de código Go
-            
+
         Returns:
             np.ndarray: Matriz de features
         """

@@ -54,6 +54,18 @@ def run_demo():
     print("\n🎮 Iniciando demostración interactiva...\n")
     os.system(f"{sys.executable} demo.py")
 
+def run_gui():
+    """Inicia la interfaz gráfica completa (GUI)."""
+    print("\n🖥️ Abriendo interfaz gráfica (GUI)...\n")
+    # Llamamos directamente al módulo de la ventana principal
+    gui_path = os.path.join('src', 'gui', 'main_window.py')
+    if not os.path.exists(gui_path):
+        print("⚠️ Archivo de GUI no encontrado en:", gui_path)
+        return
+    exit_code = os.system(f"{sys.executable} {gui_path}")
+    if exit_code != 0:
+        print("⚠️ La GUI terminó con código", exit_code)
+
 
 def run_tests():
     """Ejecuta los tests unitarios."""
@@ -178,6 +190,8 @@ def main():
                        help='Ejecutar tests unitarios')
     parser.add_argument('--stats', action='store_true',
                        help='Mostrar estadísticas del modelo')
+    parser.add_argument('--gui', action='store_true',
+                       help='Abrir interfaz gráfica (GUI)')
     
     args = parser.parse_args()
     
@@ -194,6 +208,8 @@ def main():
         train_model()
     elif args.demo:
         run_demo()
+    elif args.gui:
+        run_gui()
     elif args.test:
         run_tests()
     elif args.stats:
