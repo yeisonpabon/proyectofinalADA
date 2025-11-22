@@ -6,10 +6,14 @@
       "path": "data/algorithms/search/constant_access.go",
       "complexity": "O(1)",
       "complexity_class": 0,
-      "description": "Acceso directo a elemento por índice",
-      "recurrence": "No aplica (operación atómica)",
+      "description": "Acceso directo a elemento por \u00c3\u00adndice",
+      "recurrence": "No aplica (operaci\u00c3\u00b3n at\u00c3\u00b3mica)",
       "master_theorem": null,
-      "features": {"loops": 0, "recursion": false, "nested_depth": 1}
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
     },
     {
       "id": "swap",
@@ -18,9 +22,13 @@
       "complexity": "O(1)",
       "complexity_class": 0,
       "description": "Intercambio de dos valores con variable temporal",
-      "recurrence": "No aplica (operación atómica)",
+      "recurrence": "No aplica (operaci\u00c3\u00b3n at\u00c3\u00b3mica)",
       "master_theorem": null,
-      "features": {"loops": 0, "recursion": false, "nested_depth": 1}
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
     },
     {
       "id": "is_power_of_two",
@@ -28,65 +36,101 @@
       "path": "data/algorithms/search/is_power_of_two.go",
       "complexity": "O(1)",
       "complexity_class": 0,
-      "description": "Operación bit a bit para verificar potencia de 2",
-      "recurrence": "No aplica (operación atómica)",
+      "description": "Operaci\u00c3\u00b3n bit a bit para verificar potencia de 2",
+      "recurrence": "No aplica (operaci\u00c3\u00b3n at\u00c3\u00b3mica)",
       "master_theorem": null,
-      "features": {"loops": 0, "recursion": false, "nested_depth": 1}
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
     },
     {
       "id": "binary_search",
-      "name": "Búsqueda Binaria",
+      "name": "B\u00c3\u00basqueda Binaria",
       "path": "data/algorithms/search/binary_search.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Búsqueda binaria recursiva en array ordenado",
+      "description": "B\u00c3\u00basqueda binaria recursiva en array ordenado",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 0, "recursion": true, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
     },
     {
       "id": "binary_search_iterative",
-      "name": "Búsqueda Binaria Iterativa",
+      "name": "B\u00c3\u00basqueda Binaria Iterativa",
       "path": "data/algorithms/search/binary_search_iterative.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Búsqueda binaria iterativa en array ordenado",
+      "description": "B\u00c3\u00basqueda binaria iterativa en array ordenado",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "exponential_search",
-      "name": "Búsqueda Exponencial",
+      "name": "B\u00c3\u00basqueda Exponencial",
       "path": "data/algorithms/search/exponential_search.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Búsqueda por potencias de 2 + binary search",
+      "description": "B\u00c3\u00basqueda por potencias de 2 + binary search",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 2, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "interpolation_search",
-      "name": "Búsqueda por Interpolación",
+      "name": "B\u00c3\u00basqueda por Interpolaci\u00c3\u00b3n",
       "path": "data/algorithms/search/interpolation_search.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
       "description": "Mejor que binary search para datos uniformes (O(log log n) promedio)",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "linear_search",
-      "name": "Búsqueda Lineal",
+      "name": "B\u00c3\u00basqueda Lineal",
       "path": "data/algorithms/search/linear_search.go",
       "complexity": "O(n)",
       "complexity_class": 2,
-      "description": "Búsqueda secuencial en array",
+      "description": "B\u00c3\u00basqueda secuencial en array",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "jump_search",
@@ -94,10 +138,14 @@
       "path": "data/algorithms/search/jump_search.go",
       "complexity": "O(n)",
       "complexity_class": 2,
-      "description": "Saltos de tamaño √n seguidos de búsqueda lineal (O(√n))",
+      "description": "Saltos de tama\u00c3\u00b1o \u00e2\u02c6\u0161n seguidos de b\u00c3\u00basqueda lineal (O(\u00e2\u02c6\u0161n))",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 2, "recursion": false, "nested_depth": 2}
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "fibonacci_iterative",
@@ -105,10 +153,14 @@
       "path": "data/algorithms/search/fibonacci_iterative.go",
       "complexity": "O(n)",
       "complexity_class": 2,
-      "description": "Fibonacci con programación dinámica iterativa",
+      "description": "Fibonacci con programaci\u00c3\u00b3n din\u00c3\u00a1mica iterativa",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "factorial_recursive",
@@ -119,7 +171,11 @@
       "description": "Factorial recursivo lineal",
       "recurrence": "T(n) = T(n-1) + O(1)",
       "master_theorem": null,
-      "features": {"loops": 0, "recursion": true, "nested_depth": 2}
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
     },
     {
       "id": "array_sum",
@@ -130,18 +186,26 @@
       "description": "Suma de todos los elementos de un array",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "find_max",
-      "name": "Encontrar Máximo",
+      "name": "Encontrar M\u00c3\u00a1ximo",
       "path": "data/algorithms/search/find_max.go",
       "complexity": "O(n)",
       "complexity_class": 2,
-      "description": "Encuentra el valor máximo en un array",
+      "description": "Encuentra el valor m\u00c3\u00a1ximo en un array",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "dfs",
@@ -149,10 +213,14 @@
       "path": "data/algorithms/graph/dfs.go",
       "complexity": "O(n)",
       "complexity_class": 2,
-      "description": "Búsqueda en profundidad en grafo",
+      "description": "B\u00c3\u00basqueda en profundidad en grafo",
       "recurrence": "T(n) = T(n-1) + O(1) en grafo lineal",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "bfs",
@@ -160,21 +228,29 @@
       "path": "data/algorithms/graph/bfs.go",
       "complexity": "O(n)",
       "complexity_class": 2,
-      "description": "Búsqueda en amplitud en grafo",
+      "description": "B\u00c3\u00basqueda en amplitud en grafo",
       "recurrence": "No aplica (iterativo con cola)",
       "master_theorem": null,
-      "features": {"loops": 2, "recursion": false, "nested_depth": 3}
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
     },
     {
       "id": "topological_sort",
-      "name": "Ordenamiento Topológico",
+      "name": "Ordenamiento Topol\u00c3\u00b3gico",
       "path": "data/algorithms/graph/topological_sort.go",
       "complexity": "O(n)",
       "complexity_class": 2,
-      "description": "DFS con stack para ordenamiento topológico (O(V+E))",
+      "description": "DFS con stack para ordenamiento topol\u00c3\u00b3gico (O(V+E))",
       "recurrence": "T(n) = T(n-1) + O(1)",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "merge_sort",
@@ -184,8 +260,18 @@
       "complexity_class": 3,
       "description": "Ordenamiento por mezcla (divide y conquista)",
       "recurrence": "T(n) = 2T(n/2) + O(n)",
-      "master_theorem": {"a": 2, "b": 2, "f_n": "O(n)", "case": 2, "result": "O(n log n)"},
-      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 2,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 2,
+        "result": "O(n log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "quick_sort",
@@ -193,10 +279,20 @@
       "path": "data/algorithms/sort/quick_sort.go",
       "complexity": "O(n log n)",
       "complexity_class": 3,
-      "description": "Ordenamiento rápido (divide y conquista)",
+      "description": "Ordenamiento r\u00c3\u00a1pido (divide y conquista)",
       "recurrence": "T(n) = 2T(n/2) + O(n)",
-      "master_theorem": {"a": 2, "b": 2, "f_n": "O(n)", "case": 2, "result": "O(n log n)"},
-      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 2,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 2,
+        "result": "O(n log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "heap_sort",
@@ -204,10 +300,14 @@
       "path": "data/algorithms/sort/heap_sort.go",
       "complexity": "O(n log n)",
       "complexity_class": 3,
-      "description": "Ordenamiento con heap (construcción + extracciones)",
+      "description": "Ordenamiento con heap (construcci\u00c3\u00b3n + extracciones)",
       "recurrence": "T(n) = n * O(log n)",
       "master_theorem": null,
-      "features": {"loops": 2, "recursion": true, "nested_depth": 3}
+      "features": {
+        "loops": 2,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "counting_sort",
@@ -218,84 +318,116 @@
       "description": "Ordenamiento por conteo (O(n+k) lineal cuando k=O(n))",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 3, "recursion": false, "nested_depth": 2}
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "bubble_sort",
       "name": "Bubble Sort",
       "path": "data/algorithms/sort/bubble_sort.go",
-      "complexity": "O(n²)",
+      "complexity": "O(n\u00c2\u00b2)",
       "complexity_class": 4,
       "description": "Ordenamiento burbuja (dos loops anidados)",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 2, "recursion": false, "nested_depth": 3}
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
     },
     {
       "id": "selection_sort",
       "name": "Selection Sort",
       "path": "data/algorithms/sort/selection_sort.go",
-      "complexity": "O(n²)",
+      "complexity": "O(n\u00c2\u00b2)",
       "complexity_class": 4,
-      "description": "Ordenamiento por selección (dos loops anidados)",
+      "description": "Ordenamiento por selecci\u00c3\u00b3n (dos loops anidados)",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 2, "recursion": false, "nested_depth": 3}
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
     },
     {
       "id": "insertion_sort",
       "name": "Insertion Sort",
       "path": "data/algorithms/sort/insertion_sort.go",
-      "complexity": "O(n²)",
+      "complexity": "O(n\u00c2\u00b2)",
       "complexity_class": 4,
-      "description": "Ordenamiento por inserción (dos loops anidados)",
+      "description": "Ordenamiento por inserci\u00c3\u00b3n (dos loops anidados)",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 2, "recursion": false, "nested_depth": 3}
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
     },
     {
       "id": "dijkstra",
       "name": "Algoritmo de Dijkstra",
       "path": "data/algorithms/graph/dijkstra.go",
-      "complexity": "O(n²)",
+      "complexity": "O(n\u00c2\u00b2)",
       "complexity_class": 4,
-      "description": "Camino más corto (O(n²) con matriz adyacencia)",
+      "description": "Camino m\u00c3\u00a1s corto (O(n\u00c2\u00b2) con matriz adyacencia)",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 3, "recursion": false, "nested_depth": 4}
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 4
+      }
     },
     {
       "id": "bellman_ford",
       "name": "Algoritmo Bellman-Ford",
       "path": "data/algorithms/graph/bellman_ford.go",
-      "complexity": "O(n²)",
+      "complexity": "O(n\u00c2\u00b2)",
       "complexity_class": 4,
-      "description": "Camino más corto con pesos negativos (O(V·E))",
+      "description": "Camino m\u00c3\u00a1s corto con pesos negativos (O(V\u00c2\u00b7E))",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 2, "recursion": false, "nested_depth": 3}
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
     },
     {
       "id": "matrix_multiplication",
-      "name": "Multiplicación de Matrices",
+      "name": "Multiplicaci\u00c3\u00b3n de Matrices",
       "path": "data/algorithms/search/matrix_multiplication.go",
-      "complexity": "O(n²)",
+      "complexity": "O(n\u00c2\u00b2)",
       "complexity_class": 4,
-      "description": "Multiplicación naive de matrices (O(n³) tres loops anidados)",
+      "description": "Multiplicaci\u00c3\u00b3n naive de matrices (O(n\u00c2\u00b3) tres loops anidados)",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 3, "recursion": false, "nested_depth": 4}
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 4
+      }
     },
     {
       "id": "floyd_warshall",
       "name": "Floyd-Warshall",
       "path": "data/algorithms/graph/floyd_warshall.go",
-      "complexity": "O(n²)",
+      "complexity": "O(n\u00c2\u00b2)",
       "complexity_class": 4,
-      "description": "Todos los caminos más cortos (O(n³) tres loops anidados)",
+      "description": "Todos los caminos m\u00c3\u00a1s cortos (O(n\u00c2\u00b3) tres loops anidados)",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 3, "recursion": false, "nested_depth": 4}
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 4
+      }
     },
     {
       "id": "fibonacci_recursive",
@@ -303,10 +435,14 @@
       "path": "data/algorithms/search/fibonacci_recursive.go",
       "complexity": "O(2^n)",
       "complexity_class": 5,
-      "description": "Fibonacci recursivo sin memorización (exponencial)",
+      "description": "Fibonacci recursivo sin memorizaci\u00c3\u00b3n (exponencial)",
       "recurrence": "T(n) = T(n-1) + T(n-2) + O(1)",
       "master_theorem": null,
-      "features": {"loops": 0, "recursion": true, "nested_depth": 2}
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
     },
     {
       "id": "subset_sum",
@@ -316,8 +452,18 @@
       "complexity_class": 5,
       "description": "Genera todos los subconjuntos posibles (backtracking)",
       "recurrence": "T(n) = 2T(n-1) + O(1)",
-      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
-      "features": {"loops": 0, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "hanoi",
@@ -327,8 +473,18 @@
       "complexity_class": 5,
       "description": "Torres de Hanoi recursivas (exponencial)",
       "recurrence": "T(n) = 2T(n-1) + O(1)",
-      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
-      "features": {"loops": 0, "recursion": true, "nested_depth": 2}
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
     },
     {
       "id": "permutations",
@@ -339,7 +495,11 @@
       "description": "Genera todas las permutaciones (O(n!) factorial)",
       "recurrence": "T(n) = n * T(n-1) + O(1)",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "get_element",
@@ -347,21 +507,29 @@
       "path": "data/algorithms/search/get_element.go",
       "complexity": "O(1)",
       "complexity_class": 0,
-      "description": "Retorna elemento en posición específica",
-      "recurrence": "No aplica (operación atómica)",
+      "description": "Retorna elemento en posici\u00c3\u00b3n espec\u00c3\u00adfica",
+      "recurrence": "No aplica (operaci\u00c3\u00b3n at\u00c3\u00b3mica)",
       "master_theorem": null,
-      "features": {"loops": 0, "recursion": false, "nested_depth": 1}
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
     },
     {
       "id": "sum_two_numbers",
-      "name": "Suma de Dos Números",
+      "name": "Suma de Dos N\u00c3\u00bameros",
       "path": "data/algorithms/search/sum_two_numbers.go",
       "complexity": "O(1)",
       "complexity_class": 0,
-      "description": "Suma simple de dos números",
-      "recurrence": "No aplica (operación atómica)",
+      "description": "Suma simple de dos n\u00c3\u00bameros",
+      "recurrence": "No aplica (operaci\u00c3\u00b3n at\u00c3\u00b3mica)",
       "master_theorem": null,
-      "features": {"loops": 0, "recursion": false, "nested_depth": 1}
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
     },
     {
       "id": "check_even",
@@ -369,21 +537,35 @@
       "path": "data/algorithms/search/check_even.go",
       "complexity": "O(1)",
       "complexity_class": 0,
-      "description": "Verifica si un número es par",
-      "recurrence": "No aplica (operación atómica)",
+      "description": "Verifica si un n\u00c3\u00bamero es par",
+      "recurrence": "No aplica (operaci\u00c3\u00b3n at\u00c3\u00b3mica)",
       "master_theorem": null,
-      "features": {"loops": 0, "recursion": false, "nested_depth": 1}
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
     },
     {
       "id": "ternary_search",
-      "name": "Búsqueda Ternaria",
+      "name": "B\u00c3\u00basqueda Ternaria",
       "path": "data/algorithms/search/ternary_search.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Divide el espacio de búsqueda en tres partes",
+      "description": "Divide el espacio de b\u00c3\u00basqueda en tres partes",
       "recurrence": "T(n) = T(n/3) + O(1)",
-      "master_theorem": {"a": 1, "b": 3, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 0, "recursion": true, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 3,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
     },
     {
       "id": "lower_bound_search",
@@ -393,8 +575,18 @@
       "complexity_class": 1,
       "description": "Encuentra el primer elemento no menor que el objetivo",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "upper_bound_search",
@@ -404,8 +596,18 @@
       "complexity_class": 1,
       "description": "Encuentra el primer elemento mayor que el objetivo",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "binary_search_first_occurrence",
@@ -415,8 +617,18 @@
       "complexity_class": 1,
       "description": "Encuentra la primera ocurrencia de un elemento",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "binary_search_last_occurrence",
@@ -424,10 +636,20 @@
       "path": "data/algorithms/search/binary_search_last_occurrence.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Encuentra la última ocurrencia de un elemento",
+      "description": "Encuentra la \u00c3\u00baltima ocurrencia de un elemento",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "binary_search_rotated",
@@ -435,10 +657,20 @@
       "path": "data/algorithms/search/binary_search_rotated.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Búsqueda binaria en array rotado",
+      "description": "B\u00c3\u00basqueda binaria en array rotado",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "sqrt_binary_search",
@@ -446,10 +678,20 @@
       "path": "data/algorithms/search/sqrt_binary_search.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Calcula raíz cuadrada usando búsqueda binaria",
+      "description": "Calcula ra\u00c3\u00adz cuadrada usando b\u00c3\u00basqueda binaria",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "peak_element_search",
@@ -457,10 +699,20 @@
       "path": "data/algorithms/search/peak_element_search.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Encuentra un elemento pico usando búsqueda binaria",
+      "description": "Encuentra un elemento pico usando b\u00c3\u00basqueda binaria",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "binary_search_2d",
@@ -468,10 +720,20 @@
       "path": "data/algorithms/search/binary_search_2d.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Búsqueda binaria en matriz 2D ordenada",
+      "description": "B\u00c3\u00basqueda binaria en matriz 2D ordenada",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "find_kth_smallest",
@@ -479,10 +741,20 @@
       "path": "data/algorithms/search/find_kth_smallest.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Encuentra k-ésimo elemento más pequeño con QuickSelect",
+      "description": "Encuentra k-\u00c3\u00a9simo elemento m\u00c3\u00a1s peque\u00c3\u00b1o con QuickSelect",
       "recurrence": "T(n) = T(n/2) + O(n)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(n)", "case": 3, "result": "O(n) promedio, O(log n) mejor caso"},
-      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 3,
+        "result": "O(n) promedio, O(log n) mejor caso"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "bitonic_search",
@@ -490,10 +762,20 @@
       "path": "data/algorithms/search/bitonic_search.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Búsqueda en array bitónico (crece y decrece)",
+      "description": "B\u00c3\u00basqueda en array bit\u00c3\u00b3nico (crece y decrece)",
       "recurrence": "T(n) = 2*T(n/2) + O(1)",
-      "master_theorem": {"a": 2, "b": 2, "f_n": "O(1)", "case": 1, "result": "O(log n)"},
-      "features": {"loops": 3, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 2,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "find_closest_element",
@@ -501,10 +783,20 @@
       "path": "data/algorithms/search/closest_element.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Encuentra el elemento más cercano a un valor objetivo",
+      "description": "Encuentra el elemento m\u00c3\u00a1s cercano a un valor objetivo",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "find_missing_number",
@@ -512,10 +804,20 @@
       "path": "data/algorithms/search/find_missing_number.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Encuentra número faltante en secuencia con búsqueda binaria",
+      "description": "Encuentra n\u00c3\u00bamero faltante en secuencia con b\u00c3\u00basqueda binaria",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "search_infinite_array",
@@ -523,10 +825,20 @@
       "path": "data/algorithms/search/search_infinite_array.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Búsqueda en array infinito con expansión exponencial",
+      "description": "B\u00c3\u00basqueda en array infinito con expansi\u00c3\u00b3n exponencial",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 2, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "count_rotations",
@@ -534,10 +846,20 @@
       "path": "data/algorithms/search/count_rotations.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Cuenta rotaciones de array ordenado usando búsqueda binaria",
+      "description": "Cuenta rotaciones de array ordenado usando b\u00c3\u00basqueda binaria",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "find_fixed_point",
@@ -545,10 +867,20 @@
       "path": "data/algorithms/search/find_fixed_point.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Encuentra punto fijo (arr[i] == i) con búsqueda binaria",
+      "description": "Encuentra punto fijo (arr[i] == i) con b\u00c3\u00basqueda binaria",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "count_occurrences",
@@ -556,10 +888,14 @@
       "path": "data/algorithms/search/count_occurrences.go",
       "complexity": "O(n)",
       "complexity_class": 2,
-      "description": "Cuenta cuántas veces aparece un valor",
+      "description": "Cuenta cu\u00c3\u00a1ntas veces aparece un valor",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "reverse_array",
@@ -570,29 +906,47 @@
       "description": "Invierte los elementos de un array",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "find_min",
-      "name": "Encontrar Mínimo",
+      "name": "Encontrar M\u00c3\u00adnimo",
       "path": "data/algorithms/search/find_min.go",
       "complexity": "O(n)",
       "complexity_class": 2,
-      "description": "Encuentra el valor mínimo en un array",
+      "description": "Encuentra el valor m\u00c3\u00adnimo en un array",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "karatsuba_multiply",
-      "name": "Multiplicación de Karatsuba",
+      "name": "Multiplicaci\u00c3\u00b3n de Karatsuba",
       "path": "data/algorithms/search/karatsuba_multiply.go",
       "complexity": "O(n log n)",
       "complexity_class": 3,
-      "description": "Multiplicación rápida divide y conquista",
+      "description": "Multiplicaci\u00c3\u00b3n r\u00c3\u00a1pida divide y conquista",
       "recurrence": "T(n) = 3T(n/2) + O(n)",
-      "master_theorem": {"a": 3, "b": 2, "f_n": "O(n)", "case": 1, "result": "O(n^1.58)"},
-      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 3,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 1,
+        "result": "O(n^1.58)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "shell_sort",
@@ -603,29 +957,41 @@
       "description": "Insertion sort mejorado con gaps",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 3, "recursion": false, "nested_depth": 3}
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 3
+      }
     },
     {
       "id": "two_sum",
       "name": "Two Sum Problem",
       "path": "data/algorithms/search/two_sum.go",
-      "complexity": "O(n²)",
+      "complexity": "O(n\u00c2\u00b2)",
       "complexity_class": 4,
-      "description": "Encuentra dos números que sumen un objetivo",
+      "description": "Encuentra dos n\u00c3\u00bameros que sumen un objetivo",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 2, "recursion": false, "nested_depth": 3}
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
     },
     {
       "id": "longest_palindrome",
-      "name": "Palíndromo Más Largo",
+      "name": "Pal\u00c3\u00adndromo M\u00c3\u00a1s Largo",
       "path": "data/algorithms/search/longest_palindrome.go",
-      "complexity": "O(n²)",
+      "complexity": "O(n\u00c2\u00b2)",
       "complexity_class": 4,
-      "description": "Encuentra el palíndromo más largo en una cadena",
+      "description": "Encuentra el pal\u00c3\u00adndromo m\u00c3\u00a1s largo en una cadena",
       "recurrence": "No aplica (iterativo)",
       "master_theorem": null,
-      "features": {"loops": 2, "recursion": false, "nested_depth": 3}
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
     },
     {
       "id": "power_set",
@@ -635,8 +1001,18 @@
       "complexity_class": 5,
       "description": "Genera todos los subconjuntos de un conjunto",
       "recurrence": "T(n) = 2T(n-1) + O(1)",
-      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
-      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "n_queens",
@@ -647,7 +1023,11 @@
       "description": "Coloca N reinas en un tablero sin conflictos",
       "recurrence": "T(n) = nT(n-1) + O(n)",
       "master_theorem": null,
-      "features": {"loops": 2, "recursion": true, "nested_depth": 4}
+      "features": {
+        "loops": 2,
+        "recursion": true,
+        "nested_depth": 4
+      }
     },
     {
       "id": "fast_power",
@@ -655,10 +1035,20 @@
       "path": "data/algorithms/search/fast_power.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Exponenciación binaria rápida usando división por 2 y módulo",
+      "description": "Exponenciaci\u00c3\u00b3n binaria r\u00c3\u00a1pida usando divisi\u00c3\u00b3n por 2 y m\u00c3\u00b3dulo",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 1}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
     },
     {
       "id": "gcd_euclidean",
@@ -666,10 +1056,20 @@
       "path": "data/algorithms/search/gcd_euclidean.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Algoritmo de Euclides para GCD usando módulo y división",
+      "description": "Algoritmo de Euclides para GCD usando m\u00c3\u00b3dulo y divisi\u00c3\u00b3n",
       "recurrence": "T(n) = T(n mod m) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 1}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
     },
     {
       "id": "count_digits",
@@ -677,10 +1077,20 @@
       "path": "data/algorithms/search/count_digits.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Cuenta dígitos dividiendo por 10 iterativamente",
+      "description": "Cuenta d\u00c3\u00adgitos dividiendo por 10 iterativamente",
       "recurrence": "T(n) = T(n/10) + O(1)",
-      "master_theorem": {"a": 1, "b": 10, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 1}
+      "master_theorem": {
+        "a": 1,
+        "b": 10,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
     },
     {
       "id": "decimal_to_binary",
@@ -688,10 +1098,20 @@
       "path": "data/algorithms/search/decimal_to_binary.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Conversión decimal a binario usando división por 2 y módulo",
+      "description": "Conversi\u00c3\u00b3n decimal a binario usando divisi\u00c3\u00b3n por 2 y m\u00c3\u00b3dulo",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 1}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
     },
     {
       "id": "bst_search",
@@ -699,10 +1119,20 @@
       "path": "data/algorithms/search/bst_search.go",
       "complexity": "O(log n)",
       "complexity_class": 1,
-      "description": "Búsqueda iterativa en árbol binario de búsqueda balanceado",
+      "description": "B\u00c3\u00basqueda iterativa en \u00c3\u00a1rbol binario de b\u00c3\u00basqueda balanceado",
       "recurrence": "T(n) = T(n/2) + O(1)",
-      "master_theorem": {"a": 1, "b": 2, "f_n": "O(1)", "case": 2, "result": "O(log n)"},
-      "features": {"loops": 1, "recursion": false, "nested_depth": 2}
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
     },
     {
       "id": "combinations",
@@ -712,8 +1142,18 @@
       "complexity_class": 5,
       "description": "Genera todas las combinaciones de k elementos usando backtracking",
       "recurrence": "T(n) = 2T(n-1) + O(1)",
-      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
-      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "string_permutations",
@@ -724,7 +1164,11 @@
       "description": "Genera todas las permutaciones de una cadena (n! pero clase exponencial)",
       "recurrence": "T(n) = n*T(n-1) + O(1)",
       "master_theorem": null,
-      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "sudoku_solver",
@@ -735,7 +1179,11 @@
       "description": "Resuelve sudoku usando backtracking (9^(n*n) exponencial)",
       "recurrence": "T(n) = 9T(n-1) + O(1)",
       "master_theorem": null,
-      "features": {"loops": 3, "recursion": true, "nested_depth": 4}
+      "features": {
+        "loops": 3,
+        "recursion": true,
+        "nested_depth": 4
+      }
     },
     {
       "id": "graph_coloring",
@@ -743,10 +1191,14 @@
       "path": "data/algorithms/search/graph_coloring.go",
       "complexity": "O(2^n)",
       "complexity_class": 5,
-      "description": "Asigna colores a vértices usando backtracking (m^n exponencial)",
+      "description": "Asigna colores a v\u00c3\u00a9rtices usando backtracking (m^n exponencial)",
       "recurrence": "T(n) = m*T(n-1) + O(1)",
       "master_theorem": null,
-      "features": {"loops": 2, "recursion": true, "nested_depth": 3}
+      "features": {
+        "loops": 2,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "knapsack_exponential",
@@ -756,8 +1208,18 @@
       "complexity_class": 5,
       "description": "Knapsack con fuerza bruta recursiva",
       "recurrence": "T(n) = 2T(n-1) + O(1)",
-      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
-      "features": {"loops": 0, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "generate_parentheses",
@@ -765,10 +1227,20 @@
       "path": "data/algorithms/search/generate_parentheses.go",
       "complexity": "O(2^n)",
       "complexity_class": 5,
-      "description": "Genera paréntesis válidos usando backtracking (Catalan number, ~4^n/sqrt(n))",
+      "description": "Genera par\u00c3\u00a9ntesis v\u00c3\u00a1lidos usando backtracking (Catalan number, ~4^n/sqrt(n))",
       "recurrence": "T(n) = 2T(n-1) + O(1)",
-      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
-      "features": {"loops": 0, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "word_search",
@@ -778,8 +1250,18 @@
       "complexity_class": 5,
       "description": "Busca palabra en matriz usando backtracking (N*3^L exponencial)",
       "recurrence": "T(n) = 4T(n-1) + O(1)",
-      "master_theorem": {"a": 4, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(4^n)"},
-      "features": {"loops": 0, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 4,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(4^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "partition_equal_subset",
@@ -789,8 +1271,18 @@
       "complexity_class": 5,
       "description": "Determina si array se puede dividir en dos subconjuntos con suma igual",
       "recurrence": "T(n) = 2T(n-1) + O(1)",
-      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
-      "features": {"loops": 0, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "letter_combinations",
@@ -798,10 +1290,20 @@
       "path": "data/algorithms/search/letter_combinations.go",
       "complexity": "O(2^n)",
       "complexity_class": 5,
-      "description": "Genera combinaciones de letras del teclado telefónico (4^n exponencial)",
+      "description": "Genera combinaciones de letras del teclado telef\u00c3\u00b3nico (4^n exponencial)",
       "recurrence": "T(n) = 4T(n-1) + O(1)",
-      "master_theorem": {"a": 4, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(4^n)"},
-      "features": {"loops": 1, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 4,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(4^n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
     },
     {
       "id": "rat_in_maze",
@@ -811,8 +1313,738 @@
       "complexity_class": 5,
       "description": "Encuentra camino en laberinto usando backtracking (2^(n^2) exponencial)",
       "recurrence": "T(n) = 2T(n-1) + O(1)",
-      "master_theorem": {"a": 2, "b": 1, "f_n": "O(1)", "case": 1, "result": "O(2^n)"},
-      "features": {"loops": 0, "recursion": true, "nested_depth": 3}
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "linear_search_real",
+      "name": "LinearSearch",
+      "code": "func LinearSearch(arr []int, target int) int {\n\tfor i, v := range arr {\n\t\tif v == target {\n\t\t\treturn i\n\t\t}\n\t}\n\treturn -1\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "B\u00fasqueda lineal en un arreglo",
+      "source": "user_provided"
+    },
+    {
+      "id": "sum_array_real",
+      "name": "Sum",
+      "code": "func Sum(arr []int) int {\n\ts := 0\n\tfor _, v := range arr {\n\t\ts += v\n\t}\n\treturn s\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Suma de todos los elementos",
+      "source": "user_provided"
+    },
+    {
+      "id": "max_element_real",
+      "name": "Max",
+      "code": "func Max(arr []int) int {\n\tif len(arr) == 0 { return 0 }\n\tm := arr[0]\n\tfor _, v := range arr[1:] {\n\t\tif v > m { m = v }\n\t}\n\treturn m\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar elemento m\u00e1ximo",
+      "source": "user_provided"
+    },
+    {
+      "id": "min_element_real",
+      "name": "Min",
+      "code": "func Min(arr []int) int {\n\tif len(arr) == 0 { return 0 }\n\tm := arr[0]\n\tfor _, v := range arr[1:] {\n\t\tif v < m { m = v }\n\t}\n\treturn m\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar elemento m\u00ednimo",
+      "source": "user_provided"
+    },
+    {
+      "id": "average_real",
+      "name": "Average",
+      "code": "func Average(arr []int) float64 {\n\tif len(arr) == 0 { return 0 }\n\tsum := 0\n\tfor _, v := range arr { sum += v }\n\treturn float64(sum) / float64(len(arr))\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Calcular promedio de elementos",
+      "source": "user_provided"
+    },
+    {
+      "id": "count_occurrences_real",
+      "name": "CountOccurrences",
+      "code": "func CountOccurrences(arr []int, target int) int {\n\tc := 0\n\tfor _, v := range arr {\n\t\tif v == target { c++ }\n\t}\n\treturn c\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Contar ocurrencias de un valor",
+      "source": "user_provided"
+    },
+    {
+      "id": "is_sorted_real",
+      "name": "IsSorted",
+      "code": "func IsSorted(arr []int) bool {\n\tfor i := 1; i < len(arr); i++ {\n\t\tif arr[i] < arr[i-1] {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Verificar si arreglo est\u00e1 ordenado",
+      "source": "user_provided"
+    },
+    {
+      "id": "reverse_array_real",
+      "name": "Reverse",
+      "code": "func Reverse(arr []int) []int {\n\tn := len(arr)\n\tres := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tres[i] = arr[n-1-i]\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Invertir un arreglo",
+      "source": "user_provided"
+    },
+    {
+      "id": "copy_array_real",
+      "name": "CopyArr",
+      "code": "func CopyArr(arr []int) []int {\n\tres := make([]int, len(arr))\n\tfor i, v := range arr {\n\t\tres[i] = v\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Copiar un arreglo",
+      "source": "user_provided"
+    },
+    {
+      "id": "filter_even_real",
+      "name": "FilterEven",
+      "code": "func FilterEven(arr []int) []int {\n\tres := []int{}\n\tfor _, v := range arr {\n\t\tif v%2 == 0 {\n\t\t\tres = append(res, v)\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Filtrar n\u00fameros pares",
+      "source": "user_provided"
+    },
+    {
+      "id": "remove_first_real",
+      "name": "RemoveFirst",
+      "code": "func RemoveFirst(arr []int, target int) []int {\n\tres := []int{}\n\tremoved := false\n\tfor _, v := range arr {\n\t\tif v == target && !removed {\n\t\t\tremoved = true\n\t\t\tcontinue\n\t\t}\n\t\tres = append(res, v)\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Eliminar primera ocurrencia",
+      "source": "user_provided"
+    },
+    {
+      "id": "prefix_sums_real",
+      "name": "PrefixSums",
+      "code": "func PrefixSums(arr []int) []int {\n\tres := make([]int, len(arr))\n\tsum := 0\n\tfor i, v := range arr {\n\t\tsum += v\n\t\tres[i] = sum\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Calcular sumas acumuladas",
+      "source": "user_provided"
+    },
+    {
+      "id": "first_duplicate_real",
+      "name": "FirstDuplicate",
+      "code": "func FirstDuplicate(arr []int) (int, bool) {\n\tseen := make(map[int]bool)\n\tfor _, v := range arr {\n\t\tif seen[v] {\n\t\t\treturn v, true\n\t\t}\n\t\tseen[v] = true\n\t}\n\treturn 0, false\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar primer duplicado",
+      "source": "user_provided"
+    },
+    {
+      "id": "char_frequency_real",
+      "name": "CharFrequency",
+      "code": "func CharFrequency(s string) map[rune]int {\n\tfreq := make(map[rune]int)\n\tfor _, ch := range s {\n\t\tfreq[ch]++\n\t}\n\treturn freq\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Frecuencia de caracteres",
+      "source": "user_provided"
+    },
+    {
+      "id": "is_palindrome_real",
+      "name": "IsPalindrome",
+      "code": "func IsPalindrome(s string) bool {\n\tr := []rune(s)\n\ti, j := 0, len(r)-1\n\tfor i < j {\n\t\tif r[i] != r[j] { return false }\n\t\ti++; j--\n\t}\n\treturn true\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Verificar si es pal\u00edndromo",
+      "source": "user_provided"
+    },
+    {
+      "id": "rotate_left_real",
+      "name": "RotateLeft",
+      "code": "func RotateLeft(arr []int, k int) []int {\n\tn := len(arr)\n\tif n == 0 { return arr }\n\tk %= n\n\tres := make([]int, 0, n)\n\tfor i := k; i < n; i++ { res = append(res, arr[i]) }\n\tfor i := 0; i < k; i++ { res = append(res, arr[i]) }\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Rotar arreglo a la izquierda",
+      "source": "user_provided"
+    },
+    {
+      "id": "merge_sorted_real",
+      "name": "MergeSorted",
+      "code": "func MergeSorted(a, b []int) []int {\n\tres := make([]int, 0, len(a)+len(b))\n\ti, j := 0, 0\n\tfor i < len(a) && j < len(b) {\n\t\tif a[i] <= b[j] { res = append(res, a[i]); i++ } \n\t\telse { res = append(res, b[j]); j++ }\n\t}\n\tfor i < len(a) { res = append(res, a[i]); i++ }\n\tfor j < len(b) { res = append(res, b[j]); j++ }\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Merge de arreglos ordenados",
+      "source": "user_provided"
+    },
+    {
+      "id": "count_unique_real",
+      "name": "CountUnique",
+      "code": "func CountUnique(arr []int) int {\n\tseen := make(map[int]struct{})\n\tfor _, v := range arr {\n\t\tseen[v] = struct{}{}\n\t}\n\treturn len(seen)\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Contar valores \u00fanicos",
+      "source": "user_provided"
+    },
+    {
+      "id": "intersection_real",
+      "name": "Intersection",
+      "code": "func Intersection(a, b []int) []int {\n\tseen := make(map[int]bool)\n\tfor _, v := range a { seen[v] = true }\n\tres := []int{}\n\tfor _, v := range b {\n\t\tif seen[v] {\n\t\t\tres = append(res, v)\n\t\t\tseen[v] = false\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Intersecci\u00f3n de dos arreglos",
+      "source": "user_provided"
+    },
+    {
+      "id": "two_sum_real",
+      "name": "TwoSum",
+      "code": "func TwoSum(arr []int, target int) (int, int, bool) {\n\tpos := make(map[int]int)\n\tfor i, v := range arr {\n\t\tif j, ok := pos[target-v]; ok {\n\t\t\treturn j, i, true\n\t\t}\n\t\tpos[v] = i\n\t}\n\treturn 0, 0, false\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar dos n\u00fameros que sumen target",
+      "source": "user_provided"
+    },
+    {
+      "id": "linear_search_real",
+      "name": "LinearSearch",
+      "code": "func LinearSearch(arr []int, target int) int {\n\tfor i, v := range arr {\n\t\tif v == target {\n\t\t\treturn i\n\t\t}\n\t}\n\treturn -1\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "B\u00fasqueda lineal en un arreglo",
+      "source": "user_provided"
+    },
+    {
+      "id": "sum_array_real",
+      "name": "Sum",
+      "code": "func Sum(arr []int) int {\n\ts := 0\n\tfor _, v := range arr {\n\t\ts += v\n\t}\n\treturn s\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Suma de todos los elementos",
+      "source": "user_provided"
+    },
+    {
+      "id": "max_element_real",
+      "name": "Max",
+      "code": "func Max(arr []int) int {\n\tif len(arr) == 0 { return 0 }\n\tm := arr[0]\n\tfor _, v := range arr[1:] {\n\t\tif v > m { m = v }\n\t}\n\treturn m\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar elemento m\u00e1ximo",
+      "source": "user_provided"
+    },
+    {
+      "id": "min_element_real",
+      "name": "Min",
+      "code": "func Min(arr []int) int {\n\tif len(arr) == 0 { return 0 }\n\tm := arr[0]\n\tfor _, v := range arr[1:] {\n\t\tif v < m { m = v }\n\t}\n\treturn m\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar elemento m\u00ednimo",
+      "source": "user_provided"
+    },
+    {
+      "id": "average_real",
+      "name": "Average",
+      "code": "func Average(arr []int) float64 {\n\tif len(arr) == 0 { return 0 }\n\tsum := 0\n\tfor _, v := range arr { sum += v }\n\treturn float64(sum) / float64(len(arr))\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Calcular promedio de elementos",
+      "source": "user_provided"
+    },
+    {
+      "id": "count_occurrences_real",
+      "name": "CountOccurrences",
+      "code": "func CountOccurrences(arr []int, target int) int {\n\tc := 0\n\tfor _, v := range arr {\n\t\tif v == target { c++ }\n\t}\n\treturn c\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Contar ocurrencias de un valor",
+      "source": "user_provided"
+    },
+    {
+      "id": "is_sorted_real",
+      "name": "IsSorted",
+      "code": "func IsSorted(arr []int) bool {\n\tfor i := 1; i < len(arr); i++ {\n\t\tif arr[i] < arr[i-1] {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Verificar si arreglo est\u00e1 ordenado",
+      "source": "user_provided"
+    },
+    {
+      "id": "reverse_array_real",
+      "name": "Reverse",
+      "code": "func Reverse(arr []int) []int {\n\tn := len(arr)\n\tres := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tres[i] = arr[n-1-i]\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Invertir un arreglo",
+      "source": "user_provided"
+    },
+    {
+      "id": "copy_array_real",
+      "name": "CopyArr",
+      "code": "func CopyArr(arr []int) []int {\n\tres := make([]int, len(arr))\n\tfor i, v := range arr {\n\t\tres[i] = v\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Copiar un arreglo",
+      "source": "user_provided"
+    },
+    {
+      "id": "filter_even_real",
+      "name": "FilterEven",
+      "code": "func FilterEven(arr []int) []int {\n\tres := []int{}\n\tfor _, v := range arr {\n\t\tif v%2 == 0 {\n\t\t\tres = append(res, v)\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Filtrar n\u00fameros pares",
+      "source": "user_provided"
+    },
+    {
+      "id": "remove_first_real",
+      "name": "RemoveFirst",
+      "code": "func RemoveFirst(arr []int, target int) []int {\n\tres := []int{}\n\tremoved := false\n\tfor _, v := range arr {\n\t\tif v == target && !removed {\n\t\t\tremoved = true\n\t\t\tcontinue\n\t\t}\n\t\tres = append(res, v)\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Eliminar primera ocurrencia",
+      "source": "user_provided"
+    },
+    {
+      "id": "prefix_sums_real",
+      "name": "PrefixSums",
+      "code": "func PrefixSums(arr []int) []int {\n\tres := make([]int, len(arr))\n\tsum := 0\n\tfor i, v := range arr {\n\t\tsum += v\n\t\tres[i] = sum\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Calcular sumas acumuladas",
+      "source": "user_provided"
+    },
+    {
+      "id": "first_duplicate_real",
+      "name": "FirstDuplicate",
+      "code": "func FirstDuplicate(arr []int) (int, bool) {\n\tseen := make(map[int]bool)\n\tfor _, v := range arr {\n\t\tif seen[v] {\n\t\t\treturn v, true\n\t\t}\n\t\tseen[v] = true\n\t}\n\treturn 0, false\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar primer duplicado",
+      "source": "user_provided"
+    },
+    {
+      "id": "char_frequency_real",
+      "name": "CharFrequency",
+      "code": "func CharFrequency(s string) map[rune]int {\n\tfreq := make(map[rune]int)\n\tfor _, ch := range s {\n\t\tfreq[ch]++\n\t}\n\treturn freq\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Frecuencia de caracteres",
+      "source": "user_provided"
+    },
+    {
+      "id": "is_palindrome_real",
+      "name": "IsPalindrome",
+      "code": "func IsPalindrome(s string) bool {\n\tr := []rune(s)\n\ti, j := 0, len(r)-1\n\tfor i < j {\n\t\tif r[i] != r[j] { return false }\n\t\ti++; j--\n\t}\n\treturn true\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Verificar si es pal\u00edndromo",
+      "source": "user_provided"
+    },
+    {
+      "id": "rotate_left_real",
+      "name": "RotateLeft",
+      "code": "func RotateLeft(arr []int, k int) []int {\n\tn := len(arr)\n\tif n == 0 { return arr }\n\tk %= n\n\tres := make([]int, 0, n)\n\tfor i := k; i < n; i++ { res = append(res, arr[i]) }\n\tfor i := 0; i < k; i++ { res = append(res, arr[i]) }\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Rotar arreglo a la izquierda",
+      "source": "user_provided"
+    },
+    {
+      "id": "merge_sorted_real",
+      "name": "MergeSorted",
+      "code": "func MergeSorted(a, b []int) []int {\n\tres := make([]int, 0, len(a)+len(b))\n\ti, j := 0, 0\n\tfor i < len(a) && j < len(b) {\n\t\tif a[i] <= b[j] { res = append(res, a[i]); i++ } \n\t\telse { res = append(res, b[j]); j++ }\n\t}\n\tfor i < len(a) { res = append(res, a[i]); i++ }\n\tfor j < len(b) { res = append(res, b[j]); j++ }\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Merge de arreglos ordenados",
+      "source": "user_provided"
+    },
+    {
+      "id": "count_unique_real",
+      "name": "CountUnique",
+      "code": "func CountUnique(arr []int) int {\n\tseen := make(map[int]struct{})\n\tfor _, v := range arr {\n\t\tseen[v] = struct{}{}\n\t}\n\treturn len(seen)\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Contar valores \u00fanicos",
+      "source": "user_provided"
+    },
+    {
+      "id": "intersection_real",
+      "name": "Intersection",
+      "code": "func Intersection(a, b []int) []int {\n\tseen := make(map[int]bool)\n\tfor _, v := range a { seen[v] = true }\n\tres := []int{}\n\tfor _, v := range b {\n\t\tif seen[v] {\n\t\t\tres = append(res, v)\n\t\t\tseen[v] = false\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Intersecci\u00f3n de dos arreglos",
+      "source": "user_provided"
+    },
+    {
+      "id": "two_sum_real",
+      "name": "TwoSum",
+      "code": "func TwoSum(arr []int, target int) (int, int, bool) {\n\tpos := make(map[int]int)\n\tfor i, v := range arr {\n\t\tif j, ok := pos[target-v]; ok {\n\t\t\treturn j, i, true\n\t\t}\n\t\tpos[v] = i\n\t}\n\treturn 0, 0, false\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar dos n\u00fameros que sumen target",
+      "source": "user_provided"
+    },
+    {
+      "id": "linear_search_real",
+      "name": "LinearSearch",
+      "code": "func LinearSearch(arr []int, target int) int {\n\tfor i, v := range arr {\n\t\tif v == target {\n\t\t\treturn i\n\t\t}\n\t}\n\treturn -1\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "B\u00fasqueda lineal en un arreglo",
+      "source": "user_provided"
+    },
+    {
+      "id": "sum_array_real",
+      "name": "Sum",
+      "code": "func Sum(arr []int) int {\n\ts := 0\n\tfor _, v := range arr {\n\t\ts += v\n\t}\n\treturn s\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Suma de todos los elementos",
+      "source": "user_provided"
+    },
+    {
+      "id": "max_element_real",
+      "name": "Max",
+      "code": "func Max(arr []int) int {\n\tif len(arr) == 0 { return 0 }\n\tm := arr[0]\n\tfor _, v := range arr[1:] {\n\t\tif v > m { m = v }\n\t}\n\treturn m\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar elemento m\u00e1ximo",
+      "source": "user_provided"
+    },
+    {
+      "id": "min_element_real",
+      "name": "Min",
+      "code": "func Min(arr []int) int {\n\tif len(arr) == 0 { return 0 }\n\tm := arr[0]\n\tfor _, v := range arr[1:] {\n\t\tif v < m { m = v }\n\t}\n\treturn m\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar elemento m\u00ednimo",
+      "source": "user_provided"
+    },
+    {
+      "id": "average_real",
+      "name": "Average",
+      "code": "func Average(arr []int) float64 {\n\tif len(arr) == 0 { return 0 }\n\tsum := 0\n\tfor _, v := range arr { sum += v }\n\treturn float64(sum) / float64(len(arr))\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Calcular promedio de elementos",
+      "source": "user_provided"
+    },
+    {
+      "id": "count_occurrences_real",
+      "name": "CountOccurrences",
+      "code": "func CountOccurrences(arr []int, target int) int {\n\tc := 0\n\tfor _, v := range arr {\n\t\tif v == target { c++ }\n\t}\n\treturn c\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Contar ocurrencias de un valor",
+      "source": "user_provided"
+    },
+    {
+      "id": "is_sorted_real",
+      "name": "IsSorted",
+      "code": "func IsSorted(arr []int) bool {\n\tfor i := 1; i < len(arr); i++ {\n\t\tif arr[i] < arr[i-1] {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Verificar si arreglo est\u00e1 ordenado",
+      "source": "user_provided"
+    },
+    {
+      "id": "reverse_array_real",
+      "name": "Reverse",
+      "code": "func Reverse(arr []int) []int {\n\tn := len(arr)\n\tres := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tres[i] = arr[n-1-i]\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Invertir un arreglo",
+      "source": "user_provided"
+    },
+    {
+      "id": "copy_array_real",
+      "name": "CopyArr",
+      "code": "func CopyArr(arr []int) []int {\n\tres := make([]int, len(arr))\n\tfor i, v := range arr {\n\t\tres[i] = v\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Copiar un arreglo",
+      "source": "user_provided"
+    },
+    {
+      "id": "filter_even_real",
+      "name": "FilterEven",
+      "code": "func FilterEven(arr []int) []int {\n\tres := []int{}\n\tfor _, v := range arr {\n\t\tif v%2 == 0 {\n\t\t\tres = append(res, v)\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Filtrar n\u00fameros pares",
+      "source": "user_provided"
+    },
+    {
+      "id": "remove_first_real",
+      "name": "RemoveFirst",
+      "code": "func RemoveFirst(arr []int, target int) []int {\n\tres := []int{}\n\tremoved := false\n\tfor _, v := range arr {\n\t\tif v == target && !removed {\n\t\t\tremoved = true\n\t\t\tcontinue\n\t\t}\n\t\tres = append(res, v)\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Eliminar primera ocurrencia",
+      "source": "user_provided"
+    },
+    {
+      "id": "prefix_sums_real",
+      "name": "PrefixSums",
+      "code": "func PrefixSums(arr []int) []int {\n\tres := make([]int, len(arr))\n\tsum := 0\n\tfor i, v := range arr {\n\t\tsum += v\n\t\tres[i] = sum\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Calcular sumas acumuladas",
+      "source": "user_provided"
+    },
+    {
+      "id": "first_duplicate_real",
+      "name": "FirstDuplicate",
+      "code": "func FirstDuplicate(arr []int) (int, bool) {\n\tseen := make(map[int]bool)\n\tfor _, v := range arr {\n\t\tif seen[v] {\n\t\t\treturn v, true\n\t\t}\n\t\tseen[v] = true\n\t}\n\treturn 0, false\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar primer duplicado",
+      "source": "user_provided"
+    },
+    {
+      "id": "char_frequency_real",
+      "name": "CharFrequency",
+      "code": "func CharFrequency(s string) map[rune]int {\n\tfreq := make(map[rune]int)\n\tfor _, ch := range s {\n\t\tfreq[ch]++\n\t}\n\treturn freq\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Frecuencia de caracteres",
+      "source": "user_provided"
+    },
+    {
+      "id": "is_palindrome_real",
+      "name": "IsPalindrome",
+      "code": "func IsPalindrome(s string) bool {\n\tr := []rune(s)\n\ti, j := 0, len(r)-1\n\tfor i < j {\n\t\tif r[i] != r[j] { return false }\n\t\ti++; j--\n\t}\n\treturn true\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Verificar si es pal\u00edndromo",
+      "source": "user_provided"
+    },
+    {
+      "id": "rotate_left_real",
+      "name": "RotateLeft",
+      "code": "func RotateLeft(arr []int, k int) []int {\n\tn := len(arr)\n\tif n == 0 { return arr }\n\tk %= n\n\tres := make([]int, 0, n)\n\tfor i := k; i < n; i++ { res = append(res, arr[i]) }\n\tfor i := 0; i < k; i++ { res = append(res, arr[i]) }\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Rotar arreglo a la izquierda",
+      "source": "user_provided"
+    },
+    {
+      "id": "merge_sorted_real",
+      "name": "MergeSorted",
+      "code": "func MergeSorted(a, b []int) []int {\n\tres := make([]int, 0, len(a)+len(b))\n\ti, j := 0, 0\n\tfor i < len(a) && j < len(b) {\n\t\tif a[i] <= b[j] { res = append(res, a[i]); i++ } \n\t\telse { res = append(res, b[j]); j++ }\n\t}\n\tfor i < len(a) { res = append(res, a[i]); i++ }\n\tfor j < len(b) { res = append(res, b[j]); j++ }\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Merge de arreglos ordenados",
+      "source": "user_provided"
+    },
+    {
+      "id": "count_unique_real",
+      "name": "CountUnique",
+      "code": "func CountUnique(arr []int) int {\n\tseen := make(map[int]struct{})\n\tfor _, v := range arr {\n\t\tseen[v] = struct{}{}\n\t}\n\treturn len(seen)\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Contar valores \u00fanicos",
+      "source": "user_provided"
+    },
+    {
+      "id": "intersection_real",
+      "name": "Intersection",
+      "code": "func Intersection(a, b []int) []int {\n\tseen := make(map[int]bool)\n\tfor _, v := range a { seen[v] = true }\n\tres := []int{}\n\tfor _, v := range b {\n\t\tif seen[v] {\n\t\t\tres = append(res, v)\n\t\t\tseen[v] = false\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Intersecci\u00f3n de dos arreglos",
+      "source": "user_provided"
+    },
+    {
+      "id": "two_sum_real",
+      "name": "TwoSum",
+      "code": "func TwoSum(arr []int, target int) (int, int, bool) {\n\tpos := make(map[int]int)\n\tfor i, v := range arr {\n\t\tif j, ok := pos[target-v]; ok {\n\t\t\treturn j, i, true\n\t\t}\n\t\tpos[v] = i\n\t}\n\treturn 0, 0, false\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar dos n\u00fameros que sumen target",
+      "source": "user_provided"
+    },
+    {
+      "id": "linear_search_real",
+      "name": "LinearSearch",
+      "code": "func LinearSearch(arr []int, target int) int {\n\tfor i, v := range arr {\n\t\tif v == target {\n\t\t\treturn i\n\t\t}\n\t}\n\treturn -1\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "B\u00fasqueda lineal en un arreglo",
+      "source": "user_provided"
+    },
+    {
+      "id": "sum_array_real",
+      "name": "Sum",
+      "code": "func Sum(arr []int) int {\n\ts := 0\n\tfor _, v := range arr {\n\t\ts += v\n\t}\n\treturn s\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Suma de todos los elementos",
+      "source": "user_provided"
+    },
+    {
+      "id": "max_element_real",
+      "name": "Max",
+      "code": "func Max(arr []int) int {\n\tif len(arr) == 0 { return 0 }\n\tm := arr[0]\n\tfor _, v := range arr[1:] {\n\t\tif v > m { m = v }\n\t}\n\treturn m\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar elemento m\u00e1ximo",
+      "source": "user_provided"
+    },
+    {
+      "id": "min_element_real",
+      "name": "Min",
+      "code": "func Min(arr []int) int {\n\tif len(arr) == 0 { return 0 }\n\tm := arr[0]\n\tfor _, v := range arr[1:] {\n\t\tif v < m { m = v }\n\t}\n\treturn m\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar elemento m\u00ednimo",
+      "source": "user_provided"
+    },
+    {
+      "id": "average_real",
+      "name": "Average",
+      "code": "func Average(arr []int) float64 {\n\tif len(arr) == 0 { return 0 }\n\tsum := 0\n\tfor _, v := range arr { sum += v }\n\treturn float64(sum) / float64(len(arr))\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Calcular promedio de elementos",
+      "source": "user_provided"
+    },
+    {
+      "id": "count_occurrences_real",
+      "name": "CountOccurrences",
+      "code": "func CountOccurrences(arr []int, target int) int {\n\tc := 0\n\tfor _, v := range arr {\n\t\tif v == target { c++ }\n\t}\n\treturn c\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Contar ocurrencias de un valor",
+      "source": "user_provided"
+    },
+    {
+      "id": "is_sorted_real",
+      "name": "IsSorted",
+      "code": "func IsSorted(arr []int) bool {\n\tfor i := 1; i < len(arr); i++ {\n\t\tif arr[i] < arr[i-1] {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Verificar si arreglo est\u00e1 ordenado",
+      "source": "user_provided"
+    },
+    {
+      "id": "reverse_array_real",
+      "name": "Reverse",
+      "code": "func Reverse(arr []int) []int {\n\tn := len(arr)\n\tres := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tres[i] = arr[n-1-i]\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Invertir un arreglo",
+      "source": "user_provided"
+    },
+    {
+      "id": "copy_array_real",
+      "name": "CopyArr",
+      "code": "func CopyArr(arr []int) []int {\n\tres := make([]int, len(arr))\n\tfor i, v := range arr {\n\t\tres[i] = v\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Copiar un arreglo",
+      "source": "user_provided"
+    },
+    {
+      "id": "filter_even_real",
+      "name": "FilterEven",
+      "code": "func FilterEven(arr []int) []int {\n\tres := []int{}\n\tfor _, v := range arr {\n\t\tif v%2 == 0 {\n\t\t\tres = append(res, v)\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Filtrar n\u00fameros pares",
+      "source": "user_provided"
+    },
+    {
+      "id": "remove_first_real",
+      "name": "RemoveFirst",
+      "code": "func RemoveFirst(arr []int, target int) []int {\n\tres := []int{}\n\tremoved := false\n\tfor _, v := range arr {\n\t\tif v == target && !removed {\n\t\t\tremoved = true\n\t\t\tcontinue\n\t\t}\n\t\tres = append(res, v)\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Eliminar primera ocurrencia",
+      "source": "user_provided"
+    },
+    {
+      "id": "prefix_sums_real",
+      "name": "PrefixSums",
+      "code": "func PrefixSums(arr []int) []int {\n\tres := make([]int, len(arr))\n\tsum := 0\n\tfor i, v := range arr {\n\t\tsum += v\n\t\tres[i] = sum\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Calcular sumas acumuladas",
+      "source": "user_provided"
+    },
+    {
+      "id": "first_duplicate_real",
+      "name": "FirstDuplicate",
+      "code": "func FirstDuplicate(arr []int) (int, bool) {\n\tseen := make(map[int]bool)\n\tfor _, v := range arr {\n\t\tif seen[v] {\n\t\t\treturn v, true\n\t\t}\n\t\tseen[v] = true\n\t}\n\treturn 0, false\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar primer duplicado",
+      "source": "user_provided"
+    },
+    {
+      "id": "char_frequency_real",
+      "name": "CharFrequency",
+      "code": "func CharFrequency(s string) map[rune]int {\n\tfreq := make(map[rune]int)\n\tfor _, ch := range s {\n\t\tfreq[ch]++\n\t}\n\treturn freq\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Frecuencia de caracteres",
+      "source": "user_provided"
+    },
+    {
+      "id": "is_palindrome_real",
+      "name": "IsPalindrome",
+      "code": "func IsPalindrome(s string) bool {\n\tr := []rune(s)\n\ti, j := 0, len(r)-1\n\tfor i < j {\n\t\tif r[i] != r[j] { return false }\n\t\ti++; j--\n\t}\n\treturn true\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Verificar si es pal\u00edndromo",
+      "source": "user_provided"
+    },
+    {
+      "id": "rotate_left_real",
+      "name": "RotateLeft",
+      "code": "func RotateLeft(arr []int, k int) []int {\n\tn := len(arr)\n\tif n == 0 { return arr }\n\tk %= n\n\tres := make([]int, 0, n)\n\tfor i := k; i < n; i++ { res = append(res, arr[i]) }\n\tfor i := 0; i < k; i++ { res = append(res, arr[i]) }\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Rotar arreglo a la izquierda",
+      "source": "user_provided"
+    },
+    {
+      "id": "merge_sorted_real",
+      "name": "MergeSorted",
+      "code": "func MergeSorted(a, b []int) []int {\n\tres := make([]int, 0, len(a)+len(b))\n\ti, j := 0, 0\n\tfor i < len(a) && j < len(b) {\n\t\tif a[i] <= b[j] { res = append(res, a[i]); i++ } \n\t\telse { res = append(res, b[j]); j++ }\n\t}\n\tfor i < len(a) { res = append(res, a[i]); i++ }\n\tfor j < len(b) { res = append(res, b[j]); j++ }\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Merge de arreglos ordenados",
+      "source": "user_provided"
+    },
+    {
+      "id": "count_unique_real",
+      "name": "CountUnique",
+      "code": "func CountUnique(arr []int) int {\n\tseen := make(map[int]struct{})\n\tfor _, v := range arr {\n\t\tseen[v] = struct{}{}\n\t}\n\treturn len(seen)\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Contar valores \u00fanicos",
+      "source": "user_provided"
+    },
+    {
+      "id": "intersection_real",
+      "name": "Intersection",
+      "code": "func Intersection(a, b []int) []int {\n\tseen := make(map[int]bool)\n\tfor _, v := range a { seen[v] = true }\n\tres := []int{}\n\tfor _, v := range b {\n\t\tif seen[v] {\n\t\t\tres = append(res, v)\n\t\t\tseen[v] = false\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Intersecci\u00f3n de dos arreglos",
+      "source": "user_provided"
+    },
+    {
+      "id": "two_sum_real",
+      "name": "TwoSum",
+      "code": "func TwoSum(arr []int, target int) (int, int, bool) {\n\tpos := make(map[int]int)\n\tfor i, v := range arr {\n\t\tif j, ok := pos[target-v]; ok {\n\t\t\treturn j, i, true\n\t\t}\n\t\tpos[v] = i\n\t}\n\treturn 0, 0, false\n}",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encontrar dos n\u00fameros que sumen target",
+      "source": "user_provided"
     }
   ]
 }

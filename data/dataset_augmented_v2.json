@@ -1,0 +1,3982 @@
+{
+  "algorithms": [
+    {
+      "id": "constant_access",
+      "name": "Acceso Constante a Array",
+      "path": "data/algorithms/search/constant_access.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Acceso directo a elemento por índice",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "constant_access_aug1",
+      "name": "Acceso Constante a Array (aug1)",
+      "path": "data/algorithms/search/constant_access.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Acceso directo a elemento por índice",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "constant_access_aug2",
+      "name": "Acceso Constante a Array (aug2)",
+      "path": "data/algorithms/search/constant_access.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Acceso directo a elemento por índice",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "swap",
+      "name": "Intercambio de Elementos",
+      "path": "data/algorithms/search/swap.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Intercambio de dos valores con variable temporal",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "swap_aug1",
+      "name": "Intercambio de Elementos (aug1)",
+      "path": "data/algorithms/search/swap.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Intercambio de dos valores con variable temporal",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "swap_aug2",
+      "name": "Intercambio de Elementos (aug2)",
+      "path": "data/algorithms/search/swap.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Intercambio de dos valores con variable temporal",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "is_power_of_two",
+      "name": "Verificar Potencia de 2",
+      "path": "data/algorithms/search/is_power_of_two.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Operación bit a bit para verificar potencia de 2",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "is_power_of_two_aug1",
+      "name": "Verificar Potencia de 2 (aug1)",
+      "path": "data/algorithms/search/is_power_of_two.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Operación bit a bit para verificar potencia de 2",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "is_power_of_two_aug2",
+      "name": "Verificar Potencia de 2 (aug2)",
+      "path": "data/algorithms/search/is_power_of_two.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Operación bit a bit para verificar potencia de 2",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "binary_search",
+      "name": "Búsqueda Binaria",
+      "path": "data/algorithms/search/binary_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria recursiva en array ordenado",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_aug1",
+      "name": "Búsqueda Binaria (aug1)",
+      "path": "data/algorithms/search/binary_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria recursiva en array ordenado",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_aug2",
+      "name": "Búsqueda Binaria (aug2)",
+      "path": "data/algorithms/search/binary_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria recursiva en array ordenado",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_iterative",
+      "name": "Búsqueda Binaria Iterativa",
+      "path": "data/algorithms/search/binary_search_iterative.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria iterativa en array ordenado",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_iterative_aug1",
+      "name": "Búsqueda Binaria Iterativa (aug1)",
+      "path": "data/algorithms/search/binary_search_iterative.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria iterativa en array ordenado",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_iterative_aug2",
+      "name": "Búsqueda Binaria Iterativa (aug2)",
+      "path": "data/algorithms/search/binary_search_iterative.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria iterativa en array ordenado",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "exponential_search",
+      "name": "Búsqueda Exponencial",
+      "path": "data/algorithms/search/exponential_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda por potencias de 2 + binary search",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "exponential_search_aug1",
+      "name": "Búsqueda Exponencial (aug1)",
+      "path": "data/algorithms/search/exponential_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda por potencias de 2 + binary search",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "exponential_search_aug2",
+      "name": "Búsqueda Exponencial (aug2)",
+      "path": "data/algorithms/search/exponential_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda por potencias de 2 + binary search",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "interpolation_search",
+      "name": "Búsqueda por Interpolación",
+      "path": "data/algorithms/search/interpolation_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Mejor que binary search para datos uniformes (O(log log n) promedio)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "interpolation_search_aug1",
+      "name": "Búsqueda por Interpolación (aug1)",
+      "path": "data/algorithms/search/interpolation_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Mejor que binary search para datos uniformes (O(log log n) promedio)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "interpolation_search_aug2",
+      "name": "Búsqueda por Interpolación (aug2)",
+      "path": "data/algorithms/search/interpolation_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Mejor que binary search para datos uniformes (O(log log n) promedio)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "linear_search",
+      "name": "Búsqueda Lineal",
+      "path": "data/algorithms/search/linear_search.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Búsqueda secuencial en array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "linear_search_aug1",
+      "name": "Búsqueda Lineal (aug1)",
+      "path": "data/algorithms/search/linear_search.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Búsqueda secuencial en array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "linear_search_aug2",
+      "name": "Búsqueda Lineal (aug2)",
+      "path": "data/algorithms/search/linear_search.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Búsqueda secuencial en array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "jump_search",
+      "name": "Jump Search",
+      "path": "data/algorithms/search/jump_search.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Saltos de tamaño √n seguidos de búsqueda lineal (O(√n))",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "jump_search_aug1",
+      "name": "Jump Search (aug1)",
+      "path": "data/algorithms/search/jump_search.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Saltos de tamaño √n seguidos de búsqueda lineal (O(√n))",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "jump_search_aug2",
+      "name": "Jump Search (aug2)",
+      "path": "data/algorithms/search/jump_search.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Saltos de tamaño √n seguidos de búsqueda lineal (O(√n))",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "fibonacci_iterative",
+      "name": "Fibonacci Iterativo",
+      "path": "data/algorithms/search/fibonacci_iterative.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Fibonacci con programación dinámica iterativa",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "fibonacci_iterative_aug1",
+      "name": "Fibonacci Iterativo (aug1)",
+      "path": "data/algorithms/search/fibonacci_iterative.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Fibonacci con programación dinámica iterativa",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "fibonacci_iterative_aug2",
+      "name": "Fibonacci Iterativo (aug2)",
+      "path": "data/algorithms/search/fibonacci_iterative.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Fibonacci con programación dinámica iterativa",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "factorial_recursive",
+      "name": "Factorial Recursivo",
+      "path": "data/algorithms/search/factorial_recursive.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Factorial recursivo lineal",
+      "recurrence": "T(n) = T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "factorial_recursive_aug1",
+      "name": "Factorial Recursivo (aug1)",
+      "path": "data/algorithms/search/factorial_recursive.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Factorial recursivo lineal",
+      "recurrence": "T(n) = T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "factorial_recursive_aug2",
+      "name": "Factorial Recursivo (aug2)",
+      "path": "data/algorithms/search/factorial_recursive.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Factorial recursivo lineal",
+      "recurrence": "T(n) = T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "array_sum",
+      "name": "Suma de Array",
+      "path": "data/algorithms/search/array_sum.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Suma de todos los elementos de un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "array_sum_aug1",
+      "name": "Suma de Array (aug1)",
+      "path": "data/algorithms/search/array_sum.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Suma de todos los elementos de un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "array_sum_aug2",
+      "name": "Suma de Array (aug2)",
+      "path": "data/algorithms/search/array_sum.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Suma de todos los elementos de un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_max",
+      "name": "Encontrar Máximo",
+      "path": "data/algorithms/search/find_max.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encuentra el valor máximo en un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_max_aug1",
+      "name": "Encontrar Máximo (aug1)",
+      "path": "data/algorithms/search/find_max.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encuentra el valor máximo en un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_max_aug2",
+      "name": "Encontrar Máximo (aug2)",
+      "path": "data/algorithms/search/find_max.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encuentra el valor máximo en un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "dfs",
+      "name": "Depth-First Search",
+      "path": "data/algorithms/graph/dfs.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Búsqueda en profundidad en grafo",
+      "recurrence": "T(n) = T(n-1) + O(1) en grafo lineal",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "dfs_aug1",
+      "name": "Depth-First Search (aug1)",
+      "path": "data/algorithms/graph/dfs.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Búsqueda en profundidad en grafo",
+      "recurrence": "T(n) = T(n-1) + O(1) en grafo lineal",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "dfs_aug2",
+      "name": "Depth-First Search (aug2)",
+      "path": "data/algorithms/graph/dfs.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Búsqueda en profundidad en grafo",
+      "recurrence": "T(n) = T(n-1) + O(1) en grafo lineal",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "bfs",
+      "name": "Breadth-First Search",
+      "path": "data/algorithms/graph/bfs.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Búsqueda en amplitud en grafo",
+      "recurrence": "No aplica (iterativo con cola)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "bfs_aug1",
+      "name": "Breadth-First Search (aug1)",
+      "path": "data/algorithms/graph/bfs.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Búsqueda en amplitud en grafo",
+      "recurrence": "No aplica (iterativo con cola)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "bfs_aug2",
+      "name": "Breadth-First Search (aug2)",
+      "path": "data/algorithms/graph/bfs.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Búsqueda en amplitud en grafo",
+      "recurrence": "No aplica (iterativo con cola)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "topological_sort",
+      "name": "Ordenamiento Topológico",
+      "path": "data/algorithms/graph/topological_sort.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "DFS con stack para ordenamiento topológico (O(V+E))",
+      "recurrence": "T(n) = T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "topological_sort_aug1",
+      "name": "Ordenamiento Topológico (aug1)",
+      "path": "data/algorithms/graph/topological_sort.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "DFS con stack para ordenamiento topológico (O(V+E))",
+      "recurrence": "T(n) = T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "topological_sort_aug2",
+      "name": "Ordenamiento Topológico (aug2)",
+      "path": "data/algorithms/graph/topological_sort.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "DFS con stack para ordenamiento topológico (O(V+E))",
+      "recurrence": "T(n) = T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "merge_sort",
+      "name": "Merge Sort",
+      "path": "data/algorithms/sort/merge_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenamiento por mezcla (divide y conquista)",
+      "recurrence": "T(n) = 2T(n/2) + O(n)",
+      "master_theorem": {
+        "a": 2,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 2,
+        "result": "O(n log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "merge_sort_aug1",
+      "name": "Merge Sort (aug1)",
+      "path": "data/algorithms/sort/merge_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenamiento por mezcla (divide y conquista)",
+      "recurrence": "T(n) = 2T(n/2) + O(n)",
+      "master_theorem": {
+        "a": 2,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 2,
+        "result": "O(n log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "merge_sort_aug2",
+      "name": "Merge Sort (aug2)",
+      "path": "data/algorithms/sort/merge_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenamiento por mezcla (divide y conquista)",
+      "recurrence": "T(n) = 2T(n/2) + O(n)",
+      "master_theorem": {
+        "a": 2,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 2,
+        "result": "O(n log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "quick_sort",
+      "name": "Quick Sort",
+      "path": "data/algorithms/sort/quick_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenamiento rápido (divide y conquista)",
+      "recurrence": "T(n) = 2T(n/2) + O(n)",
+      "master_theorem": {
+        "a": 2,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 2,
+        "result": "O(n log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "quick_sort_aug1",
+      "name": "Quick Sort (aug1)",
+      "path": "data/algorithms/sort/quick_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenamiento rápido (divide y conquista)",
+      "recurrence": "T(n) = 2T(n/2) + O(n)",
+      "master_theorem": {
+        "a": 2,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 2,
+        "result": "O(n log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "quick_sort_aug2",
+      "name": "Quick Sort (aug2)",
+      "path": "data/algorithms/sort/quick_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenamiento rápido (divide y conquista)",
+      "recurrence": "T(n) = 2T(n/2) + O(n)",
+      "master_theorem": {
+        "a": 2,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 2,
+        "result": "O(n log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "heap_sort",
+      "name": "Heap Sort",
+      "path": "data/algorithms/sort/heap_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenamiento con heap (construcción + extracciones)",
+      "recurrence": "T(n) = n * O(log n)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "heap_sort_aug1",
+      "name": "Heap Sort (aug1)",
+      "path": "data/algorithms/sort/heap_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenamiento con heap (construcción + extracciones)",
+      "recurrence": "T(n) = n * O(log n)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "heap_sort_aug2",
+      "name": "Heap Sort (aug2)",
+      "path": "data/algorithms/sort/heap_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenamiento con heap (construcción + extracciones)",
+      "recurrence": "T(n) = n * O(log n)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "counting_sort",
+      "name": "Counting Sort",
+      "path": "data/algorithms/sort/counting_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenamiento por conteo (O(n+k) lineal cuando k=O(n))",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "counting_sort_aug1",
+      "name": "Counting Sort (aug1)",
+      "path": "data/algorithms/sort/counting_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenamiento por conteo (O(n+k) lineal cuando k=O(n))",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "counting_sort_aug2",
+      "name": "Counting Sort (aug2)",
+      "path": "data/algorithms/sort/counting_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenamiento por conteo (O(n+k) lineal cuando k=O(n))",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "bubble_sort",
+      "name": "Bubble Sort",
+      "path": "data/algorithms/sort/bubble_sort.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Ordenamiento burbuja (dos loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "bubble_sort_aug1",
+      "name": "Bubble Sort (aug1)",
+      "path": "data/algorithms/sort/bubble_sort.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Ordenamiento burbuja (dos loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "bubble_sort_aug2",
+      "name": "Bubble Sort (aug2)",
+      "path": "data/algorithms/sort/bubble_sort.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Ordenamiento burbuja (dos loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "selection_sort",
+      "name": "Selection Sort",
+      "path": "data/algorithms/sort/selection_sort.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Ordenamiento por selección (dos loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "selection_sort_aug1",
+      "name": "Selection Sort (aug1)",
+      "path": "data/algorithms/sort/selection_sort.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Ordenamiento por selección (dos loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "selection_sort_aug2",
+      "name": "Selection Sort (aug2)",
+      "path": "data/algorithms/sort/selection_sort.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Ordenamiento por selección (dos loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "insertion_sort",
+      "name": "Insertion Sort",
+      "path": "data/algorithms/sort/insertion_sort.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Ordenamiento por inserción (dos loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "insertion_sort_aug1",
+      "name": "Insertion Sort (aug1)",
+      "path": "data/algorithms/sort/insertion_sort.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Ordenamiento por inserción (dos loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "insertion_sort_aug2",
+      "name": "Insertion Sort (aug2)",
+      "path": "data/algorithms/sort/insertion_sort.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Ordenamiento por inserción (dos loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "dijkstra",
+      "name": "Algoritmo de Dijkstra",
+      "path": "data/algorithms/graph/dijkstra.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Camino más corto (O(n²) con matriz adyacencia)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "dijkstra_aug1",
+      "name": "Algoritmo de Dijkstra (aug1)",
+      "path": "data/algorithms/graph/dijkstra.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Camino más corto (O(n²) con matriz adyacencia)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "dijkstra_aug2",
+      "name": "Algoritmo de Dijkstra (aug2)",
+      "path": "data/algorithms/graph/dijkstra.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Camino más corto (O(n²) con matriz adyacencia)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "bellman_ford",
+      "name": "Algoritmo Bellman-Ford",
+      "path": "data/algorithms/graph/bellman_ford.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Camino más corto con pesos negativos (O(V·E))",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "bellman_ford_aug1",
+      "name": "Algoritmo Bellman-Ford (aug1)",
+      "path": "data/algorithms/graph/bellman_ford.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Camino más corto con pesos negativos (O(V·E))",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "bellman_ford_aug2",
+      "name": "Algoritmo Bellman-Ford (aug2)",
+      "path": "data/algorithms/graph/bellman_ford.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Camino más corto con pesos negativos (O(V·E))",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "matrix_multiplication",
+      "name": "Multiplicación de Matrices",
+      "path": "data/algorithms/search/matrix_multiplication.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Multiplicación naive de matrices (O(n³) tres loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "matrix_multiplication_aug1",
+      "name": "Multiplicación de Matrices (aug1)",
+      "path": "data/algorithms/search/matrix_multiplication.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Multiplicación naive de matrices (O(n³) tres loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "matrix_multiplication_aug2",
+      "name": "Multiplicación de Matrices (aug2)",
+      "path": "data/algorithms/search/matrix_multiplication.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Multiplicación naive de matrices (O(n³) tres loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "floyd_warshall",
+      "name": "Floyd-Warshall",
+      "path": "data/algorithms/graph/floyd_warshall.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Todos los caminos más cortos (O(n³) tres loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "floyd_warshall_aug1",
+      "name": "Floyd-Warshall (aug1)",
+      "path": "data/algorithms/graph/floyd_warshall.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Todos los caminos más cortos (O(n³) tres loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "floyd_warshall_aug2",
+      "name": "Floyd-Warshall (aug2)",
+      "path": "data/algorithms/graph/floyd_warshall.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Todos los caminos más cortos (O(n³) tres loops anidados)",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "fibonacci_recursive",
+      "name": "Fibonacci Recursivo",
+      "path": "data/algorithms/search/fibonacci_recursive.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Fibonacci recursivo sin memorización (exponencial)",
+      "recurrence": "T(n) = T(n-1) + T(n-2) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "fibonacci_recursive_aug1",
+      "name": "Fibonacci Recursivo (aug1)",
+      "path": "data/algorithms/search/fibonacci_recursive.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Fibonacci recursivo sin memorización (exponencial)",
+      "recurrence": "T(n) = T(n-1) + T(n-2) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "fibonacci_recursive_aug2",
+      "name": "Fibonacci Recursivo (aug2)",
+      "path": "data/algorithms/search/fibonacci_recursive.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Fibonacci recursivo sin memorización (exponencial)",
+      "recurrence": "T(n) = T(n-1) + T(n-2) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "subset_sum",
+      "name": "Subset Sum (Backtracking)",
+      "path": "data/algorithms/search/subset_sum.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todos los subconjuntos posibles (backtracking)",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "subset_sum_aug1",
+      "name": "Subset Sum (Backtracking) (aug1)",
+      "path": "data/algorithms/search/subset_sum.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todos los subconjuntos posibles (backtracking)",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "subset_sum_aug2",
+      "name": "Subset Sum (Backtracking) (aug2)",
+      "path": "data/algorithms/search/subset_sum.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todos los subconjuntos posibles (backtracking)",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "hanoi",
+      "name": "Torres de Hanoi",
+      "path": "data/algorithms/search/hanoi.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Torres de Hanoi recursivas (exponencial)",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "hanoi_aug1",
+      "name": "Torres de Hanoi (aug1)",
+      "path": "data/algorithms/search/hanoi.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Torres de Hanoi recursivas (exponencial)",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "hanoi_aug2",
+      "name": "Torres de Hanoi (aug2)",
+      "path": "data/algorithms/search/hanoi.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Torres de Hanoi recursivas (exponencial)",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "permutations",
+      "name": "Permutaciones (Backtracking)",
+      "path": "data/algorithms/search/permutations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todas las permutaciones (O(n!) factorial)",
+      "recurrence": "T(n) = n * T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "permutations_aug1",
+      "name": "Permutaciones (Backtracking) (aug1)",
+      "path": "data/algorithms/search/permutations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todas las permutaciones (O(n!) factorial)",
+      "recurrence": "T(n) = n * T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "permutations_aug2",
+      "name": "Permutaciones (Backtracking) (aug2)",
+      "path": "data/algorithms/search/permutations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todas las permutaciones (O(n!) factorial)",
+      "recurrence": "T(n) = n * T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "get_element",
+      "name": "Obtener Elemento",
+      "path": "data/algorithms/search/get_element.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Retorna elemento en posición específica",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "get_element_aug1",
+      "name": "Obtener Elemento (aug1)",
+      "path": "data/algorithms/search/get_element.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Retorna elemento en posición específica",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "get_element_aug2",
+      "name": "Obtener Elemento (aug2)",
+      "path": "data/algorithms/search/get_element.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Retorna elemento en posición específica",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "sum_two_numbers",
+      "name": "Suma de Dos Números",
+      "path": "data/algorithms/search/sum_two_numbers.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Suma simple de dos números",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "sum_two_numbers_aug1",
+      "name": "Suma de Dos Números (aug1)",
+      "path": "data/algorithms/search/sum_two_numbers.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Suma simple de dos números",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "sum_two_numbers_aug2",
+      "name": "Suma de Dos Números (aug2)",
+      "path": "data/algorithms/search/sum_two_numbers.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Suma simple de dos números",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "check_even",
+      "name": "Verificar Par",
+      "path": "data/algorithms/search/check_even.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Verifica si un número es par",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "check_even_aug1",
+      "name": "Verificar Par (aug1)",
+      "path": "data/algorithms/search/check_even.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Verifica si un número es par",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "check_even_aug2",
+      "name": "Verificar Par (aug2)",
+      "path": "data/algorithms/search/check_even.go",
+      "complexity": "O(1)",
+      "complexity_class": 0,
+      "description": "Verifica si un número es par",
+      "recurrence": "No aplica (operación atómica)",
+      "master_theorem": null,
+      "features": {
+        "loops": 0,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "ternary_search",
+      "name": "Búsqueda Ternaria",
+      "path": "data/algorithms/search/ternary_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Divide el espacio de búsqueda en tres partes",
+      "recurrence": "T(n) = T(n/3) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 3,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "ternary_search_aug1",
+      "name": "Búsqueda Ternaria (aug1)",
+      "path": "data/algorithms/search/ternary_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Divide el espacio de búsqueda en tres partes",
+      "recurrence": "T(n) = T(n/3) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 3,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "ternary_search_aug2",
+      "name": "Búsqueda Ternaria (aug2)",
+      "path": "data/algorithms/search/ternary_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Divide el espacio de búsqueda en tres partes",
+      "recurrence": "T(n) = T(n/3) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 3,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "lower_bound_search",
+      "name": "Lower Bound Binary Search",
+      "path": "data/algorithms/search/lower_bound_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra el primer elemento no menor que el objetivo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "lower_bound_search_aug1",
+      "name": "Lower Bound Binary Search (aug1)",
+      "path": "data/algorithms/search/lower_bound_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra el primer elemento no menor que el objetivo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "lower_bound_search_aug2",
+      "name": "Lower Bound Binary Search (aug2)",
+      "path": "data/algorithms/search/lower_bound_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra el primer elemento no menor que el objetivo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "upper_bound_search",
+      "name": "Upper Bound Binary Search",
+      "path": "data/algorithms/search/upper_bound_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra el primer elemento mayor que el objetivo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "upper_bound_search_aug1",
+      "name": "Upper Bound Binary Search (aug1)",
+      "path": "data/algorithms/search/upper_bound_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra el primer elemento mayor que el objetivo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "upper_bound_search_aug2",
+      "name": "Upper Bound Binary Search (aug2)",
+      "path": "data/algorithms/search/upper_bound_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra el primer elemento mayor que el objetivo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_first_occurrence",
+      "name": "Binary Search First Occurrence",
+      "path": "data/algorithms/search/binary_search_first_occurrence.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra la primera ocurrencia de un elemento",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_first_occurrence_aug1",
+      "name": "Binary Search First Occurrence (aug1)",
+      "path": "data/algorithms/search/binary_search_first_occurrence.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra la primera ocurrencia de un elemento",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_first_occurrence_aug2",
+      "name": "Binary Search First Occurrence (aug2)",
+      "path": "data/algorithms/search/binary_search_first_occurrence.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra la primera ocurrencia de un elemento",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_last_occurrence",
+      "name": "Binary Search Last Occurrence",
+      "path": "data/algorithms/search/binary_search_last_occurrence.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra la última ocurrencia de un elemento",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_last_occurrence_aug1",
+      "name": "Binary Search Last Occurrence (aug1)",
+      "path": "data/algorithms/search/binary_search_last_occurrence.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra la última ocurrencia de un elemento",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_last_occurrence_aug2",
+      "name": "Binary Search Last Occurrence (aug2)",
+      "path": "data/algorithms/search/binary_search_last_occurrence.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra la última ocurrencia de un elemento",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_rotated",
+      "name": "Binary Search in Rotated Array",
+      "path": "data/algorithms/search/binary_search_rotated.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria en array rotado",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_rotated_aug1",
+      "name": "Binary Search in Rotated Array (aug1)",
+      "path": "data/algorithms/search/binary_search_rotated.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria en array rotado",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_rotated_aug2",
+      "name": "Binary Search in Rotated Array (aug2)",
+      "path": "data/algorithms/search/binary_search_rotated.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria en array rotado",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "sqrt_binary_search",
+      "name": "Square Root Binary Search",
+      "path": "data/algorithms/search/sqrt_binary_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Calcula raíz cuadrada usando búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "sqrt_binary_search_aug1",
+      "name": "Square Root Binary Search (aug1)",
+      "path": "data/algorithms/search/sqrt_binary_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Calcula raíz cuadrada usando búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "sqrt_binary_search_aug2",
+      "name": "Square Root Binary Search (aug2)",
+      "path": "data/algorithms/search/sqrt_binary_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Calcula raíz cuadrada usando búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "peak_element_search",
+      "name": "Peak Element Binary Search",
+      "path": "data/algorithms/search/peak_element_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra un elemento pico usando búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "peak_element_search_aug1",
+      "name": "Peak Element Binary Search (aug1)",
+      "path": "data/algorithms/search/peak_element_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra un elemento pico usando búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "peak_element_search_aug2",
+      "name": "Peak Element Binary Search (aug2)",
+      "path": "data/algorithms/search/peak_element_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra un elemento pico usando búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_2d",
+      "name": "Binary Search in 2D Matrix",
+      "path": "data/algorithms/search/binary_search_2d.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria en matriz 2D ordenada",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_2d_aug1",
+      "name": "Binary Search in 2D Matrix (aug1)",
+      "path": "data/algorithms/search/binary_search_2d.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria en matriz 2D ordenada",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "binary_search_2d_aug2",
+      "name": "Binary Search in 2D Matrix (aug2)",
+      "path": "data/algorithms/search/binary_search_2d.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda binaria en matriz 2D ordenada",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_kth_smallest",
+      "name": "Find Kth Smallest Element",
+      "path": "data/algorithms/search/find_kth_smallest.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra k-ésimo elemento más pequeño con QuickSelect",
+      "recurrence": "T(n) = T(n/2) + O(n)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 3,
+        "result": "O(n) promedio, O(log n) mejor caso"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "find_kth_smallest_aug1",
+      "name": "Find Kth Smallest Element (aug1)",
+      "path": "data/algorithms/search/find_kth_smallest.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra k-ésimo elemento más pequeño con QuickSelect",
+      "recurrence": "T(n) = T(n/2) + O(n)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 3,
+        "result": "O(n) promedio, O(log n) mejor caso"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "find_kth_smallest_aug2",
+      "name": "Find Kth Smallest Element (aug2)",
+      "path": "data/algorithms/search/find_kth_smallest.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra k-ésimo elemento más pequeño con QuickSelect",
+      "recurrence": "T(n) = T(n/2) + O(n)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 3,
+        "result": "O(n) promedio, O(log n) mejor caso"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "bitonic_search",
+      "name": "Bitonic Array Search",
+      "path": "data/algorithms/search/bitonic_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda en array bitónico (crece y decrece)",
+      "recurrence": "T(n) = 2*T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "bitonic_search_aug1",
+      "name": "Bitonic Array Search (aug1)",
+      "path": "data/algorithms/search/bitonic_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda en array bitónico (crece y decrece)",
+      "recurrence": "T(n) = 2*T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "bitonic_search_aug2",
+      "name": "Bitonic Array Search (aug2)",
+      "path": "data/algorithms/search/bitonic_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda en array bitónico (crece y decrece)",
+      "recurrence": "T(n) = 2*T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_closest_element",
+      "name": "Find Closest Element",
+      "path": "data/algorithms/search/closest_element.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra el elemento más cercano a un valor objetivo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_closest_element_aug1",
+      "name": "Find Closest Element (aug1)",
+      "path": "data/algorithms/search/closest_element.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra el elemento más cercano a un valor objetivo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_closest_element_aug2",
+      "name": "Find Closest Element (aug2)",
+      "path": "data/algorithms/search/closest_element.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra el elemento más cercano a un valor objetivo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_missing_number",
+      "name": "Find Missing Number",
+      "path": "data/algorithms/search/find_missing_number.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra número faltante en secuencia con búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_missing_number_aug1",
+      "name": "Find Missing Number (aug1)",
+      "path": "data/algorithms/search/find_missing_number.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra número faltante en secuencia con búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_missing_number_aug2",
+      "name": "Find Missing Number (aug2)",
+      "path": "data/algorithms/search/find_missing_number.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra número faltante en secuencia con búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "search_infinite_array",
+      "name": "Search in Infinite Array",
+      "path": "data/algorithms/search/search_infinite_array.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda en array infinito con expansión exponencial",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "search_infinite_array_aug1",
+      "name": "Search in Infinite Array (aug1)",
+      "path": "data/algorithms/search/search_infinite_array.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda en array infinito con expansión exponencial",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "search_infinite_array_aug2",
+      "name": "Search in Infinite Array (aug2)",
+      "path": "data/algorithms/search/search_infinite_array.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda en array infinito con expansión exponencial",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "count_rotations",
+      "name": "Count Array Rotations",
+      "path": "data/algorithms/search/count_rotations.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Cuenta rotaciones de array ordenado usando búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "count_rotations_aug1",
+      "name": "Count Array Rotations (aug1)",
+      "path": "data/algorithms/search/count_rotations.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Cuenta rotaciones de array ordenado usando búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "count_rotations_aug2",
+      "name": "Count Array Rotations (aug2)",
+      "path": "data/algorithms/search/count_rotations.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Cuenta rotaciones de array ordenado usando búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_fixed_point",
+      "name": "Find Fixed Point",
+      "path": "data/algorithms/search/find_fixed_point.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra punto fijo (arr[i] == i) con búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_fixed_point_aug1",
+      "name": "Find Fixed Point (aug1)",
+      "path": "data/algorithms/search/find_fixed_point.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra punto fijo (arr[i] == i) con búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_fixed_point_aug2",
+      "name": "Find Fixed Point (aug2)",
+      "path": "data/algorithms/search/find_fixed_point.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Encuentra punto fijo (arr[i] == i) con búsqueda binaria",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "count_occurrences",
+      "name": "Contar Ocurrencias",
+      "path": "data/algorithms/search/count_occurrences.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Cuenta cuántas veces aparece un valor",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "count_occurrences_aug1",
+      "name": "Contar Ocurrencias (aug1)",
+      "path": "data/algorithms/search/count_occurrences.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Cuenta cuántas veces aparece un valor",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "count_occurrences_aug2",
+      "name": "Contar Ocurrencias (aug2)",
+      "path": "data/algorithms/search/count_occurrences.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Cuenta cuántas veces aparece un valor",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "reverse_array",
+      "name": "Invertir Array",
+      "path": "data/algorithms/search/reverse_array.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Invierte los elementos de un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "reverse_array_aug1",
+      "name": "Invertir Array (aug1)",
+      "path": "data/algorithms/search/reverse_array.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Invierte los elementos de un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "reverse_array_aug2",
+      "name": "Invertir Array (aug2)",
+      "path": "data/algorithms/search/reverse_array.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Invierte los elementos de un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_min",
+      "name": "Encontrar Mínimo",
+      "path": "data/algorithms/search/find_min.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encuentra el valor mínimo en un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_min_aug1",
+      "name": "Encontrar Mínimo (aug1)",
+      "path": "data/algorithms/search/find_min.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encuentra el valor mínimo en un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "find_min_aug2",
+      "name": "Encontrar Mínimo (aug2)",
+      "path": "data/algorithms/search/find_min.go",
+      "complexity": "O(n)",
+      "complexity_class": 2,
+      "description": "Encuentra el valor mínimo en un array",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "karatsuba_multiply",
+      "name": "Multiplicación de Karatsuba",
+      "path": "data/algorithms/search/karatsuba_multiply.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Multiplicación rápida divide y conquista",
+      "recurrence": "T(n) = 3T(n/2) + O(n)",
+      "master_theorem": {
+        "a": 3,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 1,
+        "result": "O(n^1.58)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "karatsuba_multiply_aug1",
+      "name": "Multiplicación de Karatsuba (aug1)",
+      "path": "data/algorithms/search/karatsuba_multiply.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Multiplicación rápida divide y conquista",
+      "recurrence": "T(n) = 3T(n/2) + O(n)",
+      "master_theorem": {
+        "a": 3,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 1,
+        "result": "O(n^1.58)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "karatsuba_multiply_aug2",
+      "name": "Multiplicación de Karatsuba (aug2)",
+      "path": "data/algorithms/search/karatsuba_multiply.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Multiplicación rápida divide y conquista",
+      "recurrence": "T(n) = 3T(n/2) + O(n)",
+      "master_theorem": {
+        "a": 3,
+        "b": 2,
+        "f_n": "O(n)",
+        "case": 1,
+        "result": "O(n^1.58)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "shell_sort",
+      "name": "Shell Sort",
+      "path": "data/algorithms/sort/shell_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Insertion sort mejorado con gaps",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "shell_sort_aug1",
+      "name": "Shell Sort (aug1)",
+      "path": "data/algorithms/sort/shell_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Insertion sort mejorado con gaps",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "shell_sort_aug2",
+      "name": "Shell Sort (aug2)",
+      "path": "data/algorithms/sort/shell_sort.go",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Insertion sort mejorado con gaps",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "two_sum",
+      "name": "Two Sum Problem",
+      "path": "data/algorithms/search/two_sum.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Encuentra dos números que sumen un objetivo",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "two_sum_aug1",
+      "name": "Two Sum Problem (aug1)",
+      "path": "data/algorithms/search/two_sum.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Encuentra dos números que sumen un objetivo",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "two_sum_aug2",
+      "name": "Two Sum Problem (aug2)",
+      "path": "data/algorithms/search/two_sum.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Encuentra dos números que sumen un objetivo",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "longest_palindrome",
+      "name": "Palíndromo Más Largo",
+      "path": "data/algorithms/search/longest_palindrome.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Encuentra el palíndromo más largo en una cadena",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "longest_palindrome_aug1",
+      "name": "Palíndromo Más Largo (aug1)",
+      "path": "data/algorithms/search/longest_palindrome.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Encuentra el palíndromo más largo en una cadena",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "longest_palindrome_aug2",
+      "name": "Palíndromo Más Largo (aug2)",
+      "path": "data/algorithms/search/longest_palindrome.go",
+      "complexity": "O(n²)",
+      "complexity_class": 4,
+      "description": "Encuentra el palíndromo más largo en una cadena",
+      "recurrence": "No aplica (iterativo)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": false,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "power_set",
+      "name": "Power Set",
+      "path": "data/algorithms/search/power_set.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todos los subconjuntos de un conjunto",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "power_set_aug1",
+      "name": "Power Set (aug1)",
+      "path": "data/algorithms/search/power_set.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todos los subconjuntos de un conjunto",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "power_set_aug2",
+      "name": "Power Set (aug2)",
+      "path": "data/algorithms/search/power_set.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todos los subconjuntos de un conjunto",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "n_queens",
+      "name": "N-Queens Problem",
+      "path": "data/algorithms/search/n_queens.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Coloca N reinas en un tablero sin conflictos",
+      "recurrence": "T(n) = nT(n-1) + O(n)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": true,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "n_queens_aug1",
+      "name": "N-Queens Problem (aug1)",
+      "path": "data/algorithms/search/n_queens.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Coloca N reinas en un tablero sin conflictos",
+      "recurrence": "T(n) = nT(n-1) + O(n)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": true,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "n_queens_aug2",
+      "name": "N-Queens Problem (aug2)",
+      "path": "data/algorithms/search/n_queens.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Coloca N reinas en un tablero sin conflictos",
+      "recurrence": "T(n) = nT(n-1) + O(n)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": true,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "fast_power",
+      "name": "Fast Power (Binary Exponentiation)",
+      "path": "data/algorithms/search/fast_power.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Exponenciación binaria rápida usando división por 2 y módulo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "fast_power_aug1",
+      "name": "Fast Power (Binary Exponentiation) (aug1)",
+      "path": "data/algorithms/search/fast_power.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Exponenciación binaria rápida usando división por 2 y módulo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "fast_power_aug2",
+      "name": "Fast Power (Binary Exponentiation) (aug2)",
+      "path": "data/algorithms/search/fast_power.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Exponenciación binaria rápida usando división por 2 y módulo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "gcd_euclidean",
+      "name": "GCD Euclidean Algorithm",
+      "path": "data/algorithms/search/gcd_euclidean.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Algoritmo de Euclides para GCD usando módulo y división",
+      "recurrence": "T(n) = T(n mod m) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "gcd_euclidean_aug1",
+      "name": "GCD Euclidean Algorithm (aug1)",
+      "path": "data/algorithms/search/gcd_euclidean.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Algoritmo de Euclides para GCD usando módulo y división",
+      "recurrence": "T(n) = T(n mod m) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "gcd_euclidean_aug2",
+      "name": "GCD Euclidean Algorithm (aug2)",
+      "path": "data/algorithms/search/gcd_euclidean.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Algoritmo de Euclides para GCD usando módulo y división",
+      "recurrence": "T(n) = T(n mod m) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "count_digits",
+      "name": "Count Digits",
+      "path": "data/algorithms/search/count_digits.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Cuenta dígitos dividiendo por 10 iterativamente",
+      "recurrence": "T(n) = T(n/10) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 10,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "count_digits_aug1",
+      "name": "Count Digits (aug1)",
+      "path": "data/algorithms/search/count_digits.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Cuenta dígitos dividiendo por 10 iterativamente",
+      "recurrence": "T(n) = T(n/10) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 10,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "count_digits_aug2",
+      "name": "Count Digits (aug2)",
+      "path": "data/algorithms/search/count_digits.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Cuenta dígitos dividiendo por 10 iterativamente",
+      "recurrence": "T(n) = T(n/10) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 10,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "decimal_to_binary",
+      "name": "Decimal to Binary Conversion",
+      "path": "data/algorithms/search/decimal_to_binary.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Conversión decimal a binario usando división por 2 y módulo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "decimal_to_binary_aug1",
+      "name": "Decimal to Binary Conversion (aug1)",
+      "path": "data/algorithms/search/decimal_to_binary.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Conversión decimal a binario usando división por 2 y módulo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "decimal_to_binary_aug2",
+      "name": "Decimal to Binary Conversion (aug2)",
+      "path": "data/algorithms/search/decimal_to_binary.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Conversión decimal a binario usando división por 2 y módulo",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 1
+      }
+    },
+    {
+      "id": "bst_search",
+      "name": "Binary Search Tree Search",
+      "path": "data/algorithms/search/bst_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda iterativa en árbol binario de búsqueda balanceado",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "bst_search_aug1",
+      "name": "Binary Search Tree Search (aug1)",
+      "path": "data/algorithms/search/bst_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda iterativa en árbol binario de búsqueda balanceado",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "bst_search_aug2",
+      "name": "Binary Search Tree Search (aug2)",
+      "path": "data/algorithms/search/bst_search.go",
+      "complexity": "O(log n)",
+      "complexity_class": 1,
+      "description": "Búsqueda iterativa en árbol binario de búsqueda balanceado",
+      "recurrence": "T(n) = T(n/2) + O(1)",
+      "master_theorem": {
+        "a": 1,
+        "b": 2,
+        "f_n": "O(1)",
+        "case": 2,
+        "result": "O(log n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": false,
+        "nested_depth": 2
+      }
+    },
+    {
+      "id": "combinations",
+      "name": "Combinations (C(n,k))",
+      "path": "data/algorithms/search/combinations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todas las combinaciones de k elementos usando backtracking",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "combinations_aug1",
+      "name": "Combinations (C(n,k)) (aug1)",
+      "path": "data/algorithms/search/combinations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todas las combinaciones de k elementos usando backtracking",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "combinations_aug2",
+      "name": "Combinations (C(n,k)) (aug2)",
+      "path": "data/algorithms/search/combinations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todas las combinaciones de k elementos usando backtracking",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "string_permutations",
+      "name": "String Permutations",
+      "path": "data/algorithms/search/string_permutations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todas las permutaciones de una cadena (n! pero clase exponencial)",
+      "recurrence": "T(n) = n*T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "string_permutations_aug1",
+      "name": "String Permutations (aug1)",
+      "path": "data/algorithms/search/string_permutations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todas las permutaciones de una cadena (n! pero clase exponencial)",
+      "recurrence": "T(n) = n*T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "string_permutations_aug2",
+      "name": "String Permutations (aug2)",
+      "path": "data/algorithms/search/string_permutations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera todas las permutaciones de una cadena (n! pero clase exponencial)",
+      "recurrence": "T(n) = n*T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "sudoku_solver",
+      "name": "Sudoku Solver",
+      "path": "data/algorithms/search/sudoku_solver.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Resuelve sudoku usando backtracking (9^(n*n) exponencial)",
+      "recurrence": "T(n) = 9T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": true,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "sudoku_solver_aug1",
+      "name": "Sudoku Solver (aug1)",
+      "path": "data/algorithms/search/sudoku_solver.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Resuelve sudoku usando backtracking (9^(n*n) exponencial)",
+      "recurrence": "T(n) = 9T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": true,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "sudoku_solver_aug2",
+      "name": "Sudoku Solver (aug2)",
+      "path": "data/algorithms/search/sudoku_solver.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Resuelve sudoku usando backtracking (9^(n*n) exponencial)",
+      "recurrence": "T(n) = 9T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 3,
+        "recursion": true,
+        "nested_depth": 4
+      }
+    },
+    {
+      "id": "graph_coloring",
+      "name": "Graph Coloring",
+      "path": "data/algorithms/search/graph_coloring.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Asigna colores a vértices usando backtracking (m^n exponencial)",
+      "recurrence": "T(n) = m*T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "graph_coloring_aug1",
+      "name": "Graph Coloring (aug1)",
+      "path": "data/algorithms/search/graph_coloring.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Asigna colores a vértices usando backtracking (m^n exponencial)",
+      "recurrence": "T(n) = m*T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "graph_coloring_aug2",
+      "name": "Graph Coloring (aug2)",
+      "path": "data/algorithms/search/graph_coloring.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Asigna colores a vértices usando backtracking (m^n exponencial)",
+      "recurrence": "T(n) = m*T(n-1) + O(1)",
+      "master_theorem": null,
+      "features": {
+        "loops": 2,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "knapsack_exponential",
+      "name": "Knapsack 0/1 (Brute Force)",
+      "path": "data/algorithms/search/knapsack_exponential.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Knapsack con fuerza bruta recursiva",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "knapsack_exponential_aug1",
+      "name": "Knapsack 0/1 (Brute Force) (aug1)",
+      "path": "data/algorithms/search/knapsack_exponential.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Knapsack con fuerza bruta recursiva",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "knapsack_exponential_aug2",
+      "name": "Knapsack 0/1 (Brute Force) (aug2)",
+      "path": "data/algorithms/search/knapsack_exponential.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Knapsack con fuerza bruta recursiva",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "generate_parentheses",
+      "name": "Generate Valid Parentheses",
+      "path": "data/algorithms/search/generate_parentheses.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera paréntesis válidos usando backtracking (Catalan number, ~4^n/sqrt(n))",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "generate_parentheses_aug1",
+      "name": "Generate Valid Parentheses (aug1)",
+      "path": "data/algorithms/search/generate_parentheses.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera paréntesis válidos usando backtracking (Catalan number, ~4^n/sqrt(n))",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "generate_parentheses_aug2",
+      "name": "Generate Valid Parentheses (aug2)",
+      "path": "data/algorithms/search/generate_parentheses.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera paréntesis válidos usando backtracking (Catalan number, ~4^n/sqrt(n))",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "word_search",
+      "name": "Word Search (Backtracking)",
+      "path": "data/algorithms/search/word_search.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Busca palabra en matriz usando backtracking (N*3^L exponencial)",
+      "recurrence": "T(n) = 4T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 4,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(4^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "word_search_aug1",
+      "name": "Word Search (Backtracking) (aug1)",
+      "path": "data/algorithms/search/word_search.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Busca palabra en matriz usando backtracking (N*3^L exponencial)",
+      "recurrence": "T(n) = 4T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 4,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(4^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "word_search_aug2",
+      "name": "Word Search (Backtracking) (aug2)",
+      "path": "data/algorithms/search/word_search.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Busca palabra en matriz usando backtracking (N*3^L exponencial)",
+      "recurrence": "T(n) = 4T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 4,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(4^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "partition_equal_subset",
+      "name": "Partition Equal Subset",
+      "path": "data/algorithms/search/partition_equal_subset.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Determina si array se puede dividir en dos subconjuntos con suma igual",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "partition_equal_subset_aug1",
+      "name": "Partition Equal Subset (aug1)",
+      "path": "data/algorithms/search/partition_equal_subset.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Determina si array se puede dividir en dos subconjuntos con suma igual",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "partition_equal_subset_aug2",
+      "name": "Partition Equal Subset (aug2)",
+      "path": "data/algorithms/search/partition_equal_subset.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Determina si array se puede dividir en dos subconjuntos con suma igual",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "letter_combinations",
+      "name": "Letter Combinations (Phone)",
+      "path": "data/algorithms/search/letter_combinations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera combinaciones de letras del teclado telefónico (4^n exponencial)",
+      "recurrence": "T(n) = 4T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 4,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(4^n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "letter_combinations_aug1",
+      "name": "Letter Combinations (Phone) (aug1)",
+      "path": "data/algorithms/search/letter_combinations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera combinaciones de letras del teclado telefónico (4^n exponencial)",
+      "recurrence": "T(n) = 4T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 4,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(4^n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "letter_combinations_aug2",
+      "name": "Letter Combinations (Phone) (aug2)",
+      "path": "data/algorithms/search/letter_combinations.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Genera combinaciones de letras del teclado telefónico (4^n exponencial)",
+      "recurrence": "T(n) = 4T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 4,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(4^n)"
+      },
+      "features": {
+        "loops": 1,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "rat_in_maze",
+      "name": "Rat in a Maze",
+      "path": "data/algorithms/search/rat_in_maze.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Encuentra camino en laberinto usando backtracking (2^(n^2) exponencial)",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "rat_in_maze_aug1",
+      "name": "Rat in a Maze (aug1)",
+      "path": "data/algorithms/search/rat_in_maze.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Encuentra camino en laberinto usando backtracking (2^(n^2) exponencial)",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    },
+    {
+      "id": "rat_in_maze_aug2",
+      "name": "Rat in a Maze (aug2)",
+      "path": "data/algorithms/search/rat_in_maze.go",
+      "complexity": "O(2^n)",
+      "complexity_class": 5,
+      "description": "Encuentra camino en laberinto usando backtracking (2^(n^2) exponencial)",
+      "recurrence": "T(n) = 2T(n-1) + O(1)",
+      "master_theorem": {
+        "a": 2,
+        "b": 1,
+        "f_n": "O(1)",
+        "case": 1,
+        "result": "O(2^n)"
+      },
+      "features": {
+        "loops": 0,
+        "recursion": true,
+        "nested_depth": 3
+      }
+    }
+  ]
+}
