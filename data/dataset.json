@@ -2225,6 +2225,186 @@
       "complexity_class": 5,
       "description": "Calcular todas las sumas de subarrays",
       "source": "user_provided"
+    },
+    {
+      "id": "merge_sort_recursive_nlogn",
+      "name": "MergeSort",
+      "code": "func MergeSort(arr []int) []int {\n\tif len(arr) <= 1 { return arr }\n\tmid := len(arr) / 2\n\tleft := MergeSort(arr[:mid])\n\tright := MergeSort(arr[mid:])\n\treturn merge(left, right)\n}\n\nfunc merge(a, b []int) []int {\n\ti, j := 0, 0\n\tres := make([]int, 0, len(a)+len(b))\n\tfor i < len(a) && j < len(b) {\n\t\tif a[i] <= b[j] {\n\t\t\tres = append(res, a[i]); i++\n\t\t} else {\n\t\t\tres = append(res, b[j]); j++\n\t\t}\n\t}\n\tres = append(res, a[i:]...)\n\tres = append(res, b[j:]...)\n\treturn res\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Merge Sort recursivo",
+      "source": "user_provided"
+    },
+    {
+      "id": "merge_sort_iterative_nlogn",
+      "name": "MergeSortIter",
+      "code": "func MergeSortIter(arr []int) []int {\n\tn := len(arr)\n\tres := make([]int, n)\n\tcopy(res, arr)\n\n\tfor size := 1; size < n; size *= 2 {\n\t\tfor left := 0; left < n; left += 2 * size {\n\t\t\tmid := min(left+size, n)\n\t\t\tright := min(left+2*size, n)\n\t\t\ttmp := merge(res[left:mid], res[mid:right])\n\t\t\tcopy(res[left:right], tmp)\n\t\t}\n\t}\n\treturn res\n}\n\nfunc min(a, b int) int {\n\tif a < b { return a }\n\treturn b\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Merge Sort iterativo bottom-up",
+      "source": "user_provided"
+    },
+    {
+      "id": "quick_sort_nlogn",
+      "name": "QuickSort",
+      "code": "func QuickSort(arr []int, l, r int) {\n\tif l >= r { return }\n\tp := partition(arr, l, r)\n\tQuickSort(arr, l, p-1)\n\tQuickSort(arr, p+1, r)\n}\n\nfunc partition(arr []int, l, r int) int {\n\tpivot := arr[r]\n\ti := l\n\tfor j := l; j < r; j++ {\n\t\tif arr[j] < pivot {\n\t\t\tarr[i], arr[j] = arr[j], arr[i]\n\t\t\ti++\n\t\t}\n\t}\n\tarr[i], arr[r] = arr[r], arr[i]\n\treturn i\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Quick Sort promedio O(n log n)",
+      "source": "user_provided"
+    },
+    {
+      "id": "heap_sort_nlogn",
+      "name": "HeapSort",
+      "code": "func HeapSort(arr []int) {\n\tn := len(arr)\n\n\tfor i := n/2 - 1; i >= 0; i-- {\n\t\theapify(arr, n, i)\n\t}\n\tfor i := n - 1; i > 0; i-- {\n\t\tarr[0], arr[i] = arr[i], arr[0]\n\t\theapify(arr, i, 0)\n\t}\n}\n\nfunc heapify(arr []int, n, i int) {\n\tl, r := 2*i+1, 2*i+2\n\tlargest := i\n\tif l < n && arr[l] > arr[largest] { largest = l }\n\tif r < n && arr[r] > arr[largest] { largest = r }\n\tif largest != i {\n\t\tarr[i], arr[largest] = arr[largest], arr[i]\n\t\theapify(arr, n, largest)\n\t}\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Heap Sort",
+      "source": "user_provided"
+    },
+    {
+      "id": "sort_ints_library_nlogn",
+      "name": "SortIntsLibrary",
+      "code": "import \"sort\"\n\nfunc SortIntsLibrary(arr []int) {\n\tsort.Ints(arr) // O(n log n)\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenar con librer\u00eda sort.Ints",
+      "source": "user_provided"
+    },
+    {
+      "id": "sort_strings_library_nlogn",
+      "name": "SortStringsLibrary",
+      "code": "import \"sort\"\n\nfunc SortStringsLibrary(arr []string) {\n\tsort.Strings(arr) // O(n log n)\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenar strings con librer\u00eda",
+      "source": "user_provided"
+    },
+    {
+      "id": "kth_smallest_nlogn",
+      "name": "KthSmallest",
+      "code": "import \"sort\"\n\nfunc KthSmallest(arr []int, k int) int {\n\tsort.Ints(arr)\n\treturn arr[k-1]\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Encontrar k-\u00e9simo menor",
+      "source": "user_provided"
+    },
+    {
+      "id": "median_nlogn",
+      "name": "Median",
+      "code": "import \"sort\"\n\nfunc Median(arr []int) float64 {\n\tsort.Ints(arr)\n\tn := len(arr)\n\tif n%2 == 1 { return float64(arr[n/2]) }\n\treturn float64(arr[n/2-1]+arr[n/2]) / 2.0\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Calcular mediana ordenando",
+      "source": "user_provided"
+    },
+    {
+      "id": "unique_sorted_nlogn",
+      "name": "UniqueSorted",
+      "code": "import \"sort\"\n\nfunc UniqueSorted(arr []int) []int {\n\tif len(arr) == 0 { return arr }\n\tsort.Ints(arr)\n\tres := []int{arr[0]}\n\tfor i := 1; i < len(arr); i++ {\n\t\tif arr[i] != arr[i-1] {\n\t\t\tres = append(res, arr[i])\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Eliminar duplicados ordenando",
+      "source": "user_provided"
+    },
+    {
+      "id": "intersection_sort_nlogn",
+      "name": "IntersectionSort",
+      "code": "import \"sort\"\n\nfunc IntersectionSort(a, b []int) []int {\n\tsort.Ints(a)\n\tsort.Ints(b)\n\ti, j := 0, 0\n\tres := []int{}\n\tfor i < len(a) && j < len(b) {\n\t\tif a[i] == b[j] {\n\t\t\tres = append(res, a[i]); i++; j++\n\t\t} else if a[i] < b[j] {\n\t\t\ti++\n\t\t} else {\n\t\t\tj++\n\t\t}\n\t}\n\treturn res\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Intersecci\u00f3n ordenando ambas listas",
+      "source": "user_provided"
+    },
+    {
+      "id": "union_sort_nlogn",
+      "name": "UnionSort",
+      "code": "import \"sort\"\n\nfunc UnionSort(a, b []int) []int {\n\tsort.Ints(a)\n\tsort.Ints(b)\n\ti, j := 0, 0\n\tres := []int{}\n\tfor i < len(a) && j < len(b) {\n\t\tif a[i] == b[j] {\n\t\t\tres = append(res, a[i]); i++; j++\n\t\t} else if a[i] < b[j] {\n\t\t\tres = append(res, a[i]); i++\n\t\t} else {\n\t\t\tres = append(res, b[j]); j++\n\t\t}\n\t}\n\tres = append(res, a[i:]...)\n\tres = append(res, b[j:]...)\n\treturn res\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Uni\u00f3n de dos listas ordenadas",
+      "source": "user_provided"
+    },
+    {
+      "id": "balanced_bst_nlogn",
+      "name": "BuildBalancedBST",
+      "code": "type Node struct {\n\tVal int\n\tLeft, Right *Node\n}\n\nfunc BuildBalancedBST(sorted []int) *Node {\n\tif len(sorted) == 0 { return nil }\n\tmid := len(sorted)/2\n\troot := &Node{Val: sorted[mid]}\n\troot.Left = BuildBalancedBST(sorted[:mid])\n\troot.Right = BuildBalancedBST(sorted[mid+1:])\n\treturn root\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Construir BST balanceado",
+      "source": "user_provided"
+    },
+    {
+      "id": "insert_many_balanced_tree_nlogn",
+      "name": "InsertManyBalancedTree",
+      "code": "func InsertManyBalancedTree(values []int) {\n\tvar tree BalancedTree\n\tfor _, v := range values { // n veces\n\t\ttree.Insert(v) // log n\n\t}\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Insertar n elementos en \u00e1rbol balanceado",
+      "source": "user_provided"
+    },
+    {
+      "id": "sort_binary_queries_nlogn",
+      "name": "SortAndBinaryQueries",
+      "code": "import \"sort\"\n\nfunc SortAndBinaryQueries(arr []int, queries []int) []bool {\n\tsort.Ints(arr) // n log n\n\tres := make([]bool, len(queries))\n\tfor i, q := range queries { // m veces\n\t\tidx := sort.SearchInts(arr, q) // log n\n\t\tres[i] = idx < len(arr) && arr[idx] == q\n\t}\n\treturn res\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenar y buscar binaria",
+      "source": "user_provided"
+    },
+    {
+      "id": "count_inversions_nlogn",
+      "name": "CountInversions",
+      "code": "func CountInversions(arr []int) int {\n\t_, inv := sortCount(arr)\n\treturn inv\n}\n\nfunc sortCount(arr []int) ([]int, int) {\n\tif len(arr) <= 1 { return arr, 0 }\n\tmid := len(arr)/2\n\tleft, invL := sortCount(arr[:mid])\n\tright, invR := sortCount(arr[mid:])\n\tmerged, invM := mergeCount(left, right)\n\treturn merged, invL+invR+invM\n}\n\nfunc mergeCount(a, b []int) ([]int, int) {\n\ti, j, inv := 0, 0, 0\n\tres := []int{}\n\tfor i < len(a) && j < len(b) {\n\t\tif a[i] <= b[j] {\n\t\t\tres = append(res, a[i]); i++\n\t\t} else {\n\t\t\tres = append(res, b[j]); j++\n\t\t\tinv += len(a) - i\n\t\t}\n\t}\n\tres = append(res, a[i:]...)\n\tres = append(res, b[j:]...)\n\treturn res, inv\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Contar inversiones con merge sort",
+      "source": "user_provided"
+    },
+    {
+      "id": "top_k_heap_nlogn",
+      "name": "TopK",
+      "code": "import \"container/heap\"\n\ntype MinHeap []int\nfunc (h MinHeap) Len() int { return len(h) }\nfunc (h MinHeap) Less(i, j int) bool { return h[i] < h[j] }\nfunc (h MinHeap) Swap(i, j int) { h[i], h[j] = h[j], h[i] }\nfunc (h *MinHeap) Push(x any) { *h = append(*h, x.(int)) }\nfunc (h *MinHeap) Pop() any {\n\told := *h\n\tn := len(old)\n\tx := old[n-1]\n\t*h = old[:n-1]\n\treturn x\n}\n\nfunc TopK(arr []int, k int) []int {\n\th := &MinHeap{}\n\theap.Init(h)\n\tfor _, v := range arr {\n\t\theap.Push(h, v)\n\t\tif h.Len() > k {\n\t\t\theap.Pop(h)\n\t\t}\n\t}\n\tres := make([]int, h.Len())\n\tfor i := len(res)-1; i >= 0; i-- {\n\t\tres[i] = heap.Pop(h).(int)\n\t}\n\treturn res\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Top-K usando heap",
+      "source": "user_provided"
+    },
+    {
+      "id": "sort_pairs_nlogn",
+      "name": "SortPairs",
+      "code": "import \"sort\"\n\ntype Pair struct{ A, B int }\n\nfunc SortPairs(pairs []Pair) {\n\tsort.Slice(pairs, func(i, j int) bool {\n\t\treturn pairs[i].A < pairs[j].A\n\t}) // O(n log n)\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Ordenar pares por primer elemento",
+      "source": "user_provided"
+    },
+    {
+      "id": "canonical_anagrams_nlogn",
+      "name": "Canonical",
+      "code": "import \"sort\"\n\nfunc Canonical(word string) string {\n\tr := []rune(word)\n\tsort.Slice(r, func(i, j int) bool { return r[i] < r[j] })\n\treturn string(r)\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Forma can\u00f3nica para anagramas",
+      "source": "user_provided"
+    },
+    {
+      "id": "dijkstra_sparse_nlogn",
+      "name": "DijkstraSparse",
+      "code": "func DijkstraSparse(graph [][]Edge, start int) []int {\n\t// usando prioridad (heap) => cada pop/push log V\n\t// total O(E log V)\n\treturn nil\n}\n\ntype Edge struct{ To, W int }",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Dijkstra con heap (sparse graph)",
+      "source": "user_provided"
+    },
+    {
+      "id": "heapify_extract_nlogn",
+      "name": "HeapifyAndExtract",
+      "code": "import \"container/heap\"\n\nfunc HeapifyAndExtract(arr []int) []int {\n\th := MinHeap(arr)\n\theap.Init(&h) // O(n)\n\tres := []int{}\n\tfor h.Len() > 0 { // n veces\n\t\tres = append(res, heap.Pop(&h).(int)) // log n\n\t}\n\treturn res\n}",
+      "complexity": "O(n log n)",
+      "complexity_class": 3,
+      "description": "Heapificar y extraer todo",
+      "source": "user_provided"
     }
   ]
 }

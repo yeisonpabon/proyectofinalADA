@@ -81,19 +81,21 @@ def show_stats():
     print("=" * 70)
     
     # Verificar si el modelo existe
-    model_path = "experiments/models/mlp_complexity_classifier.npz"
+    # V6 (220) es el MODELO ÓPTIMO con 75.86% accuracy
+    model_path = "experiments/models/mlp_complexity_classifier_220.npz"
     if not os.path.exists(model_path):
-        print("⚠️  Modelo no encontrado. Ejecuta primero: python proyecto.py --train")
+        print("⚠️  Modelo v6 no encontrado. Ejecuta: python add_and_train_220.py")
         return
     
-    # Cargar historial
-    history_path = "experiments/logs/training_history.json"
+    # Cargar historial v6
+    history_path = "experiments/logs/training_history_220.json"
     if os.path.exists(history_path):
         with open(history_path, 'r') as f:
             history = json.load(f)
         
-        print(f"\n✓ Modelo entrenado encontrado")
+        print(f"\n✓ Modelo v6 (ÓPTIMO) encontrado")
         print(f"✓ Épocas completadas: {len(history['train_loss'])}")
+        print(f"✓ Algoritmos: 144 (balanceados)")
         print(f"\nMétricas finales:")
         print(f"  • Train Loss:     {history['train_loss'][-1]:.4f}")
         print(f"  • Train Accuracy: {history['train_accuracy'][-1]:.4f} ({history['train_accuracy'][-1]*100:.2f}%)")
@@ -140,11 +142,11 @@ python proyecto.py --help
     Muestra esta ayuda.
 
 
-ARCHIVOS GENERADOS:
-------------------
+ARCHIVOS GENERADOS (V6 ÓPTIMO):
+------------------------------
 
-experiments/models/mlp_complexity_classifier.npz  - Modelo entrenado
-experiments/logs/training_history.json            - Historial de métricas
+experiments/models/mlp_complexity_classifier_220.npz  - Modelo v6 (75.86%)
+experiments/logs/training_history_220.json            - Historial v6
 experiments/figures/training_history.png          - Gráficas de entrenamiento
 
 
