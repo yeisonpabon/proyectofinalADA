@@ -52,7 +52,7 @@ class MainWindow:
         
         # Inicializar MLP y feature extractor
         self.mlp = None
-        self.feature_extractor = GoFeatureExtractor()
+        self.feature_extractor = GoFeatureExtractor(max_features=200)  # Debe coincidir con train_model.py
         self.complexity_labels = {
             0: "O(1)",
             1: "O(log n)",

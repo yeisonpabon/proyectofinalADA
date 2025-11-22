@@ -1,8 +1,8 @@
-# Sistema de Clasificación de Complejidad Computacional
+# 🎓 Sistema de Análisis de Complejidad Computacional
 
-**Proyecto Final - Análisis y Diseño de Algoritmos**
+**Proyecto Final - Análisis y Diseño de Algoritmos (ADA)**
 
-Sistema educativo que combina redes neuronales MLP implementadas desde cero con análisis algorítmico riguroso para clasificar la complejidad computacional de código Go.
+Un sistema completo para **clasificar, analizar y predecir la complejidad computacional** de algoritmos usando técnicas de análisis formal y aprendizaje automático.
 
 ---
 
