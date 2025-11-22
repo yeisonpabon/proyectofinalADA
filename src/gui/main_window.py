@@ -822,22 +822,28 @@ func binarySearch(arr []int, target int) int {
                         mlp_prediction = self.complexity_labels.get(predicted_class, "Desconocida")
                         mlp_probabilities = prediction_probs[0]
                         
-                        result += "🧠 PREDICCIÓN RED NEURONAL MLP (Principal)\n"
-                        result += "─" * 60 + "\n\n"
-                        result += f"📊 **COMPLEJIDAD: {mlp_prediction}**\n"
-                        result += f"💯 Confianza: {mlp_confidence:.1%}\n\n"
-                        result += "Modelo:\n"
-                        result += "  • Arquitectura: 180 → 256 → 128 → 64 → 6\n"
-                        result += "  • Entrenado con 59 algoritmos (20 O(log n))\n"
-                        result += "  • Precisión: 90.91%\n"
-                        result += "  • Épocas: 1500\n\n"
+                        result += "[NEURAL NETWORK] PREDICTION\n"
+                        result += "-" * 60 + "\n\n"
+                        result += f"COMPLEXITY: {mlp_prediction}\n"
+                        result += f"Confidence: {mlp_confidence:.1%}\n\n"
+                        result += "Model:\n"
                         
-                        result += "Distribución de probabilidades:\n"
+                        # Mostrar arquitectura correcta según el modelo
+                        if hasattr(self.mlp, 'input_dim') and self.mlp.input_dim == 3:
+                            result += "  * Architecture: 3 -> 64 -> 32 -> 6 (v6)\n"
+                        else:
+                            result += "  * Architecture: 180 -> 256 -> 128 -> 64 -> 6\n"
+                            
+                        result += "  * Trained algorithms: 144\n"
+                        result += "  * Test Accuracy: 86.21%\n"
+                        result += "  * Epochs: 2000\n\n"
+                        
+                        result += "Probability Distribution:\n"
                         sorted_probs = sorted(enumerate(mlp_probabilities), key=lambda x: x[1], reverse=True)
                         for class_idx, prob in sorted_probs[:3]:
-                            complexity = self.complexity_labels.get(class_idx, f"Clase {class_idx}")
+                            complexity = self.complexity_labels.get(class_idx, f"Class {class_idx}")
                             bar_length = int(prob * 30)
-                            bar = "█" * bar_length + "░" * (30 - bar_length)
+                            bar = "[" + "=" * bar_length + " " * (30 - bar_length) + "]"
                             result += f"  {complexity:12} {bar} {prob:.1%}\n"
                         
                         result += "\n"
@@ -848,40 +854,40 @@ func binarySearch(arr []int, target int) int {
                     traceback.print_exc()
             
             # ==== ANÁLISIS DE RECURRENCIA (SEGUNDO NIVEL) ====
-            result += "─" * 60 + "\n"
+            result += "-" * 60 + "\n"
             result += "ANÁLISIS DE RECURRENCIA\n"
             result += "─" * 60 + "\n\n"
             
             if recurrence is None and backtracking_pattern:
-                result += "🌀 PATRÓN BACKTRACKING DETECTADO\n"
-                result += "─" * 60 + "\n\n"
-                result += "Se reconoce estructura de generación de permutaciones (swap antes y después de llamada recursiva).\n"
-                result += "Complejidad aproximada: **O(n!)** (o n·n! si se imprime/almacena cada permutación).\n"
-                result += "Recurrencia conceptual: T(n) = n · T(n-1) + O(1). Master Theorem no aplica porque 'a' depende de n.\n\n"
+                result += "[BACKTRACKING PATTERN DETECTED]\n"
+                result += "-" * 60 + "\n\n"
+                result += "Structure of permutation generation detected (swap before and after recursive call).\n"
+                result += "Approximate Complexity: O(n!) (or n*n! if each permutation is printed/stored).\n"
+                result += "Conceptual Recurrence: T(n) = n * T(n-1) + O(1). Master Theorem does not apply because 'a' depends on n.\n\n"
                 if mlp_prediction and mlp_prediction != "O(2^n)":
-                    result += "⚠️ La red MLP agrupó factorial dentro de clase " + mlp_prediction + ". Se fuerza salida factorial por semántica.\n\n"
+                    result += "[WARNING] The MLP grouped factorial within class " + mlp_prediction + ". Forcing factorial output by semantics.\n\n"
                 self.current_analysis_result = None
             elif recurrence is None:
-                result += "❌ NO SE DETECTÓ RECURSIÓN\n\n"
-                result += "El código es **ITERATIVO** (no recursivo).\n\n"
+                result += "[NO RECURSION DETECTED]\n\n"
+                result += "Code is ITERATIVE (not recursive).\n\n"
                 
                 # Detectar patrones iterativos comunes
                 has_binary_search_pattern = bool(re.search(r'left.*right.*mid|for.*left\s*<=?\s*right', code))
                 
                 if has_binary_search_pattern and mlp_prediction != "O(log n)":
-                    result += "🔍 Patrón iterativo detectado: Búsqueda Binaria\n"
-                    result += "  • Complejidad teórica: O(log n)\n"
-                    result += "  • Loop que divide el espacio a la mitad\n\n"
+                    result += "[ITERATIVE PATTERN] Binary Search detected\n"
+                    result += "  * Theoretical Complexity: O(log n)\n"
+                    result += "  * Loop that divides space in half\n\n"
                 elif not mlp_prediction:
-                    result += "💡 Sin predicción MLP disponible\n"
-                    result += "  • Ejecuta: python train_model.py\n\n"
+                    result += "[INFO] MLP prediction not available\n"
+                    result += "  * Run: python train_model.py\n\n"
                 
                 self.current_analysis_result = None
                 
             else:
                 # 2. Mostrar recurrencia detectada
                 recurrence_str = self.recurrence_parser.format_recurrence(recurrence)
-                result += "✅ RECURRENCIA DETECTADA\n\n"
+                result += "[RECURRENCE DETECTED]\n\n"
                 result += f"Forma matemática:\n"
                 result += f"  {recurrence_str}\n\n"
                 
